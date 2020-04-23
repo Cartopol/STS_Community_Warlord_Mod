@@ -1,0 +1,9 @@
+{
+  "the_warlord:StartingRelic": {
+    "NAME": "Example Relic",
+    "FLAVOR": "Example Flavor Text",
+    "DESCRIPTIONS": [
+      "Description goes here"
+    ]
+  }
+}

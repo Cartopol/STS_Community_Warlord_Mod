@@ -1,0 +1,15 @@
+[
+  {
+    "PROPER_NAME": "Attack Damage",
+    "NAMES": ["attack\u00a0damage", "attack\u00a0damage"],
+    "DESCRIPTION": "Affected by buffs and debuffs that affect attacks: Strength, Vulnerable, Weakened, Thorns, Lust, Pen Nib, ...."
+  },
+  {
+    "NAMES": ["destroy"],
+    "DESCRIPTION": "Permanently remove this card from your deck (not just this combat)."
+  },
+  {
+    "NAMES": ["slow", "slowed"],
+    "DESCRIPTION": "Slowed creatures take 10% more damage from attacks per card already played this turn."
+  }
+]

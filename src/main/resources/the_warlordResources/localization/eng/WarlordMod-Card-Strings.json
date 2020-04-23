@@ -1,0 +1,11 @@
+{
+  "the_warlord:Strike_Warlord": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "the_warlord:Defend_Warlord": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! block."
+  }
+
+}
