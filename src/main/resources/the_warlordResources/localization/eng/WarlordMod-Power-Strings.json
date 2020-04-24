@@ -24,11 +24,10 @@
   },
 
   "the_warlord:NextTurnSyrettePower": {
-    "NAME": "dummy field",
+    "NAME": "Stimulus",
     "DESCRIPTIONS": [
-      "Add a Syrette to your hand next turn.",
-      "Add a Syrette to your hand for the next #b",
-      " turns"
+      "Add a Syrette to your hand at the start of next turn",
+      "Add a Syrette to your hand at the start of next #b%1$s turns."
     ]
   }
 }

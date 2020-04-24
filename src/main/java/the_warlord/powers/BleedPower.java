@@ -55,8 +55,8 @@ public class BleedPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void atStartOfTurn() {
         if (this.owner.hasPower(GashPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.owner, this.amount));
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, this.amount));
+            addToBot(new LoseHPAction(this.owner, this.owner, this.amount));
+            addToBot(new ReducePowerAction(this.owner, this.owner, this, this.amount));
         }
     }
 

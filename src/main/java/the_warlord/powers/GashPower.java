@@ -35,7 +35,7 @@ public class GashPower extends AbstractPower implements CloneablePowerInterface 
         ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
         updateDescription();
         isTurnBased = true;
         // TODO: add proper art
@@ -48,16 +48,21 @@ public class GashPower extends AbstractPower implements CloneablePowerInterface 
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(this.owner.hasPower(BleedPower.POWER_ID)) {
-            int x = this.owner.getPower(BleedPower.POWER_ID).amount;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new BleedPower(this.owner, x), x));
+    public int onAttacked(DamageInfo info, int damageAmount) {
+
+        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && damageAmount > 0) {
+            if(this.owner.hasPower(BleedPower.POWER_ID)) {
+                int x = this.owner.getPower(BleedPower.POWER_ID).amount;
+                flash();
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new BleedPower(this.owner, x), x));
+            }
         }
-        updateDescription();
+
+        return damageAmount;
     }
 
     @Override
-    public void atStartOfTurn() { AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this)); }
+    public void atStartOfTurn() { addToBot(new RemoveSpecificPowerAction(owner, owner, this)); }
 
     @Override
     public void stackPower(int i) {

@@ -30,8 +30,7 @@ public class NextTurnSyrettePower extends AbstractPower implements CloneablePowe
 
     @Override
     public void updateDescription() {
-        if(this.amount == 0) { description = DESCRIPTIONS[0]; }
-        else{ description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2]; }
+        this.description = amount == 0 ? DESCRIPTIONS[0] : String.format(DESCRIPTIONS[1], this.amount);
     }
 
     @Override

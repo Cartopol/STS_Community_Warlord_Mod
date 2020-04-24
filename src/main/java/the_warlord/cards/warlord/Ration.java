@@ -22,25 +22,24 @@ public class Ration extends CustomWarlordModCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
     private static final int COST = 1;
+    private static final int DRAW = 1;
     private static final int SYRETTE_AMOUNT = 1;
 
     public Ration() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new Syrette();
+        this.urMagicNumber = this.baseUrMagicNumber = DRAW;
         this.magicNumber = this.baseMagicNumber = SYRETTE_AMOUNT;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(p, 1));
+        addToBot(new DrawCardAction(p, this.urMagicNumber));
 
 
-        if(upgraded){ addToBot(new MakeTempCardInHandAction(new Syrette(), 1, false)); }
-        else { AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NextTurnSyrettePower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE)); }
+        if(upgraded){ addToBot(new MakeTempCardInHandAction(new Syrette(), this.magicNumber, false)); }
+        else { addToBot(new ApplyPowerAction(p, p, new NextTurnSyrettePower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE)); }
 
 
 
@@ -50,7 +49,6 @@ public class Ration extends CustomWarlordModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeDescription();
         }
     }
