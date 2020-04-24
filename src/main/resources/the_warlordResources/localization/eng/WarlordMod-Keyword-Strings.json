@@ -11,5 +11,30 @@
   {
     "NAMES": ["slow", "slowed"],
     "DESCRIPTION": "Slowed creatures take 10% more damage from attacks per card already played this turn."
+  },
+
+
+  {
+    "PROPER_NAME": "Template",
+    "NAMES": [
+      "template"
+    ],
+    "DESCRIPTION": "Text goes here!"
+  },
+
+  {
+    "PROPER_NAME": "Bleed",
+    "NAMES": [
+      "bleed"
+    ],
+    "DESCRIPTION": "placeholder - dummy field"
+  },
+
+  {
+    "PROPER_NAME": "Gash",
+    "NAMES": [
+      "gash"
+    ],
+    "DESCRIPTION": "placeholder - dummy field"
   }
 ]

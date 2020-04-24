@@ -5,5 +5,29 @@
       "Does something #b%1$s time.",
       "Does something #b%1$s times."
     ]
+  },
+
+  "the_warlord:BleedPower": {
+    "NAME": "Bleed",
+    "DESCRIPTIONS": [
+      "Some placeholder text?",
+      "More placeholder text!"
+    ]
+  },
+
+  "the_warlord:GashPower": {
+    "NAME": "Gash",
+    "DESCRIPTIONS": [
+      "Some placeholder text?",
+      "More placeholder text!"
+    ]
+  },
+
+  "the_warlord:NextTurnSyrettePower": {
+    "NAME": "Stimulus",
+    "DESCRIPTIONS": [
+      "Add a Syrette to your hand at the start of next turn",
+      "Add a Syrette to your hand at the start of next #b%1$s turns."
+    ]
   }
 }

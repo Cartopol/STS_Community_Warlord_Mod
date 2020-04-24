@@ -25,8 +25,10 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import the_warlord.WarlordMod;
-import the_warlord.cards.warlord.Defend_Warlord;
-import the_warlord.cards.warlord.Strike_Warlord;
+import the_warlord.cards.warlord.Defend;
+import the_warlord.cards.warlord.Ration;
+import the_warlord.cards.warlord.Rebuff;
+import the_warlord.cards.warlord.Strike;
 import the_warlord.relics.StartingRelic;
 
 import java.util.ArrayList;
@@ -206,14 +208,19 @@ public class Warlord extends CustomPlayer {
 
         ArrayList<String> retVal = new ArrayList<>();
 
-        retVal.add(Strike_Warlord.ID);
-        retVal.add(Strike_Warlord.ID);
-        retVal.add(Strike_Warlord.ID);
-        retVal.add(Strike_Warlord.ID);
-        retVal.add(Defend_Warlord.ID);
-        retVal.add(Defend_Warlord.ID);
-        retVal.add(Defend_Warlord.ID);
-        retVal.add(Defend_Warlord.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+
+        retVal.add(Ration.ID);
+        retVal.add(Rebuff.ID);
+
 
         return retVal;
     }
@@ -277,7 +284,7 @@ public class Warlord extends CustomPlayer {
     //TODO determine which starter card should be obtainable for Match and Keep event
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike_Warlord();
+        return new Strike();
     }
 
     // The class name as it appears next to your player name in-game
