@@ -20,7 +20,7 @@
   "the_warlord:Ration": {
     "NAME": "Ration",
     "DESCRIPTION": "Draw a card. NL Next turn, add a Syrette to your hand.",
-    "UPGRADE_DESCRIPTON": "Draw a card. NL Next turn, add a Syrette to your hand."
+    "UPGRADE_DESCRIPTON": "Draw a card. NL Add a Syrette to your hand."
   },
   "the_warlord:Rebuff": {
     "NAME": "Defend",
