@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.GashPower;
+import the_warlord.powers.GushPower;
 
 public class debu_appgash_atk extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(debu_appgash_atk.class.getSimpleName());
@@ -35,7 +35,7 @@ public class debu_appgash_atk extends CustomWarlordModCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,  p,  new GashPower(m, -1), -1, true, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m,  p,  new GushPower(m, -1), -1, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

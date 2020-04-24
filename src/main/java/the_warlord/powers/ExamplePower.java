@@ -24,7 +24,10 @@ public class ExamplePower extends CustomWarlordModPower {
 
     @Override
     public void updateDescription() {
-        this.description =  String.format(DESCRIPTIONS[0], this.amount);
+        this.description = amount == 0 ? DESCRIPTIONS[0] : String.format(DESCRIPTIONS[1], this.amount);
+
+
+//        this.description =  String.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override

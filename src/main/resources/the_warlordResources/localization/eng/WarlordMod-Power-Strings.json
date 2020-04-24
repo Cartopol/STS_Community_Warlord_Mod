@@ -10,8 +10,7 @@
   "the_warlord:BleedPower": {
     "NAME": "Bleed",
     "DESCRIPTIONS": [
-      "Some placeholder text?",
-      "More placeholder text!"
+      "When Bleed is removed, loses #b%1$s HP."
     ]
   },
 
@@ -22,7 +21,12 @@
       "More placeholder text!"
     ]
   },
-
+  "the_warlord:GushPower": {
+    "NAME": "Gush",
+    "DESCRIPTIONS": [
+      "Double enemy's #yBleed whenever it takes #yAttack #yDamage. At the start of its turn, loses #yGush and #yBleed."
+    ]
+  },
   "the_warlord:NextTurnSyrettePower": {
     "NAME": "Stimulus",
     "DESCRIPTIONS": [
