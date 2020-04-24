@@ -7,8 +7,8 @@ import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 
-public class Defend_Warlord extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(Defend_Warlord.class);
+public class Rebuff extends CustomWarlordModCard {
+    public static final String ID = WarlordMod.makeID(Rebuff.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -16,19 +16,23 @@ public class Defend_Warlord extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int BLOCK = 5;
+
+    private static final int BLOCK = 7;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
-    public Defend_Warlord() {
+
+    public Rebuff() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
 
-        this.tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
+
+        // TODO
+        // Add parry mechanics - reaction time
     }
 
     @Override
