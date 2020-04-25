@@ -6,7 +6,7 @@
 
   "the_warlord:debu_appgash_atk": {
     "NAME": "debu_appgash_atk",
-    "DESCRIPTION": "plc NL Deal !D! damage NL Apply 1 the_warlord:Gash."
+    "DESCRIPTION": "plc NL Deal !D! damage NL Apply 1 the_warlord:Gush."
   },
 
   "the_warlord:Strike": {
@@ -23,7 +23,7 @@
     "UPGRADE_DESCRIPTON": "Draw a card. NL Add a Syrette to your hand."
   },
   "the_warlord:Rebuff": {
-    "NAME": "Defend",
+    "NAME": "Rebuff",
     "DESCRIPTION": "Gain !B! block."
   },
 
@@ -34,5 +34,18 @@
   "the_warlord:Syrette": {
     "NAME": "Syrette",
     "DESCRIPTION": "Retain. NL Gain !M! Dexterity. NL At the end of this turn, lose !M! Dexterity. NL Exhaust."
+  },
+  "the_warlord:NeckSlash": {
+    "NAME": "Neck Slash",
+    "DESCRIPTION": "Apply !M! the_warlord:Bleed. NL Apply the_warlord:Gush."
+  },
+  "the_warlord:SmokeBomb": {
+    "NAME": "Smoke Bomb",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies."
+  },
+  "the_warlord:BackStep": {
+    "NAME": "Back Step",
+    "DESCRIPTION": "Draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards."
   }
 }

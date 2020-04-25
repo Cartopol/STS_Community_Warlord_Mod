@@ -27,6 +27,12 @@
       "Double enemy's #yBleed whenever it takes #yAttack #yDamage. At the start of its turn, loses #yGush and #yBleed."
     ]
   },
+  "the_warlord:ParryPower": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      ""
+    ]
+  },
   "the_warlord:NextTurnSyrettePower": {
     "NAME": "Stimulus",
     "DESCRIPTIONS": [
