@@ -15,7 +15,6 @@
 
 
   {
-    "PROPER_NAME": "Template",
     "NAMES": [
       "template"
     ],
@@ -23,18 +22,16 @@
   },
 
   {
-    "PROPER_NAME": "Bleed",
     "NAMES": [
       "bleed"
     ],
-    "DESCRIPTION": "placeholder - dummy field"
+    "DESCRIPTION": "When Bleed is removed, loses HP equal to the Bleed amount."
   },
 
   {
-    "PROPER_NAME": "Gash",
     "NAMES": [
-      "gash"
+      "gush"
     ],
-    "DESCRIPTION": "placeholder - dummy field"
+    "DESCRIPTION": "Double enemy's #yBleed whenever it takes #yAttack #yDamage. At the start of its turn, loses #yGush and #yBleed."
   }
 ]

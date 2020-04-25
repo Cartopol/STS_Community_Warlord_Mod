@@ -10,12 +10,14 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -25,10 +27,13 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import the_warlord.WarlordMod;
+import the_warlord.actions.AddToParryDeckAction;
 import the_warlord.cards.warlord.Defend;
 import the_warlord.cards.warlord.Ration;
 import the_warlord.cards.warlord.Rebuff;
 import the_warlord.cards.warlord.Strike;
+import the_warlord.cards.warlord.parry_deck.*;
+import the_warlord.powers.ParryPower;
 import the_warlord.relics.StartingRelic;
 
 import java.util.ArrayList;
@@ -206,23 +211,27 @@ public class Warlord extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         logger.info("Constructing Warlord starting deck");
 
-        ArrayList<String> retVal = new ArrayList<>();
+        ArrayList<String> startingDeck = new ArrayList<>();
 
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
+        startingDeck.add(Strike.ID);
+        startingDeck.add(Strike.ID);
+        startingDeck.add(Strike.ID);
+        startingDeck.add(Strike.ID);
 
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
+        startingDeck.add(Defend.ID);
+        startingDeck.add(Defend.ID);
+        startingDeck.add(Defend.ID);
+        startingDeck.add(Defend.ID);
 
-        retVal.add(Ration.ID);
-        retVal.add(Rebuff.ID);
+        startingDeck.add(Ration.ID);
+        startingDeck.add(Rebuff.ID);
+
+        startingDeck.add(NeckSlash.ID);
+        startingDeck.add(SmokeBomb.ID);
+        startingDeck.add(BackStep.ID);
 
 
-        return retVal;
+        return startingDeck;
     }
 
     // Starting Relics	
@@ -367,6 +376,13 @@ public class Warlord extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ParryPower(AbstractDungeon.player, -1)));
+        ParryDeck.reset();
+        for (AbstractCard c : drawPile.group) {
+            if (c instanceof CustomParryCard) {
+                AbstractDungeon.actionManager.addToBottom(new AddToParryDeckAction(c));
+            }
+        }
     }
 
     @Override
