@@ -1,6 +1,8 @@
 package the_warlord.powers;
 
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ReactionTimePower extends CustomWarlordModPower{
@@ -16,6 +18,11 @@ public class ReactionTimePower extends CustomWarlordModPower{
         this.amount = amount;
 
         updateDescription();
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(owner, owner, this, 1));
     }
 
     @Override

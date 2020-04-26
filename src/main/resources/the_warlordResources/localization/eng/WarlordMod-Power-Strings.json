@@ -28,9 +28,15 @@
     ]
   },
   "the_warlord:ParryPower": {
-    "NAME": "",
+    "NAME": "Parrying",
     "DESCRIPTIONS": [
-      ""
+      "temp"
+    ]
+  },
+  "the_warlord:ReactionTimePower": {
+    "NAME": "Reaction Time",
+    "DESCRIPTIONS": [
+      "Allows #yParrying attacks that are within #b%1$s of your current block. Reduced by #b1 at the start of your turn."
     ]
   },
   "the_warlord:NextTurnSyrettePower": {

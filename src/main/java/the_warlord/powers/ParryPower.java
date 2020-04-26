@@ -8,9 +8,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
+import the_warlord.WarlordMod;
 import the_warlord.cards.warlord.parry_deck.ParryDeck;
 
 import java.util.ArrayList;
+
 public class ParryPower extends CustomWarlordModPower implements InvisiblePower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(ParryPower.class);
     public static final String POWER_ID = STATIC.ID;
@@ -18,13 +20,12 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
     public static boolean isParrying = false;
     public static boolean isFullParrying = false;
 
-    public ParryPower(AbstractCreature owner, int amount) {
+    public ParryPower(AbstractCreature owner) {
         super(STATIC);
 
         this.type = PowerType.BUFF;
 
         this.owner = owner;
-        this.amount = amount;
 
         updateDescription();
     }
@@ -33,8 +34,21 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
     public int onAttacked(DamageInfo info, int damageAmount) {
         //this resets the isFullparrying flag in case there's another attack incoming. If the last attack is parried, we no longer reset this flag.
         isFullParrying = false;
+        WarlordMod.logger.info("onAttacked called");
 
-        if (damageAmount == owner.currentBlock) {
+        int tolerance = 0;
+        if (owner.hasPower(ReactionTimePower.POWER_ID)) {
+            tolerance = owner.getPower(ReactionTimePower.POWER_ID).amount;
+        }
+
+        WarlordMod.logger.info("Damage " + damageAmount);
+        WarlordMod.logger.info("DamageInfo.output " + info.output);
+
+//        if (damageAmount > 0 && owner.currentBlock > 0 && damageAmount <= upperDamageBound && damageAmount >= lowerDamageBound) {
+
+        if (damageAmount < info.output && damageAmount <= tolerance && owner.currentBlock <= tolerance) {
+            WarlordMod.logger.info("Parrying");
+
             addToBot(new VFXAction(new FlameBarrierEffect(owner.dialogX, owner.dialogY)));
             isFullParrying = true;
             isParrying = true;
@@ -71,6 +85,6 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
 
     @Override
     public AbstractPower makeCopy() {
-        return new ParryPower(owner, amount);
+        return new ParryPower(owner);
     }
 }

@@ -5,6 +5,11 @@
     "DESCRIPTION": "Affected by buffs and debuffs that affect attacks: Strength, Vulnerable, Weakened, Thorns, Lust, Pen Nib, ...."
   },
   {
+    "PROPER_NAME": "Reaction Time",
+    "NAMES": ["reaction\u00a0time"],
+    "DESCRIPTION": "Allows you to #yParry attacks that are within your #yReaction #yTime amount of your current block. Reduces by 1 each turn."
+  },
+  {
     "NAMES": ["destroy"],
     "DESCRIPTION": "Permanently remove this card from your deck (not just this combat)."
   },

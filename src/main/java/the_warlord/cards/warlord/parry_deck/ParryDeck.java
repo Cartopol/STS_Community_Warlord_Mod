@@ -17,7 +17,7 @@ public class ParryDeck {
         playedThisCombatCount = 0;
     }
 
-    public static ArrayList getParryOptions() {
+    public static ArrayList<AbstractCard> getParryOptions() {
         parryOptions.clear();
         int nbOptions = 3;
         if (masterParryDeck.size() < 3) {

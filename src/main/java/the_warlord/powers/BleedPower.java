@@ -28,7 +28,7 @@ public class BleedPower extends CustomWarlordModPower implements HealthBarRender
 
     @Override
     public void onRemove() {
-        addToBot(new LoseHPAction(this.owner, this.owner, this.amount));
+        addToTop(new LoseHPAction(this.owner, this.owner, this.amount));
     }
 
     @Override

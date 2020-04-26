@@ -376,7 +376,8 @@ public class Warlord extends CustomPlayer {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ParryPower(AbstractDungeon.player, -1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ParryPower(AbstractDungeon.player)));
+        WarlordMod.logger.info("ParryPower created");
         ParryDeck.reset();
         for (AbstractCard c : drawPile.group) {
             if (c instanceof CustomParryCard) {
@@ -406,6 +407,6 @@ public class Warlord extends CustomPlayer {
     }
 
     @Override
-    public void renderPowerTips(SpriteBatch sb) {
+    public void renderPowerTips(SpriteBatch sb) { super.renderPowerTips(sb);
     }
 }

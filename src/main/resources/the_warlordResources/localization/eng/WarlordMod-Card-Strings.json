@@ -24,7 +24,7 @@
   },
   "the_warlord:Rebuff": {
     "NAME": "Rebuff",
-    "DESCRIPTION": "Gain !B! block."
+    "DESCRIPTION": "Gain !B! block. NL Gain !M! the_warlord:Reaction\u00a0Time"
   },
 
   "the_warlord:HighReward": {
