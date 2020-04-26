@@ -27,6 +27,7 @@ public class Phalanx extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = THORNS;
+        this.exhaust = true;
     }
 
     @Override
@@ -45,7 +46,9 @@ public class Phalanx extends CustomWarlordModCard {
         for (int i = 0; i < effect; ++i) {
             addToBot(new GainBlockAction(p, block));
         }
-        addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber * effect)));
+        if (effect > 0) {
+            addToBot(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber * effect)));
+        }
 
         if (!this.freeToPlayOnce) {
             p.energy.use(EnergyPanel.totalCount);

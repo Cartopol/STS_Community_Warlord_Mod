@@ -11,7 +11,7 @@ import the_warlord.characters.Warlord;
 import the_warlord.util.IntentUtils;
 
 public class MeFirst extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(MeFirst.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(MeFirst.class);
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -19,7 +19,7 @@ public class MeFirst extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DMG = 3;
 
     public MeFirst() {

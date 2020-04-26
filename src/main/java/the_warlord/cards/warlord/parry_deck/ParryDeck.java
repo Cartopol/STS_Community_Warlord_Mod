@@ -27,7 +27,7 @@ public class ParryDeck {
         for (int i = 0; i < nbOptions; ++i) {
             AbstractCard c = masterParryDeck.getNCardFromTop(i);
             c.applyPowers();
-            parryOptions.add(c.makeStatEquivalentCopy());
+            parryOptions.add(c.makeSameInstanceOf());
         }
 
         return parryOptions;
