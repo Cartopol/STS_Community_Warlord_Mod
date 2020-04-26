@@ -39,6 +39,14 @@
     "NAME": "Neck Slash",
     "DESCRIPTION": "Apply !M! the_warlord:Bleed. NL Apply the_warlord:Gush."
   },
+  "the_warlord:WideSwipes": {
+    "NAME": "Wide Swipes",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
+  },
+  "the_warlord:MeFirst": {
+    "NAME": "Me First",
+    "DESCRIPTION": "Deal !D! damage if enemy is attacking."
+  },
   "the_warlord:SmokeBomb": {
     "NAME": "Smoke Bomb",
     "DESCRIPTION": "Apply !M! Weak to ALL enemies."
