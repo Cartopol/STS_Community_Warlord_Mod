@@ -39,6 +39,12 @@
       "Allows #yParrying attacks that are within #b%1$s of your current block. Reduced by #b1 at the start of your turn."
     ]
   },
+  "the_warlord:SupportingFirePower": {
+    "NAME": "Supporting Fire",
+    "DESCRIPTIONS": [
+      "At the end of your turn, deal #b%1$s damage to ALL enemies. This damage is increased by your #yStrength."
+    ]
+  },
   "the_warlord:NextTurnSyrettePower": {
     "NAME": "Stimulus",
     "DESCRIPTIONS": [
