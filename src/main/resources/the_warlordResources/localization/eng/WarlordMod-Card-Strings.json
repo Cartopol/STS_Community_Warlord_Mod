@@ -43,6 +43,14 @@
     "NAME": "Smoke Bomb",
     "DESCRIPTION": "Apply !M! Weak to ALL enemies."
   },
+  "the_warlord:ZigZag": {
+    "NAME": "Zig Zag",
+    "DESCRIPTION": "Gain !B! block for each enemy in combat."
+  },
+  "the_warlord:EyesWideOpen": {
+    "NAME": "Eyes Wide Open",
+    "DESCRIPTION": "Gain !M! Dexterity. NL At the end of this turn, lose !M! Dexterity."
+  },
   "the_warlord:BackStep": {
     "NAME": "Back Step",
     "DESCRIPTION": "Draw !M! card.",
