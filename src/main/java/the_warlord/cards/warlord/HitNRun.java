@@ -12,7 +12,7 @@ import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 
 public class HitNRun extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(HitNRun.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(HitNRun.class);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

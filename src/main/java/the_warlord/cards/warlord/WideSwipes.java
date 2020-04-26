@@ -12,7 +12,7 @@ import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 
 public class WideSwipes extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(WideSwipes.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(WideSwipes.class);
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

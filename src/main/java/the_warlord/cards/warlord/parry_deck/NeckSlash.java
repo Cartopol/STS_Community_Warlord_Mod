@@ -10,7 +10,7 @@ import the_warlord.powers.BleedPower;
 import the_warlord.powers.GushPower;
 
 public class NeckSlash extends CustomParryCard {
-    public static final String ID = WarlordMod.makeID(NeckSlash.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(NeckSlash.class);
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -19,8 +19,8 @@ public class NeckSlash extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int BLEED = 5;
-    private static final int UPGRADE_PLUS_BLEED = 2;
+    private static final int BLEED = 2;
+    private static final int UPGRADE_PLUS_BLEED = 1;
 
 
     public NeckSlash() {

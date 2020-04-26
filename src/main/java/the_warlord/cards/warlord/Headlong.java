@@ -10,7 +10,7 @@ import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 
 public class Headlong extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(Headlong.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(Headlong.class);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

@@ -5,7 +5,7 @@ import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
 
 public class BackStep extends CustomParryCard {
-    public static final String ID = WarlordMod.makeID(BackStep.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(BackStep.class);
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;

@@ -9,7 +9,7 @@ import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 
 public class ZigZag extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(ZigZag.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(ZigZag.class);
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

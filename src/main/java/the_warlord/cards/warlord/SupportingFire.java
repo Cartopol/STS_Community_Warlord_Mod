@@ -9,7 +9,7 @@ import the_warlord.characters.Warlord;
 import the_warlord.powers.SupportingFirePower;
 
 public class SupportingFire extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(SupportingFire.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(SupportingFire.class);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

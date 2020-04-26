@@ -1,7 +1,5 @@
 package the_warlord.cards.warlord;
 
-// Todo: flex for dex.
-
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +11,7 @@ import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 
 public class EyesWideOpen extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(EyesWideOpen.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(EyesWideOpen.class);
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

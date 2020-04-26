@@ -10,7 +10,7 @@ import the_warlord.characters.Warlord;
 import the_warlord.powers.ReactionTimePower;
 
 public class Rebuff extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(Rebuff.class.getSimpleName());
+    public static final String ID = WarlordMod.makeID(Rebuff.class);
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
