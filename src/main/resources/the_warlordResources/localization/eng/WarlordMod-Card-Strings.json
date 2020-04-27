@@ -1,14 +1,4 @@
 {
-  "the_warlord:debu_appbleed_atk": {
-    "NAME": "debu_appbleed_atk",
-    "DESCRIPTION": "plc NL Deal !D! damage NL Apply 1 the_warlord:Bleed."
-  },
-
-  "the_warlord:debu_appgash_atk": {
-    "NAME": "debu_appgash_atk",
-    "DESCRIPTION": "plc NL Deal !D! damage NL Apply 1 the_warlord:Gush."
-  },
-
   "the_warlord:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
@@ -23,7 +13,7 @@
   },
   "the_warlord:Rebuff": {
     "NAME": "Rebuff",
-    "DESCRIPTION": "Gain !B! block. NL Gain !M! the_warlord:Reaction\u00a0Time"
+    "DESCRIPTION": "Gain !B! block. NL Gain !M! the_warlord:Reaction\u00a0Time."
   },
 
   "the_warlord:HighReward": {
@@ -52,8 +42,8 @@
   },
   "the_warlord:FinishOff": {
     "NAME": "Finish Off",
-    "DESCRIPTION": "Your attacks deal double damage this turn.",
-    "UPGRADE_DESCRIPTION": "Your attacks deal double damage this turn. NL Apply !M! Vulnerable to ALL enemies."
+    "DESCRIPTION": "Your attacks deal double damage this turn. NL the_warlord:Purge.",
+    "UPGRADE_DESCRIPTION": "Your attacks deal double damage this turn. NL Apply !M! Vulnerable to ALL enemies. NL the_warlord:Purge."
   },
   "the_warlord:ZigZag": {
     "NAME": "Zig Zag",
@@ -69,7 +59,15 @@
   },
   "the_warlord:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
-    "DESCRIPTION": "Gain !M! Dexterity. NL At the end of this turn, lose !M! Dexterity."
+    "DESCRIPTION": "Gain !M! the_warlord:Reaction\u00a0Time."
+  },
+  "the_warlord:Stretch": {
+    "NAME": "Stretch",
+    "DESCRIPTION": "Gain !M! the_warlord:Reaction\u00a0Time."
+  },
+  "the_warlord:Wrap": {
+    "NAME": "Wrap",
+    "DESCRIPTION": "ALL enemies lose !M! Strength this turn."
   },
   "the_warlord:HitNRun": {
     "NAME": "Hit 'n Run",
@@ -89,9 +87,8 @@
   },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",
-    "DESCRIPTION": "Upgrade all cards in your hand for the rest of combat.",
-    "UPGRADE_DESCRIPTION": "Upgrade ALL your cards for the rest of combat. NL Exhaust."
-
+    "DESCRIPTION": "Upgrade a card in your hand for the rest of combat.",
+    "UPGRADE_DESCRIPTION": "Upgrade all cards in your hand for the rest of combat."
   },
   "the_warlord:Sidestep": {
     "NAME": "Sidestep",

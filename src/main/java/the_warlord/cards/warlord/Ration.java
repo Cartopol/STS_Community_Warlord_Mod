@@ -10,13 +10,13 @@ import the_warlord.characters.Warlord;
 public class Ration extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Ration.class);
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 0;
-    private static final int SYRETTE_AMOUNT = 1;
+    private static final int SYRETTE_AMOUNT = 2;
     private static final int UPGRADE_PLUS_SYRETTE_AMOUNT = 1;
 
     public Ration() {

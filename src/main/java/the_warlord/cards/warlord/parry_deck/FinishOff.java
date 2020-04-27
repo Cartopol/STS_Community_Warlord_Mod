@@ -39,6 +39,8 @@ public class FinishOff extends CustomParryCard {
         }
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, urMagicNumber, false)));
+
+        removeFromMasterParryDeck(this);
     }
 
     @Override

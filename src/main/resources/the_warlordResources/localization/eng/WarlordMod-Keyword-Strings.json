@@ -35,6 +35,13 @@
 
   {
     "NAMES": [
+      "purge", "purged"
+    ],
+    "DESCRIPTION": "Purged cards are removed from your Parry options for the rest of combat."
+  },
+
+  {
+    "NAMES": [
       "gush"
     ],
     "DESCRIPTION": "Double enemy's #yBleed whenever it takes #yAttack #yDamage. At the start of its turn, loses #yGush and #yBleed."
