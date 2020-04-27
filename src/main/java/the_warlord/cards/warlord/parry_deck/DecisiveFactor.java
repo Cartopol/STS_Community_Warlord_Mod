@@ -1,6 +1,5 @@
 package the_warlord.cards.warlord.parry_deck;
 
-import com.megacrit.cardcrawl.actions.unique.ApotheosisAction;
 import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
@@ -21,13 +20,7 @@ public class DecisiveFactor extends CustomParryCard {
 
     @Override
     public void onChoseThisOption() {
-        if (this.upgraded) {
-            addToBot(new ApotheosisAction());
-            removeFromMasterParryDeck(this);
-        }
-        else {
-            addToBot(new ArmamentsAction(true));
-        }
+            addToBot(new ArmamentsAction(upgraded));
     }
 
     @Override

@@ -4,8 +4,8 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
 
-public class BackStep extends CustomParryCard {
-    public static final String ID = WarlordMod.makeID(BackStep.class);
+public class Sidestep extends CustomParryCard {
+    public static final String ID = WarlordMod.makeID(Sidestep.class);
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -18,7 +18,7 @@ public class BackStep extends CustomParryCard {
     private static final int UPGRADE_PLUS_DRAW = 1;
 
 
-    public BackStep() {
+    public Sidestep() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = DRAW;
 

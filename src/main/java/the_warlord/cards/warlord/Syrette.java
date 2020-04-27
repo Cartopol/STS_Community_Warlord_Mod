@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.ReactionTimePower;
 
 public class Syrette extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Syrette.class);
@@ -28,14 +27,14 @@ public class Syrette extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = DEXTERITY;
         this.selfRetain = true;
-
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(p, p, new ReactionTimePower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+//        addToBot(new ApplyPowerAction(p, p, new ReactionTimePower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
 
     }
 

@@ -32,6 +32,11 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
+        //make sure parry logic only works on normal attacks
+        if (!info.type.equals(DamageInfo.DamageType.NORMAL)) {
+            return damageAmount;
+        }
+
         //this resets the isFullparrying flag in case there's another attack incoming. If the last attack is parried, we no longer reset this flag.
         isFullParrying = false;
         WarlordMod.logger.info("onAttacked called");

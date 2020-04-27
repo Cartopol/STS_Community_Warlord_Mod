@@ -228,7 +228,7 @@ public class Warlord extends CustomPlayer {
 
         startingDeck.add(NeckSlash.ID);
         startingDeck.add(SmokeScreen.ID);
-        startingDeck.add(BackStep.ID);
+        startingDeck.add(Sidestep.ID);
 
 
         return startingDeck;
