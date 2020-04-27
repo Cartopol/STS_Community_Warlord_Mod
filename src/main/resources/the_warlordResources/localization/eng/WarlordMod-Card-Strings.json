@@ -85,10 +85,27 @@
     "NAME": "Supporting Fire",
     "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies. NL This damage is increased by your Strength."
   },
+  "the_warlord:Scout": {
+    "NAME": "Scout",
+    "DESCRIPTION": "If this is the first card played this turn, draw !M! cards."
+  },
+  "the_warlord:BrokenGlass": {
+    "NAME": "Broken Glass",
+    "DESCRIPTION": "Apply !M! the_warlord:Bleed to ALL enemies."
+  },
+  "the_warlord:FlayKnife": {
+    "NAME": "Flay Knife",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! the_warlord:Bleed."
+  },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",
     "DESCRIPTION": "Upgrade a card in your hand for the rest of combat.",
     "UPGRADE_DESCRIPTION": "Upgrade all cards in your hand for the rest of combat."
+  },
+  "the_warlord:TakeShelter": {
+    "NAME": "Take Shelter",
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, add a Syrette to your hand.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Next !M! turns, add a Syrette to your hand."
   },
   "the_warlord:Sidestep": {
     "NAME": "Sidestep",
