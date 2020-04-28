@@ -70,6 +70,7 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
 
             ArrayList<AbstractCard> parryOptions = ParryDeck.getParryOptions();
 
+            // Todo:
             if (isFullParrying) {
                 isFullParrying = false;
                 for (AbstractCard c : parryOptions) {

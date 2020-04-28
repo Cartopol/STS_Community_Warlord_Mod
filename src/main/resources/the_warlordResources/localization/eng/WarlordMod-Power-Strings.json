@@ -21,6 +21,7 @@
       "More placeholder text!"
     ]
   },
+
   "the_warlord:GushPower": {
     "NAME": "Gush",
     "DESCRIPTIONS": [
@@ -50,6 +51,19 @@
     "DESCRIPTIONS": [
       "Add a Syrette to your hand at the start of next turn",
       "Add a Syrette to your hand at the start of next #b%1$s turns."
+    ]
+  },
+
+  "MokouMod:IgnitionBarrierPower": {
+    "NAME": "Ignition Barrier",
+    "DESCRIPTIONS": [
+      "When attacked, deals #b%1$s damage back."
+    ]
+  },
+  "MokouMod:FocusPunchPower": {
+    "NAME": "Focus Punch",
+    "DESCRIPTIONS": [
+      "At the start of next turn, deal #b%1$s damage. NL Cancels if you take damage."
     ]
   }
 }
