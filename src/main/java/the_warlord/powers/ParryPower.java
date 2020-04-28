@@ -62,9 +62,16 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
         return damageAmount;
     }
 
+    @Override
+    public void onInitialApplication() {
+        isParrying = false;
+        isFullParrying = false;
+    }
+
 
     @Override
     public void atStartOfTurn() {
+        WarlordMod.logger.info(this.ID + " isParrying: " + isParrying + ". isFullParrying: " + isFullParrying);
         if (isParrying) {
             isParrying = false;
 

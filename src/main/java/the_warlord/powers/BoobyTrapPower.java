@@ -1,42 +1,28 @@
 package the_warlord.powers;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import the_warlord.WarlordMod;
-import the_warlord.cards.warlord.BoobyTrap;
 
-public class BoobyTrapPower extends AbstractPower {
+public class BoobyTrapPower extends CustomWarlordModPower {
+    public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(BoobyTrapPower.class);
+    public static final String POWER_ID = STATIC.ID;
 
-    public static final String POWER_ID = WarlordMod.makeID(BoobyTrapPower.class);
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String NAME = powerStrings.NAME;
-    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public BoobyTrapPower(AbstractCreature owner, int amount) {
+        super(STATIC);
 
-    public BoobyTrapPower(AbstractCreature owner, int thornsDamage) {
-        this.name = NAME;
-        this.ID = POWER_ID;
+        this.type = PowerType.BUFF;
+
         this.owner = owner;
-        this.amount = thornsDamage;
-        updateDescription();
-        loadRegion("flameBarrier");
-    }
+        this.amount = amount;
 
-
-    public void stackPower(int stackAmount) {
-        if (this.amount == -1) { return; }
-        this.fontScale = 8.0F;
-        this.amount += stackAmount;
         updateDescription();
     }
 
+    @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner) {
             flash();
@@ -44,11 +30,19 @@ public class BoobyTrapPower extends AbstractPower {
         return damageAmount;
     }
 
+
+    @Override
+    public void updateDescription() {
+        description = String.format(DESCRIPTIONS[0], amount);
+    }
+
+    @Override
     public void atStartOfTurn() {
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 
-    public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount);
+    @Override
+    public AbstractPower makeCopy() {
+        return new BoobyTrapPower(owner, amount);
     }
 }

@@ -5,12 +5,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.ReactionTimePower;
 
 public class PrickHoles extends CustomParryCard {
     public static final String ID = WarlordMod.makeID(PrickHoles.class);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;

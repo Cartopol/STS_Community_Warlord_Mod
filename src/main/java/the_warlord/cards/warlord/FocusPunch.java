@@ -12,7 +12,7 @@ public class FocusPunch extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(FocusPunch.class);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 

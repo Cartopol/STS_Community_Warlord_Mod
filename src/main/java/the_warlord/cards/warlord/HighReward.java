@@ -20,7 +20,7 @@ public class HighReward extends CustomWarlordModCard {
 
     private static final int COST = 2;
 
-    private static final int STR_DEX = 6;
+    private static final int STR_DEX = 4;
     private static final int UPGRADE_PLUS_STR_DEX = 1;
 
     public HighReward() {

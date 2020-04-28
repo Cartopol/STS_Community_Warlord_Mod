@@ -29,15 +29,17 @@ public class Diversion extends CustomWarlordModCard {
     public Diversion() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
-        magicNumber = baseMagicNumber = 0;
+        magicNumber = baseMagicNumber = BONUS_BLOCK;
     }
 
     @Override
     public int calculateBonusMagicNumber() {
-        int bonusBlock = BONUS_BLOCK;
-        if (upgraded) {
-            bonusBlock += UPGRADE_PLUS_BONUS_BLOCK;
-        }
+        return calculateMagicNumberAfterMods(magicNumber) - magicNumber;
+    }
+
+    private int calculateMagicNumberAfterMods(int block) {
+        int bonusBlock = block;
+
         AbstractPlayer p = AbstractDungeon.player;
         if (p.hasPower(DexterityPower.POWER_ID)) {
             bonusBlock += p.getPower(DexterityPower.POWER_ID).amount;
@@ -61,6 +63,7 @@ public class Diversion extends CustomWarlordModCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_BONUS_BLOCK);
             upgradeDescription();
         }
     }

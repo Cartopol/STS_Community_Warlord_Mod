@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.BleedPower;
-import the_warlord.powers.GushPower;
 
 public class HighRisk extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(HighRisk.class);
@@ -23,7 +21,7 @@ public class HighRisk extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int STR_DEX = 3;
+    private static final int STR_DEX = 2;
     private static final int UPGRADE_PLUS_STR_DEX = -1;
 
     public HighRisk() {
