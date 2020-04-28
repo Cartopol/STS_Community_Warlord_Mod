@@ -30,7 +30,7 @@
     "NAMES": [
       "bleed"
     ],
-    "DESCRIPTION": "When Bleed is removed, loses HP equal to the Bleed amount."
+    "DESCRIPTION": "At the start of turn, lose HP equal to the Bleed amount and reduce Bleed by half."
   },
 
   {
@@ -44,6 +44,6 @@
     "NAMES": [
       "gush"
     ],
-    "DESCRIPTION": "Double enemy's #yBleed whenever it takes #yAttack #yDamage. At the start of its turn, loses #yGush and #yBleed."
+    "DESCRIPTION": "At the start of turn, Bleed is multiplied by the Gush amount instead of reduced by half."
   }
 ]

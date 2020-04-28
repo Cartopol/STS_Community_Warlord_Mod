@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.BleedPower;
+import the_warlord.powers.GushPower;
 
 public class FlayKnife extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(FlayKnife.class);
@@ -23,12 +23,14 @@ public class FlayKnife extends CustomWarlordModCard {
     private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DAMAGE = 1;
     private static final int BLEED = 5;
+    private static final int GUSH = 1;
+
     private static final int UPGRADE_PLUS_BLEED = 2;
 
 
     public FlayKnife() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = BLEED;
+        magicNumber = baseMagicNumber = GUSH;
         baseDamage = DAMAGE;
     }
 
@@ -36,7 +38,9 @@ public class FlayKnife extends CustomWarlordModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.addToBot(new ApplyPowerAction(m, p, new BleedPower(m, this.magicNumber)));
+//        this.addToBot(new ApplyPowerAction(m, p, new BleedPower(m, this.magicNumber)));
+        this.addToBot(new ApplyPowerAction(m, p, new GushPower(m, magicNumber)));
+
     }
 
     @Override

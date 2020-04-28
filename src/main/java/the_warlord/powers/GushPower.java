@@ -1,10 +1,7 @@
 package the_warlord.powers;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class GushPower extends CustomWarlordModPower {
@@ -24,28 +21,12 @@ public class GushPower extends CustomWarlordModPower {
 
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
-    }
-
-    @Override
-    public int onAttacked(DamageInfo info, int damageAmount) {
-
-        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && damageAmount > 0) {
-            if(this.owner.hasPower(BleedPower.POWER_ID)) {
-                int x = this.owner.getPower(BleedPower.POWER_ID).amount;
-                flash();
-                addToTop(new ApplyPowerAction(this.owner, this.owner, new BleedPower(this.owner, x), x));
-            }
-        }
-        return damageAmount;
+        description = String.format(DESCRIPTIONS[0], amount);
     }
 
     @Override
     public void atStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(owner, owner, this));
-        if (owner.hasPower(BleedPower.POWER_ID)) {
-            addToBot(new RemoveSpecificPowerAction(owner, owner, BleedPower.POWER_ID));
-        }
+        addToBot(new ReducePowerAction(owner, owner, this, 1));
     }
 
     @Override

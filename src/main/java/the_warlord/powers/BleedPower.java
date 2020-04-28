@@ -2,7 +2,10 @@ package the_warlord.powers;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -27,17 +30,31 @@ public class BleedPower extends CustomWarlordModPower implements HealthBarRender
     }
 
     @Override
-    public void onRemove() {
-        addToTop(new LoseHPAction(this.owner, this.owner, this.amount));
-    }
-
-    @Override
     public int getHealthBarAmount() {
         int amount = 0;
-        if (owner.hasPower(GushPower.POWER_ID)) {
             amount = this.amount;
-        }
         return Math.max(amount, 0);
+    }
+
+
+    @Override
+    public void atStartOfTurn() {
+        flash();
+        addToTop(new LoseHPAction(this.owner, this.owner, this.amount));
+        if (owner.hasPower(GushPower.POWER_ID)) {
+            owner.getPower(GushPower.POWER_ID).flash();
+            int gushAmount = owner.getPower(GushPower.POWER_ID).amount;
+            if (gushAmount > 1) {
+                addToBot(new ApplyPowerAction(owner, owner, new BleedPower(owner, amount * (owner.getPower(GushPower.POWER_ID).amount - 1))));
+            }
+        } else {
+            //remove if amount is 1, since halving 1 doesn't work
+            if (amount == 1) {
+                addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+            } else {
+                addToBot(new ReducePowerAction(owner, owner, this, amount / 2));
+            }
+        }
     }
 
     @Override
