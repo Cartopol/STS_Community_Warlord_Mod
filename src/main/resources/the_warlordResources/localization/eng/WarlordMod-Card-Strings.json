@@ -134,5 +134,46 @@
     "NAME": "Sidestep",
     "DESCRIPTION": "Draw !M! card.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards."
+  },
+  "the_warlord:PrickHoles": {
+    "NAME": "Prick Holes",
+    "DESCRIPTION": "Gain !M! Thorns. NL the_warlord:Purge."
+  },
+  "the_warlord:Sharpen": {
+    "NAME": "Sharpen",
+    "DESCRIPTION": "Gain !M! Strength."
+  },
+  "the_warlord:Firecracker": {
+    "NAME": "Firecracker",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
+  },
+  "the_warlord:HeadStart": {
+    "NAME": "Head Start",
+    "DESCRIPTION": "Innate. NL Draw !M! cards. NL Gain !the_warlord:UrMagic! the_warlord:Reaction\u00a0Time."
+  },
+  "the_warlord:DeadlyMist": {
+    "NAME": "Deadly Mist",
+    "DESCRIPTION": "Apply !the_warlord:UrMagic! the_warlord:Bleed and !M! the_warlord:Gush to ALL enemies. NL Exhaust."
+  },
+  "the_warlord:HighRisk": {
+    "NAME": "High Risk",
+    "DESCRIPTION": "Lose !M! Strength. NL Lose !M! Dexterity. NL Shuffle a *High *Reward into your draw pile. NL Exhaust."
+  },
+  "the_warlord:BoobyTrap": {
+    "NAME": "Booby Trap",
+    "DESCRIPTION": "Whenever you are attacked this turn, deal !M! damage back."
+  },
+  "the_warlord:Hyperglycemia": {
+    "NAME": "Hyperglycemia",
+    "DESCRIPTION": "Gain [E] [E] NL Lose all of your the_warlord:Reaction\u00a0Time."
+  },
+  "the_warlord:Anticoagulant": {
+    "NAME": "Anticoagulant",
+    "DESCRIPTION": "Double the enemy's the_warlord:Gush. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Triple the enemy's the_warlord:Gush. NL Exhaust."
+  },
+  "the_warlord:FocusPunch": {
+    "NAME": "Focus Punch",
+    "DESCRIPTION": "Next turn, Deal !D! damage. NL This fails if you take damage this turn."
   }
 }
