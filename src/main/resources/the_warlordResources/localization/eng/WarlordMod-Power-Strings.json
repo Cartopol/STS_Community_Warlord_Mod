@@ -54,13 +54,13 @@
     ]
   },
 
-  "MokouMod:IgnitionBarrierPower": {
-    "NAME": "Ignition Barrier",
+  "the_warlord:BoobyTrapPower": {
+    "NAME": "Booby Trap",
     "DESCRIPTIONS": [
       "When attacked, deals #b%1$s damage back."
     ]
   },
-  "MokouMod:FocusPunchPower": {
+  "the_warlord:FocusPunchPower": {
     "NAME": "Focus Punch",
     "DESCRIPTIONS": [
       "At the start of next turn, deal #b%1$s damage. NL Cancels if you take damage."

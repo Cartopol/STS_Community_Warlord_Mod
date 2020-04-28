@@ -18,7 +18,7 @@ public class DeadlyMist extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(DeadlyMist.class);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 

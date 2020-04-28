@@ -1,21 +1,17 @@
 package the_warlord.cards.warlord;
 
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
-import the_warlord.actions.DoubleGushAction;
-import the_warlord.actions.TripleGushAction;
+import the_warlord.actions.GushAction;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.ReactionTimePower;
 
 public class Anticoagulant extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Anticoagulant.class);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
@@ -28,8 +24,8 @@ public class Anticoagulant extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(!upgraded){ addToBot(new DoubleGushAction(p, p));}
-        else{ addToBot(new TripleGushAction(p, p));}
+        if(upgraded){ addToBot(new GushAction(m, p, true)); }
+        else { addToBot(new GushAction(m, p, false)); }
     }
 
     @Override

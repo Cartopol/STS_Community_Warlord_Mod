@@ -18,7 +18,7 @@ public class Firecracker extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Firecracker.class);
 
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 

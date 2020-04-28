@@ -49,6 +49,6 @@ public class BoobyTrapPower extends AbstractPower {
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], amount);;
+        this.description = String.format(DESCRIPTIONS[0], amount);
     }
 }

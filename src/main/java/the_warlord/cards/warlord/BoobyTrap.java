@@ -33,14 +33,14 @@ public class BoobyTrap extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BoobyTrapPower(p, this.magicNumber), -this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BoobyTrapPower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(RETALIATION);
+            upgradeMagicNumber(UPGRADE_PLUS_RETALIATION);
             upgradeDescription();
         }
     }

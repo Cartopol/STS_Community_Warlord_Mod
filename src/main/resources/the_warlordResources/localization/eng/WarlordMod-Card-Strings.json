@@ -145,7 +145,7 @@
   },
   "the_warlord:Firecracker": {
     "NAME": "Firecracker",
-    "DESCRIPTION": "Deal !D! damage and Apply !M! Weak to ALL Enemies."
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
   },
   "the_warlord:HeadStart": {
     "NAME": "Head Start",
