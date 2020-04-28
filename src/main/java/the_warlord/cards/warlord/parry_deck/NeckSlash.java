@@ -20,13 +20,15 @@ public class NeckSlash extends CustomParryCard {
     private static final int COST = COST_UNPLAYABLE;
 
     private static final int BLEED = 2;
+    private static final int GUSH = 1;
+
     private static final int UPGRADE_PLUS_BLEED = 1;
 
 
     public NeckSlash() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = BLEED;
-
+        urMagicNumber = baseUrMagicNumber = GUSH;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class NeckSlash extends CustomParryCard {
         AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new ApplyPowerAction(m, p, new BleedPower(m, magicNumber)));
-        addToBot(new ApplyPowerAction(m, p, new GushPower(m, -1)));
+        addToBot(new ApplyPowerAction(m, p, new GushPower(m, urMagicNumber)));
     }
 
     @Override

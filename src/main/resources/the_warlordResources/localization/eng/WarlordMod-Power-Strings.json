@@ -10,7 +10,7 @@
   "the_warlord:BleedPower": {
     "NAME": "Bleed",
     "DESCRIPTIONS": [
-      "When Bleed is removed, loses #b%1$s HP."
+      "Lose #b%1$s HP at the start of turn, then reduce Bleed by half."
     ]
   },
 
@@ -24,7 +24,7 @@
   "the_warlord:GushPower": {
     "NAME": "Gush",
     "DESCRIPTIONS": [
-      "Double enemy's #yBleed whenever it takes #yAttack #yDamage. At the start of its turn, loses #yGush and #yBleed."
+      "Bleed doesn't decay, but is multiplied by #b%1$s instead. Reduced by #b1 at the start of your turn."
     ]
   },
   "the_warlord:ParryPower": {
