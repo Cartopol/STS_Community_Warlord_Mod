@@ -95,7 +95,7 @@
   },
   "the_warlord:FlayKnife": {
     "NAME": "Flay Knife",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! the_warlord:Bleed."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! the_warlord:Gush."
   },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",
