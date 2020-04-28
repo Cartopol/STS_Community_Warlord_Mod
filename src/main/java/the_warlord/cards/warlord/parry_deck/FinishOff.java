@@ -18,7 +18,7 @@ public class FinishOff extends CustomParryCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = COST_UNPLAYABLE;
-    private static final int VULN_AMOUNT = 2;
+    private static final int VULN_AMOUNT = 1;
     private static final int DOUBLE_DAMAGE_AMOUNT = 1;
 
     public FinishOff() {

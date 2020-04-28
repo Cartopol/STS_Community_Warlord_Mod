@@ -43,10 +43,7 @@ public class BleedPower extends CustomWarlordModPower implements HealthBarRender
         addToTop(new LoseHPAction(this.owner, this.owner, this.amount));
         if (owner.hasPower(GushPower.POWER_ID)) {
             owner.getPower(GushPower.POWER_ID).flash();
-            int gushAmount = owner.getPower(GushPower.POWER_ID).amount;
-            if (gushAmount > 1) {
-                addToBot(new ApplyPowerAction(owner, owner, new BleedPower(owner, amount * (owner.getPower(GushPower.POWER_ID).amount - 1))));
-            }
+            addToBot(new ApplyPowerAction(owner, owner, new BleedPower(owner, amount)));
         } else {
             //remove if amount is 1, since halving 1 doesn't work
             if (amount == 1) {

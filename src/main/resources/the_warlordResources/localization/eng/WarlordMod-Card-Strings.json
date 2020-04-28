@@ -95,7 +95,30 @@
   },
   "the_warlord:FlayKnife": {
     "NAME": "Flay Knife",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! the_warlord:Bleed."
+  },
+  "the_warlord:Slash": {
+    "NAME": "Slash",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! the_warlord:Gush."
+  },
+  "the_warlord:Zweihänder": {
+    "NAME": "Zweihänder",
+    "DESCRIPTION": "Deal !D! damage. NL Lose all the_warlord:Reaction\u00a0Time."
+  },
+  "the_warlord:Ambush": {
+    "NAME": "Ambush",
+    "DESCRIPTION": "Unplayable. NL Whenever you draw this card, exhaust it and deal !D! damage to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
+  },
+  "the_warlord:Diversion": {
+    "NAME": "Diversion",
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !M! Block."
+  },
+  "the_warlord:HeavyBlow": {
+    "NAME": "Heavy Blow",
+    "DESCRIPTION": "Deal !D! damage."
   },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",

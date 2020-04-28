@@ -18,7 +18,7 @@ public class TakeShelter extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int BLOCK = 12;
+    private static final int BLOCK = 11;
     private static final int SYRETTES = 1;
     private static final int UPGRADE_PLUS_SYRETTES = 1;
     private static final int UPGRADE_PLUS_BLOCK = 2;

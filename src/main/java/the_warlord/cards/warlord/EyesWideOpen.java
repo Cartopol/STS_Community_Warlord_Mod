@@ -18,7 +18,7 @@ public class EyesWideOpen extends CustomWarlordModCard {
 
     private static final int COST = 0;
 
-    private static final int REACTION_TIME = 3;
+    private static final int REACTION_TIME = 2;
     private static final int UPGRADE_PLUS_REACTION_TIME = 2;
 
     public EyesWideOpen() {
