@@ -28,6 +28,19 @@
       "Bleed doesn't decay, but is multiplied by #b%1$s instead. Reduced by #b1 at the start of your turn."
     ]
   },
+  "the_warlord:RipostePower": {
+    "NAME": "Riposte",
+    "DESCRIPTIONS": [
+      "Whenever you Parry, deal #b%1$s damage to ALL enemies."
+    ]
+  },
+  "the_warlord:QuickDrawPower": {
+    "NAME": "Quick Draw",
+    "DESCRIPTIONS": [
+      "Whenever you Parry, draw #b%1$s card.",
+      "Whenever you Parry, draw #b%1$s cards."
+    ]
+  },
   "the_warlord:ParryPower": {
     "NAME": "Parrying",
     "DESCRIPTIONS": [
@@ -53,7 +66,12 @@
       "Add a Syrette to your hand at the start of next #b%1$s turns."
     ]
   },
-
+  "the_warlord:EndlessNextTurnSyrettePower": {
+    "NAME": "Stimulation",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b%1$s Syrette into your hand."
+    ]
+  },
   "the_warlord:BoobyTrapPower": {
     "NAME": "Booby Trap",
     "DESCRIPTIONS": [

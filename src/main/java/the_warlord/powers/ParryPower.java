@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import the_warlord.WarlordMod;
@@ -73,11 +74,18 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
     public void atStartOfTurn() {
         WarlordMod.logger.info(this.ID + " isParrying: " + isParrying + ". isFullParrying: " + isFullParrying);
         if (isParrying) {
+
+            //this calls onParry for all powers that implement onParrySubsciber
+            for (AbstractPower pow : AbstractDungeon.player.powers) {
+                if (pow instanceof OnParrySubscriber) {
+                    ((OnParrySubscriber) pow).onParry(isFullParrying);
+                }
+            }
+
             isParrying = false;
 
             ArrayList<AbstractCard> parryOptions = ParryDeck.getParryOptions();
 
-            // Todo:
             if (isFullParrying) {
                 isFullParrying = false;
                 for (AbstractCard c : parryOptions) {

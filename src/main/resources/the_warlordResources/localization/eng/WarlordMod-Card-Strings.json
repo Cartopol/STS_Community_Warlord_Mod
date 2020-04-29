@@ -116,6 +116,19 @@
     "NAME": "Diversion",
     "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !M! Block."
   },
+  "the_warlord:Riposte": {
+    "NAME": "Riposte",
+    "DESCRIPTION": "Whenever you the_warlord:Parry, deal !M! damage to ALL enemies."
+  },
+  "the_warlord:QuickDraw": {
+    "NAME": "Quick Draw",
+    "DESCRIPTION": "Whenever you the_warlord:Parry, draw !M! card."
+  },
+  "the_warlord:Stimulation": {
+    "NAME": "Stimulation",
+    "DESCRIPTION": "At the start of your turn, add a Syrette into your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add a Syrette into your hand."
+  },
   "the_warlord:HeavyBlow": {
     "NAME": "Heavy Blow",
     "DESCRIPTION": "Deal !D! damage."

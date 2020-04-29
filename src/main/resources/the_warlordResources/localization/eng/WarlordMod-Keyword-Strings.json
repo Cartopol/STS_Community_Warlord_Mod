@@ -39,6 +39,12 @@
     ],
     "DESCRIPTION": "Purged cards are removed from your Parry options for the rest of combat."
   },
+  {
+    "NAMES": [
+      "parry", "parried"
+    ],
+    "DESCRIPTION": "You Parry when you block the exact amount of incoming Attack Damage. When you Parry, choose 1 out of 3 cards from your Parry Deck and play them immediately. If you Parry all attacks in a turn, upgrade your Parry options."
+  },
 
   {
     "NAMES": [
