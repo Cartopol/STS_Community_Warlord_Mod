@@ -72,16 +72,24 @@
       "At the start of your turn, add #b%1$s Syrette into your hand."
     ]
   },
-  "the_warlord:BoobyTrapPower": {
-    "NAME": "Booby Trap",
+  "the_warlord:TempThornsPower": {
+    "NAME": "Temporary Thorns",
     "DESCRIPTIONS": [
-      "When attacked, deals #b%1$s damage back."
+      "When attacked, deals #b%1$s damage back. Lose all #yTemporary #yThorns at the start of next turn."
     ]
   },
   "the_warlord:FocusPunchPower": {
     "NAME": "Focus Punch",
     "DESCRIPTIONS": [
       "At the start of next turn, deal #b%1$s damage. NL Cancels if you take damage."
+    ]
+  },
+
+  "the_warlord:DoubleTeamPower": {
+    "NAME": "Double Team",
+    "DESCRIPTIONS": [
+      "Your next card this turn is played twice.",
+      "Your next #b%1$s cards this turn are played twice."
     ]
   }
 }
