@@ -14,24 +14,24 @@ import the_warlord.powers.TempThornsPower;
 
 public class ThornsToStrengthAction extends AbstractGameAction {
 
-    private boolean upgraded;
-    public ThornsToStrengthAction(AbstractCreature target, boolean upgraded) {
+    private int StrengthPerThorns;
+
+    public ThornsToStrengthAction(AbstractCreature target, int StrengthPerThorns) {
         this.target = target;
         this.duration = this.startDuration;
+        this.StrengthPerThorns = StrengthPerThorns;
 
     }
 
     public void update() {
         if(this.duration == startDuration){
             if (target.hasPower(ThornsPower.POWER_ID)) {
-                if(upgraded){ addToTop(new ApplyPowerAction(target, target, new StrengthPower(target, target.getPower(ThornsPower.POWER_ID).amount * 2))); }
-                else{ addToTop(new ApplyPowerAction(target, target, new StrengthPower(target, target.getPower(ThornsPower.POWER_ID).amount))); }
+                addToTop(new ApplyPowerAction(target, target, new StrengthPower(target, target.getPower(ThornsPower.POWER_ID).amount * StrengthPerThorns)));
                 addToTop(new RemoveSpecificPowerAction(target, target, ThornsPower.POWER_ID));
             }
 
             if (target.hasPower(TempThornsPower.POWER_ID)) {
-                if(upgraded){ addToTop(new ApplyPowerAction(target, target, new StrengthPower(target, target.getPower(TempThornsPower.POWER_ID).amount * 2))); }
-                else{ addToTop(new ApplyPowerAction(target, target, new StrengthPower(target, target.getPower(TempThornsPower.POWER_ID).amount))); }
+                addToTop(new ApplyPowerAction(target, target, new StrengthPower(target, target.getPower(TempThornsPower.POWER_ID).amount * StrengthPerThorns)));
                 addToTop(new RemoveSpecificPowerAction(target, target, TempThornsPower.POWER_ID));
             }
 

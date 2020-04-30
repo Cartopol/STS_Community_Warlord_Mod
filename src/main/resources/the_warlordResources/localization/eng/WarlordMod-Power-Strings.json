@@ -88,8 +88,8 @@
   "the_warlord:DoubleTeamPower": {
     "NAME": "Double Team",
     "DESCRIPTIONS": [
-      "Your next card is played twice.",
-      "Your next #b%1$s cards are played twice."
+      "Your next card this turn is played twice.",
+      "Your next #b%1$s cards this turn are played twice."
     ]
   }
 }

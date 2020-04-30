@@ -32,7 +32,7 @@ public class SkillSwap extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ThornsToStrengthAction(p, upgraded));
+        addToBot(new ThornsToStrengthAction(p, magicNumber));
     }
 
     @Override

@@ -57,6 +57,11 @@ public class DoubleTeamPower extends CustomWarlordModPower {
     }
 
     @Override
+    public void atStartOfTurn() {
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+    }
+
+    @Override
     public void updateDescription() {
         if (this.amount == 1) {
             this.description = DESCRIPTIONS[0];
@@ -67,6 +72,6 @@ public class DoubleTeamPower extends CustomWarlordModPower {
 
     @Override
     public AbstractPower makeCopy() {
-        return new TempThornsPower(owner, amount);
+        return new DoubleTeamPower(owner, amount);
     }
 }

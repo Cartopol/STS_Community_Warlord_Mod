@@ -191,8 +191,8 @@
   },
   "the_warlord:DoubleTeam": {
     "NAME": "Double Team",
-    "DESCRIPTION": "Your next card is played twice.",
-    "UPGRADE_DESCRIPTION": "Draw !the_warlord:UrMagic! cards. NL Your next card is played twice."
+    "DESCRIPTION": "Your next card this turn is played twice.",
+    "UPGRADE_DESCRIPTION": "Draw !the_warlord:UrMagic! cards. NL Your next card this turn is played twice."
   },
   "the_warlord:Safeguard": {
     "NAME": "Safeguard",
