@@ -6,19 +6,20 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ThornsPower;
 
-public class BoobyTrapPower extends CustomWarlordModPower {
-    public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(BoobyTrapPower.class);
+public class TempThornsPower extends CustomWarlordModPower {
+    public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(TempThornsPower.class);
     public static final String POWER_ID = STATIC.ID;
 
-    public BoobyTrapPower(AbstractCreature owner, int amount) {
+    public TempThornsPower(AbstractCreature owner, int amount) {
         super(STATIC);
 
         this.type = PowerType.BUFF;
 
         this.owner = owner;
         this.amount = amount;
-
+        loadRegion("thorns");
         updateDescription();
     }
 
@@ -43,6 +44,6 @@ public class BoobyTrapPower extends CustomWarlordModPower {
 
     @Override
     public AbstractPower makeCopy() {
-        return new BoobyTrapPower(owner, amount);
+        return new TempThornsPower(owner, amount);
     }
 }

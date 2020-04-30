@@ -1,42 +1,49 @@
 package the_warlord.cards.warlord;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.TempThornsPower;
+import the_warlord.powers.DoubleTeamPower;
 
-public class BoobyTrap extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(BoobyTrap.class);
+import static the_warlord.WarlordMod.makeCardPath;
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+public class DoubleTeam extends CustomWarlordModCard {
+
+    public static final String ID = WarlordMod.makeID(DoubleTeam.class);
+
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int RETALIATION = 5;
-    private static final int UPGRADE_PLUS_RETALIATION = 3;
+    private static final int POWER_AMOUNT = 1;
+    private static final int DRAW = 2;
 
-    public BoobyTrap() {
+    public DoubleTeam() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = RETALIATION;
+        magicNumber = baseMagicNumber = POWER_AMOUNT;
+        urMagicNumber = baseUrMagicNumber = DRAW;
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TempThornsPower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        if(upgraded){ addToBot(new DrawCardAction(DRAW));}
+        addToBot(new ApplyPowerAction(p, p, new DoubleTeamPower(p, POWER_AMOUNT)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_RETALIATION);
             upgradeDescription();
         }
     }
