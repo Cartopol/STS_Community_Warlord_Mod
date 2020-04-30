@@ -153,6 +153,11 @@ public abstract class CustomWarlordModCard extends CustomCard {
         return calculateBonusBaseDamage();
     }
 
+    protected int calculateBonusBaseBlock(AbstractMonster m) {
+        return calculateBonusBaseBlock();
+    }
+
+
     /**
      * This is intended for use with cards that work like Blizzard/Flechettes/etc, adding a parenthetical suffix
      * for dynamically calculated damage/block/etc values that summarizes the calculated total amount.
@@ -165,7 +170,7 @@ public abstract class CustomWarlordModCard extends CustomCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseBlock = baseBlock;
-        baseBlock += calculateBonusBaseBlock();
+        baseBlock += calculateBonusBaseBlock(mo);
         int realBaseDamage = baseDamage;
         baseDamage += calculateBonusBaseDamage(mo);
 

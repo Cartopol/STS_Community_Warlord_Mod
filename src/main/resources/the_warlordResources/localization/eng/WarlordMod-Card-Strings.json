@@ -105,11 +105,29 @@
     "NAME": "Zweihänder",
     "DESCRIPTION": "Deal !D! damage. NL Lose all the_warlord:Reaction\u00a0Time."
   },
+  "the_warlord:Ablution": {
+    "NAME": "Ablution",
+    "DESCRIPTION": "Remove all of your debuffs. NL Purge.",
+    "UPGRADE_DESCRIPTION": "Remove all of your debuffs."
+  },
+  "the_warlord:HoldTheLine": {
+    "NAME": "Hold The Line",
+    "DESCRIPTION": "Retain your hand this turn.",
+    "UPGRADE_DESCRIPTION": "Retain your hand the next !M! turns."
+  },
   "the_warlord:Ambush": {
     "NAME": "Ambush",
     "DESCRIPTION": "Unplayable. NL Whenever you draw this card, exhaust it and deal !D! damage to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
+    ]
+  },
+  "the_warlord:Assess": {
+    "NAME": "Assess",
+    "DESCRIPTION": "Gain Block equal to half enemy's attack intent. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to half enemy's attack intent. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gain !B! Block)"
     ]
   },
   "the_warlord:Diversion": {

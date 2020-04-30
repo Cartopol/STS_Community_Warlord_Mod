@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 
 public class TempThornsPower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(TempThornsPower.class);
@@ -19,7 +18,7 @@ public class TempThornsPower extends CustomWarlordModPower {
 
         this.owner = owner;
         this.amount = amount;
-        loadRegion("thorns");
+//        loadRegion("thorns");
         updateDescription();
     }
 
