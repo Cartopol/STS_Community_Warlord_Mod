@@ -35,7 +35,10 @@ public class Assess extends CustomWarlordModCard {
 
 
     public int getEnemyDamage(AbstractMonster m) {
-        int damage = (int) ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentDmg");
+        int damage = 0;
+        if (IntentUtils.isAttackIntent(m.intent)) {
+            damage = (int) ReflectionHacks.getPrivate(m, AbstractMonster.class, "intentDmg");
+        }
 
         if (IntentUtils.isAttackIntent(m.intent)) {
             if ((boolean) ReflectionHacks.getPrivate(m, AbstractMonster.class, "isMultiDmg")) {
@@ -47,7 +50,7 @@ public class Assess extends CustomWarlordModCard {
 
     @Override
     public String getRawDynamicDescriptionSuffix() {
-        if (block > 0) {
+        if (block > 0 && IntentUtils.playerCanSeeThatAnyEnemyIntentMatches(IntentUtils::isAttackIntent)) {
             return EXTENDED_DESCRIPTION[0];
         }
         return "";
@@ -55,7 +58,9 @@ public class Assess extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
+        if (block > 0) {
+            addToBot(new GainBlockAction(p, p, block));
+        }
     }
 
     @Override
