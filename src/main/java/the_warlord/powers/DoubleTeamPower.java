@@ -57,8 +57,9 @@ public class DoubleTeamPower extends CustomWarlordModPower {
     }
 
     @Override
-    public void atStartOfTurn() {
-        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+    public void atEndOfTurn(boolean isPlayer) {
+        if (isPlayer)
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 
     @Override

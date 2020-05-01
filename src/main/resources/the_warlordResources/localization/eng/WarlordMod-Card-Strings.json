@@ -224,5 +224,41 @@
   "the_warlord:SkillSwap": {
     "NAME": "Skill Swap",
     "DESCRIPTION": "Gain !M! Strength for each Thorns you have. NL Lose ALL Thorns. NL Exhaust."
+  },
+
+  "the_warlord:TrappingPit": {
+    "NAME": "Trapping Pit",
+    "DESCRIPTION": "Apply !M! the_warlord:Bleed to ALL enemies that intend to attack this turn."
+  },
+
+  "the_warlord:TripleSlash": {
+    "NAME": "Triple Slash",
+    "DESCRIPTION": "Deal !D! damage. NL Play this card !M! more times."
+  },
+
+  "the_warlord:TripleSlashCopy": {
+    "NAME": "Triple Slash",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+
+  "the_warlord:Extremespeed": {
+    "NAME": "Extremespeed",
+    "DESCRIPTION": "At the start of each turn, gain !M! the_warlord:Reaction\u00a0Time. NL Exhaust."
+  },
+
+  "the_warlord:GuardianMode": {
+    "NAME": "Guardian Mode",
+    "DESCRIPTION": "At the start of your turn, gain !M! Dexterity.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain !M! Dexterity and !the_warlord:UrMagic! the_warlord:Reaction\u00a0Time."
+  },
+
+  "the_warlord:Refuge": {
+    "NAME": "Refuge",
+    "DESCRIPTION": "At the start of your turn, gain !M! Block."
+  },
+
+  "the_warlord:MarchingSong": {
+    "NAME": "Marching Song",
+    "DESCRIPTION": "When you play a card that costs Energy: NL Draw a card."
   }
 }
