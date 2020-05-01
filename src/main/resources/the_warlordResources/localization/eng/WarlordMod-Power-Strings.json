@@ -34,6 +34,18 @@
       "Whenever you Parry, deal #b%1$s damage to ALL enemies."
     ]
   },
+  "the_warlord:PositioningPower": {
+    "NAME": "Positioning",
+    "DESCRIPTIONS": [
+      "Whenever you Parry, gain #b%1$s Block."
+    ]
+  },
+  "the_warlord:BloodMagicPower": {
+    "NAME": "Blood Magic",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #b%1$s Bleed to a random enemy."
+    ]
+  },
   "the_warlord:QuickDrawPower": {
     "NAME": "Quick Draw",
     "DESCRIPTIONS": [
