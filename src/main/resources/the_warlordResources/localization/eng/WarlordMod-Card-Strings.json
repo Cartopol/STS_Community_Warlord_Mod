@@ -101,6 +101,26 @@
     "NAME": "Slash",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! the_warlord:Gush."
   },
+  "the_warlord:TopsyTurvy": {
+    "NAME": "Topsy-Turvy",
+    "DESCRIPTION": "Draw !M! cards. Randomize their cost this turn."
+  },
+  "the_warlord:PositioningTheory": {
+    "NAME": "Positioning Theory",
+    "DESCRIPTION": "Whenever you the_warlord:Parry, gain !M! Block."
+  },
+  "the_warlord:BloodMagic": {
+    "NAME": "BloodMagic",
+    "DESCRIPTION": "At the start of your turn, apply !M! Bleed to a random enemy."
+  },
+  "the_warlord:Steamroll": {
+    "NAME": "Steamroll",
+    "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
+  },
+  "the_warlord:Furrow": {
+    "NAME": "Furrow",
+    "DESCRIPTION": "Gain !B! Block. NL Increase this card's Block by !M! this combat."
+  },
   "the_warlord:Zweihänder": {
     "NAME": "Zweihänder",
     "DESCRIPTION": "Deal !D! damage. NL Lose all the_warlord:Reaction\u00a0Time."
