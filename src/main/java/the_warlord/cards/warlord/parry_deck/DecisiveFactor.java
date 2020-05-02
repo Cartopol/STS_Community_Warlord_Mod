@@ -1,5 +1,6 @@
 package the_warlord.cards.warlord.parry_deck;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
@@ -13,14 +14,19 @@ public class DecisiveFactor extends CustomParryCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = COST_UNPLAYABLE;
+    private static final int DRAW_AMOUNT = 1;
 
     public DecisiveFactor() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = DRAW_AMOUNT;
     }
 
     @Override
     public void onChoseThisOption() {
-            addToBot(new ArmamentsAction(upgraded));
+        if (this.upgraded) {
+            addToBot(new DrawCardAction(magicNumber));
+        }
+        addToBot(new ArmamentsAction(true));
     }
 
     @Override

@@ -112,6 +112,15 @@
     ]
   },
 
+  "the_warlord:SelfDrawReductionPower": {
+    "NAME": "Draw Reduction",
+    "DESCRIPTIONS": [
+      "Draw #b1 less card next turn.",
+      "Draw #b1 less card for #b",
+      " turns."
+    ]
+  },
+
   "the_warlord:EndlessNextTurnDexterityPower": {
     "NAME": "Adaptive Dexterity",
     "DESCRIPTIONS": [
@@ -122,7 +131,7 @@
   "the_warlord:RefugePower": {
     "NAME": "Refuge",
     "DESCRIPTIONS": [
-      "At the start of each turn, gain #b%1$s #yBlock."
+      "At the start of each turn, gain #b%1$s #yBlock. This Block is increased you your #yReaction #yTime."
     ]
   },
 
