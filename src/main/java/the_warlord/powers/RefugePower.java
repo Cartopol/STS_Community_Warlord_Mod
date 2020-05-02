@@ -1,9 +1,7 @@
 package the_warlord.powers;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class RefugePower extends CustomWarlordModPower {
@@ -29,8 +27,12 @@ public class RefugePower extends CustomWarlordModPower {
     @Override
     public void atStartOfTurn() {
         flash();
-        AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new GainBlockAction(p, this.amount));
+        int reactionBonus = 0;
+        if (owner.hasPower(ReactionTimePower.POWER_ID)) {
+            reactionBonus = owner.getPower(ReactionTimePower.POWER_ID).amount;
+        }
+
+        addToBot(new GainBlockAction(owner, this.amount + reactionBonus));
     }
 
     @Override

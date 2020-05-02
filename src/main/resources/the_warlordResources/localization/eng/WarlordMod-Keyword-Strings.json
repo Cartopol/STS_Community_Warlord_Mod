@@ -43,7 +43,7 @@
     "NAMES": [
       "parry", "parried"
     ],
-    "DESCRIPTION": "You Parry when you block the exact amount of incoming Attack Damage. When you Parry, choose 1 out of 3 cards from your Parry Deck and play them immediately. If you Parry all attacks in a turn, upgrade your Parry options."
+    "DESCRIPTION": "You Parry when you block the exact amount of damage from any attack. When you Parry, choose 1 out of 3 cards from your Parry Deck and play them immediately."
   },
 
   {

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -74,11 +75,28 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
     public void atStartOfTurn() {
         WarlordMod.logger.info(this.ID + " isParrying: " + isParrying + ". isFullParrying: " + isFullParrying);
         if (isParrying) {
+            AbstractPlayer p = AbstractDungeon.player;
 
             //this calls onParry for all powers that implement onParrySubsciber
-            for (AbstractPower pow : AbstractDungeon.player.powers) {
+            for (AbstractPower pow : p.powers) {
                 if (pow instanceof OnParrySubscriber) {
                     ((OnParrySubscriber) pow).onParry(isFullParrying);
+                }
+            }
+            //this calls onParry for all cards in draw pile, hand, and discard pile that implement onParrySubscriber
+            for (AbstractCard c : p.drawPile.group) {
+                if (c instanceof OnParrySubscriber) {
+                    ((OnParrySubscriber) c).onParry(isFullParrying);
+                }
+            }
+            for (AbstractCard c : p.hand.group) {
+                if (c instanceof OnParrySubscriber) {
+                    ((OnParrySubscriber) c).onParry(isFullParrying);
+                }
+            }
+            for (AbstractCard c : p.discardPile.group) {
+                if (c instanceof OnParrySubscriber) {
+                    ((OnParrySubscriber) c).onParry(isFullParrying);
                 }
             }
 
@@ -89,7 +107,7 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
             if (isFullParrying) {
                 isFullParrying = false;
                 for (AbstractCard c : parryOptions) {
-                    c.upgrade();
+//                    c.upgrade();
                 }
             }
 

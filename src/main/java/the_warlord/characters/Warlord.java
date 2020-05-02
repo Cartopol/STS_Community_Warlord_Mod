@@ -33,7 +33,7 @@ import the_warlord.cards.warlord.Rebuff;
 import the_warlord.cards.warlord.Strike;
 import the_warlord.cards.warlord.parry_deck.*;
 import the_warlord.powers.ParryPower;
-import the_warlord.relics.StartingRelic;
+import the_warlord.relics.FencingBoots;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -237,7 +237,7 @@ public class Warlord extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
 
         // Note: only the first relic gets replaced when selecting the "replace starter relic" Neow boon
-        retVal.add(StartingRelic.ID);
+        retVal.add(FencingBoots.ID);
 
         return retVal;
     }

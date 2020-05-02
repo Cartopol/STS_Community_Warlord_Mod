@@ -198,6 +198,18 @@
     "NAME": "Firecracker",
     "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
   },
+  "the_warlord:Somersault": {
+    "NAME": "Somersault",
+    "DESCRIPTION": "Deal !D! damage. NL Put a card from your discard pile into your hand."
+  },
+  "the_warlord:Prey": {
+  "NAME": "Prey",
+  "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage to ALL enemies."
+},
+  "the_warlord:Backsword": {
+    "NAME": "Backsword",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you the_warlord:Parry, increase the damage of this card by !M! this combat."
+  },
   "the_warlord:HeadStart": {
     "NAME": "Head Start",
     "DESCRIPTION": "Innate. NL Draw !M! cards. NL Gain !the_warlord:UrMagic! the_warlord:Reaction\u00a0Time."
@@ -212,7 +224,7 @@
   },
   "the_warlord:BoobyTrap": {
     "NAME": "Booby Trap",
-    "DESCRIPTION": "Whenever you are attacked this turn, deal !M! damage back."
+    "DESCRIPTION": "Retain. NL Whenever you are attacked this turn, deal !M! damage back."
   },
   "the_warlord:Hyperglycemia": {
     "NAME": "Hyperglycemia",
@@ -269,7 +281,7 @@
 
   "the_warlord:Refuge": {
     "NAME": "Refuge",
-    "DESCRIPTION": "At the start of your turn, gain !M! Block."
+    "DESCRIPTION": "At the start of your turn, gain !M! Block. NL This Block is increased by your the_warlord:Reaction\u00a0Time."
   },
 
   "the_warlord:MarchingSong": {

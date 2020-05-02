@@ -8,11 +8,11 @@ import the_warlord.powers.ReactionTimePower;
 
 import static the_warlord.characters.Warlord.Enums.WARLORD_CARD_COLOR;
 
-public class StartingRelic extends CustomWarlordModRelic {
-    public static final String ID = WarlordMod.makeID(StartingRelic.class);
+public class FencingBoots extends CustomWarlordModRelic {
+    public static final String ID = WarlordMod.makeID(FencingBoots.class);
     private static final int REACTION_TIME = 2;
 
-    public StartingRelic() {
+    public FencingBoots() {
         super(ID, WARLORD_CARD_COLOR, RelicTier.STARTER, LandingSound.MAGICAL);
     }
 

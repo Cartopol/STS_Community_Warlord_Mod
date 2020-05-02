@@ -17,8 +17,8 @@ public class Furrow extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int BLOCK = 9;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int BLOCK = 12;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final int BONUS_BLOCK = 3;
 
     public Furrow() {
@@ -37,7 +37,7 @@ public class Furrow extends CustomWarlordModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_BLOCK);
             upgradeDescription();
         }
     }

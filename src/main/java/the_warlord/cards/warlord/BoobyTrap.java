@@ -25,6 +25,7 @@ public class BoobyTrap extends CustomWarlordModCard {
     public BoobyTrap() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = RETALIATION;
+        this.selfRetain = true;
     }
 
     @Override
