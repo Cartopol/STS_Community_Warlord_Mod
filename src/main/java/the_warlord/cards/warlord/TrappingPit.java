@@ -10,6 +10,7 @@ import the_warlord.actions.GushAction;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.BleedPower;
+import the_warlord.util.IntentUtils;
 
 public class TrappingPit extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(TrappingPit.class);
@@ -32,11 +33,8 @@ public class TrappingPit extends CustomWarlordModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         for (AbstractMonster mo: AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mo.intent == AbstractMonster.Intent.ATTACK ||
-                    mo.intent == AbstractMonster.Intent.ATTACK_BUFF ||
-                    mo.intent == AbstractMonster.Intent.ATTACK_DEBUFF ||
-                    mo.intent == AbstractMonster.Intent.ATTACK_DEFEND) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BleedPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            if ((!mo.isDead && !mo.isDying)) {
+                if (IntentUtils.isAttackIntent(mo.intent)) { addToBot(new ApplyPowerAction(mo, p, new BleedPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE)); }
             }
         }
 

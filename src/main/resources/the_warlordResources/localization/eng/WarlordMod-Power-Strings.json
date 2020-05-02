@@ -113,9 +113,9 @@
   },
 
   "the_warlord:EndlessNextTurnDexterityPower": {
-    "NAME": "dummy field",
+    "NAME": "Adaptive Dexterity",
     "DESCRIPTIONS": [
-      "At the start of each turn, gain #b%1$s #yDexterity"
+      "At the start of each turn, gain #b%1$s #yDexterity."
     ]
   },
 
@@ -130,7 +130,7 @@
     "NAME": "Marching Song",
     "DESCRIPTIONS": [
       "Whenever you play a card that costs Energy, draw a card.",
-      "Whenever you play a card that costs Energy, draw #b%1$s cards"
+      "Whenever you play a card that costs Energy, draw #b%1$s cards."
     ]
   }
 }

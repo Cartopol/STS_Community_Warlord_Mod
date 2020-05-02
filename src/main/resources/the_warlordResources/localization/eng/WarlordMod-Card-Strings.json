@@ -255,12 +255,7 @@
     "NAME": "Triple Slash",
     "DESCRIPTION": "Deal !D! damage. NL Play this card !M! more times."
   },
-
-  "the_warlord:TripleSlashCopy": {
-    "NAME": "Triple Slash",
-    "DESCRIPTION": "Deal !D! damage."
-  },
-
+  
   "the_warlord:Extremespeed": {
     "NAME": "Extremespeed",
     "DESCRIPTION": "At the start of each turn, gain !M! the_warlord:Reaction\u00a0Time. NL Exhaust."
