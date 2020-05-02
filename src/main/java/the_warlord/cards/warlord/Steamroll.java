@@ -18,7 +18,7 @@ public class Steamroll extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = COST_X;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 9;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
 
     public Steamroll() {

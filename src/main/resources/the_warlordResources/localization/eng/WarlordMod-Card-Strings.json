@@ -63,7 +63,7 @@
   },
   "the_warlord:Stretch": {
     "NAME": "Stretch",
-    "DESCRIPTION": "Gain !M! the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "Gain !M! the_warlord:Reaction\u00a0Time. NL the_warlord:Purge."
   },
   "the_warlord:Wrap": {
     "NAME": "Wrap",
@@ -83,7 +83,7 @@
   },
   "the_warlord:SupportingFire": {
     "NAME": "Supporting Fire",
-    "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies. NL This damage is increased by your Strength."
+    "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies. NL This damage is increased by your the_warlord:Reaction\u00a0Time."
   },
   "the_warlord:Scout": {
     "NAME": "Scout",
@@ -137,7 +137,7 @@
   },
   "the_warlord:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Unplayable. NL Whenever you draw this card, exhaust it and deal !D! damage to ALL enemies.",
+    "DESCRIPTION": "If this is the first card played this turn, deal !D! damage to ALL enemies. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
     ]
@@ -156,7 +156,7 @@
   },
   "the_warlord:Riposte": {
     "NAME": "Riposte",
-    "DESCRIPTION": "Whenever you the_warlord:Parry, deal !M! damage to ALL enemies."
+    "DESCRIPTION": "Whenever you the_warlord:Parry, apply !M! Vulnerable to ALL enemies."
   },
   "the_warlord:QuickDraw": {
     "NAME": "Quick Draw",
@@ -229,8 +229,8 @@
   },
   "the_warlord:DoubleTeam": {
     "NAME": "Double Team",
-    "DESCRIPTION": "Your next card this turn is played twice.",
-    "UPGRADE_DESCRIPTION": "Draw !the_warlord:UrMagic! cards. NL Your next card this turn is played twice."
+    "DESCRIPTION": "Your next card this turn is played twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next card this turn is played twice."
   },
   "the_warlord:Safeguard": {
     "NAME": "Safeguard",

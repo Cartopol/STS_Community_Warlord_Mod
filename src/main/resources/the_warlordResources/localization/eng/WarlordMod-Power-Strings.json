@@ -31,7 +31,7 @@
   "the_warlord:RipostePower": {
     "NAME": "Riposte",
     "DESCRIPTIONS": [
-      "Whenever you Parry, deal #b%1$s damage to ALL enemies."
+      "Whenever you Parry, apply #b%1$s #yVulnerable to ALL enemies."
     ]
   },
   "the_warlord:PositioningPower": {
@@ -68,7 +68,7 @@
   "the_warlord:SupportingFirePower": {
     "NAME": "Supporting Fire",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal #b%1$s damage to ALL enemies. This damage is increased by your #yStrength."
+      "At the end of your turn, deal #b%1$s damage to ALL enemies. This damage is increased by your #yReaction #yTime."
     ]
   },
   "the_warlord:NextTurnSyrettePower": {

@@ -16,7 +16,7 @@ public class Stretch extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int REACTION_TIME = 2;
+    private static final int REACTION_TIME = 4;
     private static final int UPGRADE_PLUS_REACTION_TIME = 1;
 
 
@@ -29,6 +29,7 @@ public class Stretch extends CustomParryCard {
     @Override
     public void onChoseThisOption() {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReactionTimePower(AbstractDungeon.player, magicNumber)));
+        CustomParryCard.removeFromMasterParryDeck(this);
     }
 
     @Override

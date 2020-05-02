@@ -19,9 +19,6 @@ public class EndlessNextTurnDexterityPower extends CustomWarlordModPower {
         this.owner = owner;
         this.amount = amount;
 
-        //Todo: add proper art
-        loadRegion("dexterity");
-
         updateDescription();
     }
 

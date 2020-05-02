@@ -1,7 +1,6 @@
 package the_warlord.cards.warlord;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
@@ -26,18 +25,18 @@ public class DoubleTeam extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = POWER_AMOUNT;
         urMagicNumber = baseUrMagicNumber = DRAW;
-
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(upgraded){ addToBot(new DrawCardAction(DRAW));}
         addToBot(new ApplyPowerAction(p, p, new DoubleTeamPower(p, POWER_AMOUNT)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
+            this.exhaust = false;
             upgradeName();
             upgradeDescription();
         }

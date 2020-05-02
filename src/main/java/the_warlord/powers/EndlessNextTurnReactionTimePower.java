@@ -1,13 +1,10 @@
 package the_warlord.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import the_warlord.cards.warlord.Syrette;
 
 public class EndlessNextTurnReactionTimePower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(EndlessNextTurnReactionTimePower.class);
@@ -20,9 +17,6 @@ public class EndlessNextTurnReactionTimePower extends CustomWarlordModPower {
 
         this.owner = owner;
         this.amount = amount;
-
-        //Todo: add proper art
-        loadRegion("dexterity");
 
         updateDescription();
     }

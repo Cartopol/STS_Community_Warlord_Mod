@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class SupportingFirePower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(SupportingFirePower.class);
@@ -32,13 +31,13 @@ public class SupportingFirePower extends CustomWarlordModPower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                int strengthBonus = 0;
-                if (owner.hasPower(StrengthPower.POWER_ID)) {
-                    strengthBonus = owner.getPower(StrengthPower.POWER_ID).amount;
+                int reactionBonus = 0;
+                if (owner.hasPower(ReactionTimePower.POWER_ID)) {
+                    reactionBonus = owner.getPower(ReactionTimePower.POWER_ID).amount;
                 }
 
                 this.flash();
-                this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount + strengthBonus, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+                this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount + reactionBonus, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             }
         }
     }

@@ -21,7 +21,7 @@ public class DeadlyMist extends CustomWarlordModCard {
 
     private static final int COST = 2;
     private static final int GUSH = 1;
-    private static final int BLEED = 6;
+    private static final int BLEED = 5;
     private static final int UPGRADE_PLUS_BLEED = 2;
 
     public DeadlyMist() {

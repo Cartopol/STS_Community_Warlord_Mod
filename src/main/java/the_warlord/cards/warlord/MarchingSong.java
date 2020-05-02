@@ -16,8 +16,8 @@ public class MarchingSong extends CustomWarlordModCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 3;
+    private static final int UPGRADED_COST = 2;
 
     private static final int MARCHING_SONG = 1;
 
