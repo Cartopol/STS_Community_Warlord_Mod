@@ -103,5 +103,34 @@
       "Your next card this turn is played twice.",
       "Your next #b%1$s cards this turn are played twice."
     ]
+  },
+
+  "the_warlord:EndlessNextTurnReactionTimePower": {
+    "NAME": "Adaptive Reaction",
+    "DESCRIPTIONS": [
+      "At the start of each turn, gain #b%1$s #yReaction #yTime."
+    ]
+  },
+
+  "the_warlord:EndlessNextTurnDexterityPower": {
+    "NAME": "Adaptive Dexterity",
+    "DESCRIPTIONS": [
+      "At the start of each turn, gain #b%1$s #yDexterity."
+    ]
+  },
+
+  "the_warlord:RefugePower": {
+    "NAME": "Refuge",
+    "DESCRIPTIONS": [
+      "At the start of each turn, gain #b%1$s #yBlock."
+    ]
+  },
+
+  "the_warlord:MarchingSongPower": {
+    "NAME": "Marching Song",
+    "DESCRIPTIONS": [
+      "Whenever you play a card that costs Energy, draw a card.",
+      "Whenever you play a card that costs Energy, draw #b%1$s cards."
+    ]
   }
 }
