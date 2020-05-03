@@ -36,6 +36,11 @@
     "NAME": "Me First",
     "DESCRIPTION": "Deal !D! damage if enemy is attacking."
   },
+  "the_warlord:SuperSaver": {
+    "NAME": "Super Saver",
+    "DESCRIPTION": "Reduce the cost of a random card in your hand to 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Reduce the cost of a random card in your hand to 0 for the rest of combat."
+  },
   "the_warlord:SmokeScreen": {
     "NAME": "Smoke Screen",
     "DESCRIPTION": "Apply !M! Weak to ALL enemies."
@@ -270,7 +275,19 @@
   
   "the_warlord:Extremespeed": {
     "NAME": "Extremespeed",
-    "DESCRIPTION": "At the start of each turn, gain !M! the_warlord:Reaction\u00a0Time. NL Exhaust."
+    "DESCRIPTION": "At the start of each turn, gain !M! the_warlord:Reaction\u00a0Time."
+  },
+  "the_warlord:CompositeArmor": {
+    "NAME": "Composite Armor",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Plated Armor."
+  },
+  "the_warlord:BladeSwing": {
+    "NAME": "Blade Swing",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+  },
+  "the_warlord:XSlice": {
+    "NAME": "X-Slice",
+    "DESCRIPTION": "Apply !the_warlord:UrMagic! the_warlord:Gush and !M! the_warlord:Bleed to ALL enemies."
   },
 
   "the_warlord:GuardianMode": {
