@@ -21,7 +21,6 @@ public class SuperSaver extends CustomParryCard {
     @Override
     public void onChoseThisOption() {
         addToBot(new ReduceCostRandomCardAction(upgraded));
-//        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SuperSaverPower(AbstractDungeon.player, upgraded)));
     }
 
     @Override
