@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class ParryDeck {
     public static int playedThisCombatCount = 0;
+    public static boolean hasParried = false;
 
     public static final CardGroup masterParryDeck = new CardGroup(CardGroupType.UNSPECIFIED);
     public static final ArrayList<AbstractCard> parryOptions = new ArrayList<>();
@@ -15,6 +16,10 @@ public class ParryDeck {
     public static void reset() {
         masterParryDeck.clear();
         playedThisCombatCount = 0;
+    }
+
+    public static void setParried(boolean parried) {
+        hasParried = parried;
     }
 
     public static ArrayList<AbstractCard> getParryOptions() {

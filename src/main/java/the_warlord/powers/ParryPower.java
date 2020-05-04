@@ -70,11 +70,12 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
         isFullParrying = false;
     }
 
-
     @Override
     public void atStartOfTurn() {
+        ParryDeck.setParried(false);
         WarlordMod.logger.info(this.ID + " isParrying: " + isParrying + ". isFullParrying: " + isFullParrying);
         if (isParrying) {
+            ParryDeck.setParried(true);
             AbstractPlayer p = AbstractDungeon.player;
 
             //this calls onParry for all powers that implement onParrySubsciber

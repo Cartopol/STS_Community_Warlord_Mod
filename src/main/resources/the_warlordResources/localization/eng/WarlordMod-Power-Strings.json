@@ -10,22 +10,14 @@
   "the_warlord:BleedPower": {
     "NAME": "Bleed",
     "DESCRIPTIONS": [
-      "Lose #b%1$s HP at the start of turn, then reduce Bleed by half."
-    ]
-  },
-
-  "the_warlord:GashPower": {
-    "NAME": "Gash",
-    "DESCRIPTIONS": [
-      "Some placeholder text?",
-      "More placeholder text!"
+      "Lose #b%1$s HP at the start of turn, then reduce #yBleed by half."
     ]
   },
 
   "the_warlord:GushPower": {
     "NAME": "Gush",
     "DESCRIPTIONS": [
-      "Bleed doesn't decay, but is multiplied by #b%1$s instead. Reduced by #b1 at the start of your turn."
+      "#yBleed doesn't decay, but is multiplied by #b%1$s instead. Reduced by #b1 at the start of your turn."
     ]
   },
   "the_warlord:RipostePower": {
@@ -43,7 +35,7 @@
   "the_warlord:BloodMagicPower": {
     "NAME": "Blood Magic",
     "DESCRIPTIONS": [
-      "At the start of your turn, apply #b%1$s Bleed to a random enemy."
+      "At the start of your turn, apply #b%1$s #yBleed to a random enemy."
     ]
   },
   "the_warlord:QuickDrawPower": {
@@ -51,6 +43,13 @@
     "DESCRIPTIONS": [
       "Whenever you Parry, draw #b%1$s card.",
       "Whenever you Parry, draw #b%1$s cards."
+    ]
+  },
+  "the_warlord:BoilingBloodPower": {
+    "NAME": "Boiling Blood",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #b%1$s #yGush to a random enemy.",
+      "At the start of your turn, apply #b%1$s #yGush and #b%2$s #yBleed to a random enemy."
     ]
   },
   "the_warlord:ParryPower": {
@@ -74,14 +73,14 @@
   "the_warlord:NextTurnSyrettePower": {
     "NAME": "Stimulus",
     "DESCRIPTIONS": [
-      "Add a Syrette to your hand at the start of next turn",
-      "Add a Syrette to your hand at the start of next #b%1$s turns."
+      "Add a #ySyrette to your hand at the start of next turn",
+      "Add a #ySyrette to your hand at the start of next #b%1$s turns."
     ]
   },
   "the_warlord:EndlessNextTurnSyrettePower": {
     "NAME": "Stimulation",
     "DESCRIPTIONS": [
-      "At the start of your turn, add #b%1$s Syrette into your hand."
+      "At the start of your turn, add #b%1$s #ySyrette into your hand."
     ]
   },
   "the_warlord:TempThornsPower": {
@@ -121,6 +120,14 @@
     ]
   },
 
+  "the_warlord:AnticipationPower": {
+    "NAME": "Anticipation",
+    "DESCRIPTIONS": [
+      "At the start of your turn, put #b%1$s card from your draw pile into your hand. Draw #b%1$s fewer card each turn.",
+      "At the start of your turn, put #b%1$s cards from your draw pile into your hand. Draw #b%1$s fewer cards each turn."
+    ]
+  },
+
   "the_warlord:EndlessNextTurnDexterityPower": {
     "NAME": "Adaptive Dexterity",
     "DESCRIPTIONS": [
@@ -131,7 +138,7 @@
   "the_warlord:RefugePower": {
     "NAME": "Refuge",
     "DESCRIPTIONS": [
-      "At the start of each turn, gain #b%1$s #yBlock. This Block is increased you your #yReaction #yTime."
+      "At the start of each turn, gain #b%1$s Block. This Block is increased you your #yReaction #yTime."
     ]
   },
 

@@ -3,11 +3,11 @@ package the_warlord.cards.warlord;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.EndlessNextTurnDexterityPower;
-import the_warlord.powers.EndlessNextTurnReactionTimePower;
+import the_warlord.powers.ReactionTimePower;
 
 
 public class GuardianMode extends CustomWarlordModCard {
@@ -21,24 +21,24 @@ public class GuardianMode extends CustomWarlordModCard {
     private static final int COST = 3;
 
     private static final int DEXTERITY = 1;
-    private static final int REACTION_TIME = 1;
-
 
     public GuardianMode() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = DEXTERITY;
-        urMagicNumber = baseUrMagicNumber = REACTION_TIME;
+        isEthereal = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new EndlessNextTurnDexterityPower(p, this.magicNumber)));
-        if(upgraded){ addToBot(new ApplyPowerAction(p, p, new EndlessNextTurnReactionTimePower(p, this.magicNumber)));}
+        if (p.hasPower(ReactionTimePower.POWER_ID)) {
+            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, p.getPower(ReactionTimePower.POWER_ID).amount)));
         }
+    }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
+            isEthereal = false;
             upgradeName();
             upgradeDescription();
         }

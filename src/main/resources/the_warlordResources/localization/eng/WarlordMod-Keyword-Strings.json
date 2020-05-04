@@ -43,7 +43,13 @@
     "NAMES": [
       "parry", "parried"
     ],
-    "DESCRIPTION": "You Parry when you block the exact amount of damage from any attack. When you Parry, choose 1 out of 3 cards from your Parry Deck and play them immediately."
+    "DESCRIPTION": "You #yParry when you block the exact amount of damage from any attack. When you Parry, choose 1 out of 3 cards from your #yParry #yDeck and play them immediately."
+  },
+
+  {
+    "PROPER_NAME": "Parry Deck",
+    "NAMES": ["parry\u00a0deck"],
+    "DESCRIPTION": "Whenever you #yParry, options are drawn from your #yParry #yDeck."
   },
 
   {

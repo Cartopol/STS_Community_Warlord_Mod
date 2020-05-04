@@ -288,10 +288,9 @@ public class Warlord extends CustomPlayer {
     }
 
     //Which card should be obtainable from the Match and Keep event?
-    //TODO determine which starter card should be obtainable for Match and Keep event
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new Rebuff();
     }
 
     // The class name as it appears next to your player name in-game
@@ -379,7 +378,7 @@ public class Warlord extends CustomPlayer {
         ParryDeck.reset();
         for (AbstractCard c : drawPile.group) {
             if (c instanceof CustomParryCard) {
-                AbstractDungeon.actionManager.addToBottom(new AddToParryDeckAction(c));
+                AbstractDungeon.actionManager.addToBottom(new AddToParryDeckAction(c, true));
             }
         }
     }

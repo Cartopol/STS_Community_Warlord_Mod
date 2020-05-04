@@ -126,9 +126,22 @@
     "NAME": "Furrow",
     "DESCRIPTION": "Gain !B! Block. NL Increase this card's Block by !M! this combat."
   },
+  "the_warlord:Fortress": {
+    "NAME": "Fortress",
+    "DESCRIPTION": "Prevent the next time you would lose HP.",
+    "UPGRADE_DESCRIPTION": "Prevent the next !M! times you would lose HP."
+  },
+  "the_warlord:BuildingFortress": {
+    "NAME": "Building Fortress",
+    "DESCRIPTION": "Add Fortress to your the_warlord:Parry\u00a0Deck."
+  },
   "the_warlord:Zweihänder": {
     "NAME": "Zweihänder",
     "DESCRIPTION": "Deal !D! damage. NL Lose all the_warlord:Reaction\u00a0Time."
+  },
+  "the_warlord:ThousandBlades": {
+    "NAME": "Thousand Blades",
+    "DESCRIPTION": "Deal !D! damage and apply !M! the_warlord:Gush to ALL enemies."
   },
   "the_warlord:Ablution": {
     "NAME": "Ablution",
@@ -155,13 +168,36 @@
       " NL (Gain !B! Block)"
     ]
   },
+  "the_warlord:PerfectAnswer": {
+    "NAME": "Perfect Answer",
+    "DESCRIPTION": "Gain Block equal to ALL incoming attack damage. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gain !B! Block)"
+    ]
+  },
+  "the_warlord:SwordDance": {
+    "NAME": "Sword Dance",
+    "DESCRIPTION": "Deal !D! damage for each card played this turn.",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !M! card played.)",
+      " NL ( !M! cards played.)"
+    ]
+  },
   "the_warlord:Diversion": {
     "NAME": "Diversion",
     "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !M! Block."
   },
+  "the_warlord:Anticipation": {
+    "NAME": "Anticipation",
+    "DESCRIPTION": "At the start of your turn, pu1 !M! card from your draw pile into your hand. NL Draw !M! fewer card each turn."
+  },
   "the_warlord:Riposte": {
     "NAME": "Riposte",
     "DESCRIPTION": "Whenever you the_warlord:Parry, apply !M! Vulnerable to ALL enemies."
+  },
+  "the_warlord:Punishment": {
+    "NAME": "Punishment",
+    "DESCRIPTION": "Deal !D! damage. NL If you have the_warlord:Parried this turn, play this card an additional time."
   },
   "the_warlord:QuickDraw": {
     "NAME": "Quick Draw",
@@ -171,6 +207,11 @@
     "NAME": "Stimulation",
     "DESCRIPTION": "At the start of your turn, add a Syrette into your hand.",
     "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add a Syrette into your hand."
+  },
+  "the_warlord:BoilingBlood": {
+    "NAME": "Boiling Blood",
+    "DESCRIPTION": "At the start of your turn, apply !M! the_warlord:Gush to a random enemy.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, apply !M! the_warlord:Gush and !the_warlord:UrMagic! the_warlord:Bleed to a random enemy."
   },
   "the_warlord:HeavyBlow": {
     "NAME": "Heavy Blow",
@@ -292,8 +333,8 @@
 
   "the_warlord:GuardianMode": {
     "NAME": "Guardian Mode",
-    "DESCRIPTION": "At the start of your turn, gain !M! Dexterity.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, gain !M! Dexterity and !the_warlord:UrMagic! the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "Ethereal. NL Gain Dexterity equal to your the_warlord:Reaction\u00a0Time.",
+    "UPGRADE_DESCRIPTION": "Gain Dexterity equal to your the_warlord:Reaction\u00a0Time."
   },
 
   "the_warlord:Refuge": {
