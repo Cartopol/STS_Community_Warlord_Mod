@@ -17,12 +17,12 @@ public class Riposte extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE_ON_PARRY = 5;
-    private static final int UPGRADE_PLUS_DAMAGE_ON_PARRY = 2;
+    private static final int VULN_ON_PARRY = 2;
+    private static final int UPGRADE_PLUS_VULN_ON_PARRY = 1;
 
     public Riposte() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = DAMAGE_ON_PARRY;
+        magicNumber = baseMagicNumber = VULN_ON_PARRY;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class Riposte extends CustomWarlordModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_DAMAGE_ON_PARRY);
+            upgradeMagicNumber(UPGRADE_PLUS_VULN_ON_PARRY);
             upgradeDescription();
         }
     }

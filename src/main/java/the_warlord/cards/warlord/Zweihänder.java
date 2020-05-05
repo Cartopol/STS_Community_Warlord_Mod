@@ -20,7 +20,7 @@ public class Zweihänder extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 16;
+    private static final int DAMAGE = 17;
     private static final int UPGRADE_PLUS_DAMAGE = 6;
 
     public Zweihänder() {

@@ -133,7 +133,8 @@
   },
   "the_warlord:BuildingFortress": {
     "NAME": "Building Fortress",
-    "DESCRIPTION": "Add Fortress to your the_warlord:Parry\u00a0Deck."
+    "DESCRIPTION": "Add Fortress to your the_warlord:Parry\u00a0Deck.",
+    "UPGRADE_DESCRIPTION": "Add an upgraded Fortress to your the_warlord:Parry\u00a0Deck."
   },
   "the_warlord:Zweihänder": {
     "NAME": "Zweihänder",
@@ -213,9 +214,9 @@
     "DESCRIPTION": "At the start of your turn, apply !M! the_warlord:Gush to a random enemy.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, apply !M! the_warlord:Gush and !the_warlord:UrMagic! the_warlord:Bleed to a random enemy."
   },
-  "the_warlord:HeavyBlow": {
-    "NAME": "Heavy Blow",
-    "DESCRIPTION": "Deal !D! damage."
+  "the_warlord:DeftCharge": {
+    "NAME": "Deft Charge",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards if you have the_warlord:Reaction\u00a0Time."
   },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",

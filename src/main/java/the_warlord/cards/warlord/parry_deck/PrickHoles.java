@@ -9,15 +9,15 @@ import the_warlord.characters.Warlord;
 public class PrickHoles extends CustomParryCard {
     public static final String ID = WarlordMod.makeID(PrickHoles.class);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int THORNS = 2;
-    private static final int UPGRADE_PLUS_THORNS = 1;
+    private static final int THORNS = 3;
+    private static final int UPGRADE_PLUS_THORNS = 2;
 
 
     public PrickHoles() {
