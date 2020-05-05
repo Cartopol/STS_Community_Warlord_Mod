@@ -250,7 +250,7 @@
   },
   "the_warlord:Prey": {
   "NAME": "Prey",
-  "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage to ALL enemies."
+  "DESCRIPTION": "Deal !D! damage. NL Deal !M! damage to ALL enemies."
 },
   "the_warlord:Backsword": {
     "NAME": "Backsword",

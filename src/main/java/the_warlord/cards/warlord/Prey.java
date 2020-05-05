@@ -26,11 +26,13 @@ public class Prey extends CustomWarlordModCard {
     public Prey() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = DAMAGE;
         this.isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        calculateCardDamage(m);
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.SMASH));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }

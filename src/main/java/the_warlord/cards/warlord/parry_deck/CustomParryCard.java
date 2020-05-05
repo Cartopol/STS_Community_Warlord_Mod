@@ -24,6 +24,9 @@ public abstract class CustomParryCard extends CustomWarlordModCard {
             setBackgroundTexture(makeCharPath("warlord/card_bgs/card_bg_parry_power_512.png"), makeCharPath("warlord/card_bgs/card_bg_parry_power_1024.png"));
         }
 
+        // this tag is added so that these cards will not be generated in combat.
+        tags.add(CardTags.HEALING);
+
     }
 
     @Override

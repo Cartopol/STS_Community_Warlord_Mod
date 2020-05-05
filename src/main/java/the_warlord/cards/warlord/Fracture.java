@@ -31,7 +31,7 @@ public class Fracture extends CustomWarlordModCard {
         if (m == null) { return 0; }
         int addedDamage = 0;
         if (m.currentBlock > 0) {
-            addedDamage = damage;
+            addedDamage = baseDamage;
         }
 
         return addedDamage;
