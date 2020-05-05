@@ -1,5 +1,6 @@
 package the_warlord.cards.warlord;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
@@ -17,23 +18,29 @@ public class BuildingFortress extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 3;
-    private static final int UPGRADED_COST = 2;
 
     public BuildingFortress() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        cardsToPreview = new Fortress();
+        AbstractCard c = new Fortress();
+        if (upgraded) {
+            c.upgrade();
+        }
+        cardsToPreview = c;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new AddToParryDeckAction(new Fortress(), false));
+        AbstractCard c = new Fortress();
+        if (upgraded) {
+            c.upgrade();
+        }
+        addToBot(new AddToParryDeckAction(c, false));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
             upgradeDescription();
         }
     }
