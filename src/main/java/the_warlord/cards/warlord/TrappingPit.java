@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
-import the_warlord.actions.GushAction;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.BleedPower;
@@ -22,7 +21,7 @@ public class TrappingPit extends CustomWarlordModCard {
 
     private static final int COST = 1;
     private static final int BLEED = 9;
-    private static final int UPGRADE_PLUS_BLEED = 2;
+    private static final int UPGRADE_PLUS_BLEED = 3;
 
     public TrappingPit() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);

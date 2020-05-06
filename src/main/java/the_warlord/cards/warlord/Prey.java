@@ -41,6 +41,8 @@ public class Prey extends CustomWarlordModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_DAMAGE);
+
             upgradeName();
             upgradeDescription();
         }

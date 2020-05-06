@@ -19,7 +19,7 @@ public class Somersault extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DAMAGE = 4;
     private static final int CARDS_FROM_DISCARD = 1;
 

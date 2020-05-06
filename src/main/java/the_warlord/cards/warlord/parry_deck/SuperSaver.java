@@ -1,7 +1,7 @@
 package the_warlord.cards.warlord.parry_deck;
 
 import the_warlord.WarlordMod;
-import the_warlord.actions.ReduceCostRandomCardAction;
+import the_warlord.actions.SuperSaverAction;
 import the_warlord.characters.Warlord;
 
 public class SuperSaver extends CustomParryCard {
@@ -20,7 +20,7 @@ public class SuperSaver extends CustomParryCard {
 
     @Override
     public void onChoseThisOption() {
-        addToBot(new ReduceCostRandomCardAction(upgraded));
+        addToBot(new SuperSaverAction(upgraded));
     }
 
     @Override

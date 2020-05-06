@@ -28,6 +28,7 @@ public class Fortress extends CustomParryCard {
     @Override
     public void onChoseThisOption() {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BufferPower(AbstractDungeon.player, magicNumber)));
+        removeFromMasterParryDeck(this);
     }
 
     @Override

@@ -38,8 +38,8 @@
   },
   "the_warlord:SuperSaver": {
     "NAME": "Super Saver",
-    "DESCRIPTION": "Reduce the cost of a random card in your hand to 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Reduce the cost of a random card in your hand to 0 for the rest of combat."
+    "DESCRIPTION": "Exhaust a card. NL Gain [E] equal to its cost.",
+    "UPGRADE_DESCRIPTION": "Exhaust a card. NL Gain [E] equal to its cost + 1."
   },
   "the_warlord:SmokeScreen": {
     "NAME": "Smoke Screen",
@@ -128,8 +128,8 @@
   },
   "the_warlord:Fortress": {
     "NAME": "Fortress",
-    "DESCRIPTION": "Prevent the next time you would lose HP.",
-    "UPGRADE_DESCRIPTION": "Prevent the next !M! times you would lose HP."
+    "DESCRIPTION": "Prevent the next time you would lose HP. NL the_warlord:Purge.",
+    "UPGRADE_DESCRIPTION": "Prevent the next !M! times you would lose HP. NL the_warlord:Purge."
   },
   "the_warlord:BuildingFortress": {
     "NAME": "Building Fortress",
@@ -190,7 +190,7 @@
   },
   "the_warlord:Anticipation": {
     "NAME": "Anticipation",
-    "DESCRIPTION": "At the start of your turn, pu1 !M! card from your draw pile into your hand. NL Draw !M! fewer card each turn."
+    "DESCRIPTION": "At the start of your turn, put !M! card from your draw pile into your hand. NL Draw !M! fewer card each turn."
   },
   "the_warlord:Riposte": {
     "NAME": "Riposte",
@@ -263,7 +263,7 @@
   },
   "the_warlord:DeadlyMist": {
     "NAME": "Deadly Mist",
-    "DESCRIPTION": "Apply !the_warlord:UrMagic! the_warlord:Bleed and !M! the_warlord:Gush to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! the_warlord:Gush and !the_warlord:UrMagic! the_warlord:Bleed to ALL enemies. NL Exhaust."
   },
   "the_warlord:HighRisk": {
     "NAME": "High Risk",
@@ -323,9 +323,20 @@
     "NAME": "Composite Armor",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Plated Armor."
   },
-  "the_warlord:BladeSwing": {
-    "NAME": "Blade Swing",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+  "the_warlord:AlphaStrike": {
+    "NAME": "Alpha Strike",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add Beta Strike to your the_warlord:Parry\u00a0Deck. NL the_warlord:Purge.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add an upgraded Beta Strike to your the_warlord:Parry\u00a0Deck. NL the_warlord:Purge."
+  },
+  "the_warlord:BetaStrike": {
+    "NAME": "Beta Strike",
+    "DESCRIPTION": "Deal !D! damage to a random enemy. NL Add Omega Strike to your the_warlord:Parry\u00a0Deck. NL the_warlord:Purge.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy. NL Add an upgraded Omega Strike to your the_warlord:Parry\u00a0Deck. NL the_warlord:Purge."
+  },
+  "the_warlord:OmegaStrike": {
+    "NAME": "Omega Strike",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Apply !M! the_warlord:Bleed to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Apply !the_warlord:UrMagic! the_warlord:Gush and !M! the_warlord:Bleed to ALL enemies."
   },
   "the_warlord:XSlice": {
     "NAME": "X-Slice",

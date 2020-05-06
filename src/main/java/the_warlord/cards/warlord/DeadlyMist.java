@@ -34,8 +34,8 @@ public class DeadlyMist extends CustomWarlordModCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo: AbstractDungeon.getCurrRoom().monsters.monsters) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BleedPower(mo, this.urMagicNumber), this.urMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new GushPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BleedPower(mo, this.urMagicNumber), this.urMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
 

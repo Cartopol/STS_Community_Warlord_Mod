@@ -22,7 +22,7 @@ public class HeadStart extends CustomWarlordModCard {
     private static final int COST = 1;
     private static final int DRAW = 3;
     private static final int REACTION_TIME = 1;
-    private static final int UPGRADE_PLUS_REACTION_TIME = 1;
+    private static final int UPGRADE_PLUS_REACTION_TIME = 2;
 
     public HeadStart() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
