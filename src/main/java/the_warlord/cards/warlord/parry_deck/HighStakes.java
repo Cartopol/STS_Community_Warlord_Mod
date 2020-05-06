@@ -1,14 +1,13 @@
 package the_warlord.cards.warlord.parry_deck;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.unique.GamblingChipAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.EquilibriumPower;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
 
-public class HoldTheLine extends CustomParryCard {
-    public static final String ID = WarlordMod.makeID(HoldTheLine.class);
+public class HighStakes extends CustomParryCard {
+    public static final String ID = WarlordMod.makeID(HighStakes.class);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -20,7 +19,7 @@ public class HoldTheLine extends CustomParryCard {
     private static final int UPGRADE_PLUS_RETAIN_TURNS = 1;
 
 
-    public HoldTheLine() {
+    public HighStakes() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = RETAIN_TURNS;
     }
@@ -28,7 +27,10 @@ public class HoldTheLine extends CustomParryCard {
     @Override
     public void onChoseThisOption() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new EquilibriumPower(p, magicNumber)));
+        addToBot(new GamblingChipAction(p, true));
+        if (!this.upgraded) {
+            removeFromMasterParryDeck(this);
+        }
     }
 
     @Override

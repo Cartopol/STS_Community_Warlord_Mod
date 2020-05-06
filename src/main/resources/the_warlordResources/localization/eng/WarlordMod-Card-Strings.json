@@ -149,10 +149,10 @@
     "DESCRIPTION": "Remove all of your debuffs. NL Purge.",
     "UPGRADE_DESCRIPTION": "Remove all of your debuffs."
   },
-  "the_warlord:HoldTheLine": {
-    "NAME": "Hold The Line",
-    "DESCRIPTION": "Retain your hand this turn.",
-    "UPGRADE_DESCRIPTION": "Retain your hand the next !M! turns."
+  "the_warlord:HighStakes": {
+    "NAME": "High Stakes",
+    "DESCRIPTION": "Discard any number of cards then draw that many. NL the_warlord:Purge.",
+    "UPGRADE_DESCRIPTION": "Discard any number of cards then draw that many."
   },
   "the_warlord:Ambush": {
     "NAME": "Ambush",
