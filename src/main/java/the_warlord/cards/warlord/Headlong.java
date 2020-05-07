@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.SelfDrawReductionPower;
+import the_warlord.powers.TensionPower;
 
 public class Headlong extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Headlong.class);
@@ -21,17 +21,22 @@ public class Headlong extends CustomWarlordModCard {
     private static final int DRAW = 4;
     private static final int UPGRADE_DRAW = 1;
     private static final int DEBUFF_DRAW = 1;
+    private static final int TENSION = 1;
+
 
     public Headlong() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        this.urMagicNumber = this.baseUrMagicNumber = DEBUFF_DRAW;
+//        this.urMagicNumber = this.baseUrMagicNumber = DEBUFF_DRAW;
         this.magicNumber = this.baseMagicNumber = DRAW;
+        this.urMagicNumber = this.baseUrMagicNumber = TENSION;
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new SelfDrawReductionPower(p, urMagicNumber)));
+//        addToBot(new ApplyPowerAction(p, p, new SelfDrawReductionPower(p, urMagicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new TensionPower(p, urMagicNumber)));
     }
 
     @Override

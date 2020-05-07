@@ -28,9 +28,22 @@
 
   {
     "NAMES": [
-      "bleed"
+      "bleed", "bleeding"
     ],
-    "DESCRIPTION": "At the start of turn, lose HP equal to the Bleed amount and reduce Bleed by half."
+    "DESCRIPTION": "At the start of turn, lose HP equal to the #yBleed amount and reduce #yBleed by half."
+  },
+  {
+    "NAMES": [
+      "posture"
+    ],
+    "DESCRIPTION": "#yAttack #yDamage is reduced by your #yPosture. Whenever you take #yAttack #yDamage, lose all #yPosture and gain that much #yTension."
+  },
+
+  {
+    "NAMES": [
+      "tension"
+    ],
+    "DESCRIPTION": "At the end of your turn, lose HP equal to your #yTension, and reduce #yTension by 1."
   },
 
   {

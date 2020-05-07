@@ -84,7 +84,7 @@
   },
   "the_warlord:Headlong": {
     "NAME": "Headlong",
-    "DESCRIPTION": "Draw !M! cards. NL Draw !the_warlord:UrMagic! fewer card next turn."
+    "DESCRIPTION": "Draw !M! cards. NL Gain !the_warlord:UrMagic! the_warlord:Tension."
   },
   "the_warlord:SupportingFire": {
     "NAME": "Supporting Fire",
@@ -186,7 +186,7 @@
   },
   "the_warlord:Diversion": {
     "NAME": "Diversion",
-    "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !M! Block."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! the_warlord:Posture."
   },
   "the_warlord:Anticipation": {
     "NAME": "Anticipation",
@@ -321,7 +321,7 @@
   },
   "the_warlord:CompositeArmor": {
     "NAME": "Composite Armor",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Plated Armor."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! the_warlord:Posture."
   },
   "the_warlord:AlphaStrike": {
     "NAME": "Alpha Strike",

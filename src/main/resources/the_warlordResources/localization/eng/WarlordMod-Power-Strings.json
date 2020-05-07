@@ -26,6 +26,18 @@
       "Whenever you Parry, apply #b%1$s #yVulnerable to ALL enemies."
     ]
   },
+  "the_warlord:PosturePower": {
+    "NAME": "Posture",
+    "DESCRIPTIONS": [
+      "#yAttack #yDamage is reduced by #b%1$s. Whenever you take #yAttack #yDamage, lose all #Posture and gain that much #yTension."
+    ]
+  },
+  "the_warlord:TensionPower": {
+    "NAME": "Tension",
+    "DESCRIPTIONS": [
+      "At the end of your turn, lose #b%1$s HP and reduce #yTension by 1."
+    ]
+  },
   "the_warlord:PositioningPower": {
     "NAME": "Positioning",
     "DESCRIPTIONS": [
