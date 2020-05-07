@@ -4,7 +4,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import the_warlord.WarlordMod;
-import the_warlord.powers.ReactionTimePower;
+import the_warlord.powers.PosturePower;
+import the_warlord.powers.TensionPower;
 
 import static the_warlord.characters.Warlord.Enums.WARLORD_CARD_COLOR;
 
@@ -19,7 +20,10 @@ public class FencingBoots extends CustomWarlordModRelic {
     @Override
     public void atBattleStart() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new ReactionTimePower(p, REACTION_TIME)));
+//        addToBot(new ApplyPowerAction(p, p, new ReactionTimePower(p, REACTION_TIME)));
+        addToBot(new ApplyPowerAction(p, p, new PosturePower(p, REACTION_TIME)));
+        addToBot(new ApplyPowerAction(p, p, new TensionPower(p, REACTION_TIME)));
+
         this.flash();
     }
 }

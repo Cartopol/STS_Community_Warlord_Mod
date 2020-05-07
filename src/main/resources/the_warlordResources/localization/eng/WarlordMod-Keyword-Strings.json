@@ -43,7 +43,7 @@
     "NAMES": [
       "tension"
     ],
-    "DESCRIPTION": "At the end of your turn, lose HP equal to your #yTension, and reduce #yTension by 1."
+    "DESCRIPTION": "At the end of your turn, lose HP equal to your #yTension."
   },
 
   {

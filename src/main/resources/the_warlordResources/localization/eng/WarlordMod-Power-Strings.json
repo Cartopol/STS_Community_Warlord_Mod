@@ -35,7 +35,7 @@
   "the_warlord:TensionPower": {
     "NAME": "Tension",
     "DESCRIPTIONS": [
-      "At the end of your turn, lose #b%1$s HP and reduce #yTension by 1."
+      "At the end of your turn, lose #b%1$s HP."
     ]
   },
   "the_warlord:PositioningPower": {
