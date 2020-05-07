@@ -30,7 +30,7 @@ public class PosturePower extends CustomWarlordModPower {
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         int damageTaken = damageAmount - amount;
         //only trigger if damageAmount > 0 and is Attack Damage
-        if (damageTaken > 0 && info.type.equals(DamageInfo.DamageType.NORMAL)) {
+        if (damageTaken > 0) {
             flash();
             addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));

@@ -3,7 +3,7 @@
     "NAME": "Fencing Boots",
     "FLAVOR": "You are the fencing queen, young and ascension 17...",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b2 the_warlord:Reaction\u00a0Time"
+      "At the start of combat, gain #b2 the_warlord:Posture and #b2 the_warlord:Tension."
     ]
   }
 }
