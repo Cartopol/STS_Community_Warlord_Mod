@@ -2,6 +2,8 @@ package the_warlord.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,6 +14,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import the_warlord.WarlordMod;
 import the_warlord.cards.warlord.parry_deck.ParryDeck;
+import the_warlord.relics.FencingGloves;
+import the_warlord.relics.SamuraiSword;
 
 import java.util.ArrayList;
 
@@ -77,7 +81,8 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
         if (isParrying) {
             ParryDeck.setParried(true);
             AbstractPlayer p = AbstractDungeon.player;
-
+            if(p.hasRelic(FencingGloves.ID)){ addToBot(new ApplyPowerAction(p, p, new ReactionTimePower(p, 1))); }
+            if(p.hasRelic(SamuraiSword.ID)){ addToBot(new GainEnergyAction(1)); }
             //this calls onParry for all powers that implement onParrySubsciber
             for (AbstractPower pow : p.powers) {
                 if (pow instanceof OnParrySubscriber) {
