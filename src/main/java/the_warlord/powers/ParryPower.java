@@ -2,6 +2,8 @@ package the_warlord.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -9,9 +11,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import the_warlord.WarlordMod;
 import the_warlord.cards.warlord.parry_deck.ParryDeck;
+import the_warlord.relics.FencingGloves;
+import the_warlord.relics.RelicParrySubscriber;
+import the_warlord.relics.SamuraiSword;
 
 import java.util.ArrayList;
 
@@ -77,11 +83,16 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
         if (isParrying) {
             ParryDeck.setParried(true);
             AbstractPlayer p = AbstractDungeon.player;
-
             //this calls onParry for all powers that implement onParrySubsciber
             for (AbstractPower pow : p.powers) {
                 if (pow instanceof OnParrySubscriber) {
                     ((OnParrySubscriber) pow).onParry(isFullParrying);
+                }
+            }
+            //this calls onParry for all relics that implement onParrySubsciber
+            for (AbstractRelic r : p.relics){
+                if(r instanceof RelicParrySubscriber){
+                    ((RelicParrySubscriber) r).onParry(isFullParrying);
                 }
             }
             //this calls onParry for all cards in draw pile, hand, and discard pile that implement onParrySubscriber

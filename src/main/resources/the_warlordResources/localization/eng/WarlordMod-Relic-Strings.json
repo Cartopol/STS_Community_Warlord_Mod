@@ -5,5 +5,40 @@
     "DESCRIPTIONS": [
       "At the start of combat, gain #b2 the_warlord:Reaction\u00a0Time"
     ]
+  },
+  "the_warlord:MedicPouch": {
+    "NAME": "Medic Pouch",
+    "FLAVOR": "A Swordfight a day keeps the doctor away! Or does it?",
+    "DESCRIPTIONS": [
+      "At the start of combat, add #b2 #ySyrettes to your hand."
+    ]
+  },
+  "the_warlord:PocketKnife": {
+    "NAME": "Pocket Knife",
+    "FLAVOR": "Comes with a pencil sharpener?",
+    "DESCRIPTIONS": [
+      "You can now have #b4 Parry cards instead of #b3 to choose from."
+    ]
+  },
+  "the_warlord:FencingGloves": {
+    "NAME": "Fencing Gloves",
+    "FLAVOR": "Envied by goalkeepers.",
+    "DESCRIPTIONS": [
+      "When you Parry, gain 1 Reaction Time."
+    ]
+  },
+  "the_warlord:FeatherBoots": {
+    "NAME": "Feather Boots",
+    "FLAVOR": "Makes you feel like flying.",
+    "DESCRIPTIONS": [
+      "#rReplaces #rFencing #rBoots. NL At the start of combat, gain #b2 the_warlord:Reaction\u00a0Time"
+    ]
+  },
+  "the_warlord:SamuraiSword": {
+    "NAME": "Samurai Sword",
+    "FLAVOR": "The last of the 7 famous swords.",
+    "DESCRIPTIONS": [
+      "When you Parry, gain [E]"
+    ]
   }
 }
