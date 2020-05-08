@@ -11,10 +11,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import the_warlord.WarlordMod;
 import the_warlord.cards.warlord.parry_deck.ParryDeck;
 import the_warlord.relics.FencingGloves;
+import the_warlord.relics.RelicParrySubscriber;
 import the_warlord.relics.SamuraiSword;
 
 import java.util.ArrayList;
@@ -81,12 +83,16 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
         if (isParrying) {
             ParryDeck.setParried(true);
             AbstractPlayer p = AbstractDungeon.player;
-            if(p.hasRelic(FencingGloves.ID)){ addToBot(new ApplyPowerAction(p, p, new ReactionTimePower(p, 1))); }
-            if(p.hasRelic(SamuraiSword.ID)){ addToBot(new GainEnergyAction(1)); }
             //this calls onParry for all powers that implement onParrySubsciber
             for (AbstractPower pow : p.powers) {
                 if (pow instanceof OnParrySubscriber) {
                     ((OnParrySubscriber) pow).onParry(isFullParrying);
+                }
+            }
+            //this calls onParry for all relics that implement onParrySubsciber
+            for (AbstractRelic r : p.relics){
+                if(r instanceof RelicParrySubscriber){
+                    ((RelicParrySubscriber) r).onParry(isFullParrying);
                 }
             }
             //this calls onParry for all cards in draw pile, hand, and discard pile that implement onParrySubscriber

@@ -53,9 +53,9 @@
     ]
   },
   "the_warlord:ParryPower": {
-    "NAME": "Parrying",
+    "NAME": "",
     "DESCRIPTIONS": [
-      "temp"
+      ""
     ]
   },
   "the_warlord:ReactionTimePower": {
