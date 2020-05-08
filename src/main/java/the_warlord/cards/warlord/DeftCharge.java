@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.ReactionTimePower;
+import the_warlord.powers.PosturePower;
 
 public class DeftCharge extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(DeftCharge.class);
@@ -37,14 +37,14 @@ public class DeftCharge extends CustomWarlordModCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.SMASH));
-        if (p.hasPower(ReactionTimePower.POWER_ID)) {
+        if (p.hasPower(PosturePower.POWER_ID)) {
             addToBot(new DrawCardAction(magicNumber));
         }
     }
 
     @Override
     public boolean shouldGlowGold() {
-        return AbstractDungeon.player.hasPower(ReactionTimePower.POWER_ID);
+        return AbstractDungeon.player.hasPower(PosturePower.POWER_ID);
     }
 
     @Override

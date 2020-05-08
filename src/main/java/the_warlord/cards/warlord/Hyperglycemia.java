@@ -1,18 +1,13 @@
 package the_warlord.cards.warlord;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.BleedPower;
-import the_warlord.powers.GushPower;
-import the_warlord.powers.ReactionTimePower;
+import the_warlord.powers.TensionPower;
 
 
 public class Hyperglycemia extends CustomWarlordModCard {
@@ -26,20 +21,22 @@ public class Hyperglycemia extends CustomWarlordModCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
+    private static final int TENSION = 1;
     private static final int ENERGY = 2;
 
     public Hyperglycemia() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = ENERGY;
+        urMagicNumber = baseUrMagicNumber = TENSION;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainEnergyAction(ENERGY));
-        if(p.hasPower(ReactionTimePower.POWER_ID)){
-            addToBot(new RemoveSpecificPowerAction(p, p, ReactionTimePower.POWER_ID));
-        }
-
+//        if(p.hasPower(ReactionTimePower.POWER_ID)){
+//            addToBot(new RemoveSpecificPowerAction(p, p, ReactionTimePower.POWER_ID));
+//        }
+        addToBot(new ApplyPowerAction(p, p, new TensionPower(p, urMagicNumber)));
     }
 
     @Override

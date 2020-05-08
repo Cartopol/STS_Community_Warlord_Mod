@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.ReactionTimePower;
+import the_warlord.powers.PosturePower;
 
 public class EyesWideOpen extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(EyesWideOpen.class);
@@ -18,26 +18,24 @@ public class EyesWideOpen extends CustomWarlordModCard {
 
     private static final int COST = 0;
 
-    private static final int REACTION_TIME = 2;
-    private static final int UPGRADE_PLUS_REACTION_TIME = 2;
+    private static final int POSTURE = 2;
+    private static final int UPGRADE_PLUS_POSTURE = 1;
 
     public EyesWideOpen() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = REACTION_TIME;
+        this.magicNumber = this.baseMagicNumber = POSTURE;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-//        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-//        addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-        addToBot(new ApplyPowerAction(p, p, new ReactionTimePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new PosturePower(p, magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_REACTION_TIME);
+            upgradeMagicNumber(UPGRADE_PLUS_POSTURE);
             upgradeDescription();
         }
     }

@@ -17,12 +17,14 @@ public class PositioningTheory extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int BLOCK_ON_PARRY = 4;
-    private static final int UPGRADE_PLUS_BLOCK_ON_PARRY = 2;
+    private static final int UPGRADE_COST = 0;
+//    private static final int BLOCK_ON_PARRY = 4;
+//    private static final int UPGRADE_PLUS_BLOCK_ON_PARRY = 2;
+    private static final int POSTURE = 1;
 
     public PositioningTheory() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = BLOCK_ON_PARRY;
+        magicNumber = baseMagicNumber = POSTURE;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class PositioningTheory extends CustomWarlordModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_BLOCK_ON_PARRY);
+            upgradeBaseCost(UPGRADE_COST);
             upgradeDescription();
         }
     }

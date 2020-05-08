@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.ReactionTimePower;
+import the_warlord.powers.PosturePower;
 
 public class Rebuff extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Rebuff.class);
@@ -19,22 +19,22 @@ public class Rebuff extends CustomWarlordModCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 7;
+    private static final int BLOCK = 6;
     private static final int UPGRADE_PLUS_BLOCK = 3;
-    private static final int REACTION_TIME = 2;
+    private static final int POSTURE = 2;
 
 
     public Rebuff() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
-        magicNumber = baseMagicNumber = REACTION_TIME;
+        magicNumber = baseMagicNumber = POSTURE;
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new ReactionTimePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new PosturePower(p, magicNumber)));
 
     }
 

@@ -29,7 +29,7 @@
   "the_warlord:PosturePower": {
     "NAME": "Posture",
     "DESCRIPTIONS": [
-      "#yAttack #yDamage is reduced by #b%1$s. Whenever you take #yAttack #yDamage, lose all #Posture and gain that much #yTension."
+      "#yAttack #yDamage is reduced by #b%1$s. Whenever you take #yAttack #yDamage, lose all #yPosture and gain that much #yTension."
     ]
   },
   "the_warlord:TensionPower": {
@@ -41,7 +41,7 @@
   "the_warlord:PositioningPower": {
     "NAME": "Positioning",
     "DESCRIPTIONS": [
-      "Whenever you Parry, gain #b%1$s Block."
+      "At the start of your turn, gain #b%1$s #yPosture."
     ]
   },
   "the_warlord:BloodMagicPower": {
@@ -79,7 +79,7 @@
   "the_warlord:SupportingFirePower": {
     "NAME": "Supporting Fire",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal #b%1$s damage to ALL enemies. This damage is increased by your #yReaction #yTime."
+      "At the end of your turn, deal #b%1$s damage to ALL enemies. This damage is increased by your #yPosture."
     ]
   },
   "the_warlord:NextTurnSyrettePower": {
@@ -104,7 +104,7 @@
   "the_warlord:FocusPunchPower": {
     "NAME": "Focus Punch",
     "DESCRIPTIONS": [
-      "At the start of next turn, deal #b%1$s damage. NL Cancels if you take damage."
+      "At the start of next turn, deal #b%1$s damage. NL If you take damage, gain #b5 #yTension."
     ]
   },
 
@@ -150,7 +150,7 @@
   "the_warlord:RefugePower": {
     "NAME": "Refuge",
     "DESCRIPTIONS": [
-      "At the start of each turn, gain #b%1$s Block. This Block is increased you your #yReaction #yTime."
+      "At the start of each turn, gain #b%1$s Block. This Block is increased you your #yPosture."
     ]
   },
 

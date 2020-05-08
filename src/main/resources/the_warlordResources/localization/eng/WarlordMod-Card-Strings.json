@@ -13,7 +13,7 @@
   },
   "the_warlord:Rebuff": {
     "NAME": "Rebuff",
-    "DESCRIPTION": "Gain !B! block. NL Gain !M! the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "Gain !B! block. NL Gain !M! the_warlord:Posture."
   },
 
   "the_warlord:HighReward": {
@@ -64,11 +64,11 @@
   },
   "the_warlord:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
-    "DESCRIPTION": "Gain !M! the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "Gain !M! the_warlord:Posture."
   },
   "the_warlord:Stretch": {
     "NAME": "Stretch",
-    "DESCRIPTION": "Gain !M! the_warlord:Reaction\u00a0Time. NL the_warlord:Purge."
+    "DESCRIPTION": "Gain !M! the_warlord:Posture. NL the_warlord:Purge."
   },
   "the_warlord:Wrap": {
     "NAME": "Wrap",
@@ -88,7 +88,7 @@
   },
   "the_warlord:SupportingFire": {
     "NAME": "Supporting Fire",
-    "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies. NL This damage is increased by your the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies. NL This damage is increased by your the_warlord:Posture."
   },
   "the_warlord:Scout": {
     "NAME": "Scout",
@@ -112,7 +112,7 @@
   },
   "the_warlord:PositioningTheory": {
     "NAME": "Positioning Theory",
-    "DESCRIPTION": "Whenever you the_warlord:Parry, gain !M! Block."
+    "DESCRIPTION": "At the start of your turn, gain !M! the_warlord:Posture."
   },
   "the_warlord:BloodMagic": {
     "NAME": "BloodMagic",
@@ -138,7 +138,7 @@
   },
   "the_warlord:Zweihänder": {
     "NAME": "Zweihänder",
-    "DESCRIPTION": "Deal !D! damage. NL Lose all the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! the_warlord:Tension."
   },
   "the_warlord:ThousandBlades": {
     "NAME": "Thousand Blades",
@@ -216,7 +216,7 @@
   },
   "the_warlord:DeftCharge": {
     "NAME": "Deft Charge",
-    "DESCRIPTION": "Deal !D! damage. NL If you have the_warlord:Reaction\u00a0Time, draw !M! cards."
+    "DESCRIPTION": "Deal !D! damage. NL If you have the_warlord:Posture, draw !M! cards."
   },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",
@@ -259,7 +259,7 @@
   },
   "the_warlord:HeadStart": {
     "NAME": "Head Start",
-    "DESCRIPTION": "Innate. NL Draw !M! cards. NL Gain !the_warlord:UrMagic! the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "Innate. NL Draw !M! cards. NL Gain !the_warlord:UrMagic! the_warlord:Posture."
   },
   "the_warlord:DeadlyMist": {
     "NAME": "Deadly Mist",
@@ -275,7 +275,7 @@
   },
   "the_warlord:Hyperglycemia": {
     "NAME": "Hyperglycemia",
-    "DESCRIPTION": "Gain [E] [E] NL Lose all of your the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "Gain [E] [E] NL Gain !the_warlord:UrMagic! the_warlord:Tension."
   },
   "the_warlord:Anticoagulant": {
     "NAME": "Anticoagulant",
@@ -284,7 +284,7 @@
   },
   "the_warlord:FocusPunch": {
     "NAME": "Focus Punch",
-    "DESCRIPTION": "Next turn, Deal !D! damage. NL This fails if you take damage this turn."
+    "DESCRIPTION": "Next turn, Deal !D! damage. NL If you take damage this turn, gain !M! the_warlord:Tension."
   },
   "the_warlord:DoubleTeam": {
     "NAME": "Double Team",
@@ -298,11 +298,11 @@
   },
   "the_warlord:SpeedUp": {
     "NAME": "Speed Up",
-    "DESCRIPTION": "Draw !M! cards. NL Gain !the_warlord:UrMagic! the_warlord:Reaction\u00a0Time. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards. NL Lose !the_warlord:UrMagic! the_warlord:Tension. NL Exhaust."
   },
   "the_warlord:SkillSwap": {
     "NAME": "Skill Swap",
-    "DESCRIPTION": "Gain !M! Strength for each Thorns you have. NL Lose ALL Thorns. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Strength for each the_warlord:Tension you have. NL Lose ALL the_warlord:Tension. NL Exhaust."
   },
 
   "the_warlord:TrappingPit": {
@@ -314,10 +314,10 @@
     "NAME": "Triple Slash",
     "DESCRIPTION": "Deal !D! damage. NL Play this card !M! more times."
   },
-  
   "the_warlord:Extremespeed": {
     "NAME": "Extremespeed",
-    "DESCRIPTION": "At the start of each turn, gain !M! the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "Gain !M! the_warlord:Tension. NL At the start of each turn, draw !the_warlord:UrMagic! card.",
+    "UPGRADE_DESCRIPTION": "Gain !M! the_warlord:Tension. NL At the start of each turn, draw !the_warlord:UrMagic! cards."
   },
   "the_warlord:CompositeArmor": {
     "NAME": "Composite Armor",
@@ -351,7 +351,7 @@
 
   "the_warlord:Refuge": {
     "NAME": "Refuge",
-    "DESCRIPTION": "At the start of your turn, gain !M! Block. NL This Block is increased by your the_warlord:Reaction\u00a0Time."
+    "DESCRIPTION": "At the start of your turn, gain !M! Block. NL This Block is increased by your the_warlord:Posture."
   },
 
   "the_warlord:MarchingSong": {

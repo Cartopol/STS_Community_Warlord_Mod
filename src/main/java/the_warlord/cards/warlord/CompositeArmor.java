@@ -18,7 +18,7 @@ public class CompositeArmor extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int BLOCK = 12;
+    private static final int BLOCK = 10;
     private static final int UPGRADE_PLUS_BLOCK = 4;
     private static final int PLATED_ARMOR = 2;
     private static final int POSTURE = 2;
