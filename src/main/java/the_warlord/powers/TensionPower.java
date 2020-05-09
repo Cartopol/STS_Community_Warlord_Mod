@@ -1,6 +1,7 @@
 package the_warlord.powers;
 
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -32,7 +33,7 @@ public class TensionPower extends CustomWarlordModPower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS)));
-//            addToBot(new ReducePowerAction(owner, owner, this, 1));
+            addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
     }
 
@@ -41,4 +42,9 @@ public class TensionPower extends CustomWarlordModPower {
     public AbstractPower makeCopy() {
         return new TensionPower(owner, amount);
     }
+
+//    @Override
+//    public void onParry(boolean fullParry) {
+//        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+//    }
 }
