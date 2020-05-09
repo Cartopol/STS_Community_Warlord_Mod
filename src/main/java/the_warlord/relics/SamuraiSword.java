@@ -10,7 +10,7 @@ import static the_warlord.characters.Warlord.Enums.WARLORD_CARD_COLOR;
 public class SamuraiSword extends CustomWarlordModRelic implements RelicParrySubscriber {
     public static final String ID = WarlordMod.makeID(SamuraiSword.class);
     public SamuraiSword() {
-        super(ID, WARLORD_CARD_COLOR, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, WARLORD_CARD_COLOR, RelicTier.BOSS, LandingSound.CLINK);
     }
     @Override
     public void onParry(boolean fullParry) {

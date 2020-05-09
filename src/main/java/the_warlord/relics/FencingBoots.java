@@ -13,7 +13,7 @@ public class FencingBoots extends CustomWarlordModRelic {
     private static final int REACTION_TIME = 2;
 
     public FencingBoots() {
-        super(ID, WARLORD_CARD_COLOR, RelicTier.STARTER, LandingSound.MAGICAL);
+        super(ID, WARLORD_CARD_COLOR, RelicTier.STARTER, LandingSound.FLAT);
     }
 
     @Override
