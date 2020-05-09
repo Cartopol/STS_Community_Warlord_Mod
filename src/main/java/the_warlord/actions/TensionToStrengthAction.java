@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 import the_warlord.powers.TensionPower;
 
 public class TensionToStrengthAction extends AbstractGameAction {
@@ -22,7 +21,7 @@ public class TensionToStrengthAction extends AbstractGameAction {
     public void update() {
         if(this.duration == startDuration){
             if (target.hasPower(TensionPower.POWER_ID)) {
-                addToTop(new ApplyPowerAction(target, target, new StrengthPower(target, target.getPower(ThornsPower.POWER_ID).amount * StrengthPerThorns)));
+                addToTop(new ApplyPowerAction(target, target, new StrengthPower(target, target.getPower(TensionPower.POWER_ID).amount * StrengthPerThorns)));
                 addToTop(new RemoveSpecificPowerAction(target, target, TensionPower.POWER_ID));
             }
 //

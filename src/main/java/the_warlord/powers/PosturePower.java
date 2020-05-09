@@ -1,6 +1,7 @@
 package the_warlord.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -30,12 +31,17 @@ public class PosturePower extends CustomWarlordModPower {
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         int damageTaken = damageAmount - amount;
         //only trigger if damageAmount > 0 and is Attack Damage
-        if (damageTaken > 0) {
+        if (damageTaken > 0 && info.type.equals(DamageInfo.DamageType.NORMAL)) {
             flash();
             addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
         }
         return damageTaken < 0 ? 0 : damageTaken;
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        addToBot(new ReducePowerAction(owner, owner, this, 1));
     }
 
     @Override
