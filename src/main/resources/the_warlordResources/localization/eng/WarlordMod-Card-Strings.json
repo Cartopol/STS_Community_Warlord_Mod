@@ -259,7 +259,7 @@
   },
   "the_warlord:HeadStart": {
     "NAME": "Head Start",
-    "DESCRIPTION": "Innate. NL Draw !M! cards. NL Gain !the_warlord:UrMagic! the_warlord:Posture."
+    "DESCRIPTION": "Innate. NL Draw !M! cards. NL Gain !the_warlord:UrMagic! the_warlord:Posture. NL Exhaust."
   },
   "the_warlord:DeadlyMist": {
     "NAME": "Deadly Mist",
