@@ -35,7 +35,7 @@
   "the_warlord:TensionPower": {
     "NAME": "Tension",
     "DESCRIPTIONS": [
-      "At the end of your turn, lose #b%1$s HP, then reduce #Tension by 1. Whenever you #yParry, remove all #yTension."
+      "ALL #yAttack #yDamage is increased by #b%1$s. At the start of turn, reduce #Tension by 1. Whenever you #yParry, remove all #yTension."
     ]
   },
   "the_warlord:PositioningPower": {

@@ -2,7 +2,6 @@ package the_warlord.powers;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -33,14 +32,28 @@ public class TensionPower extends CustomWarlordModPower {
     }
 
 
+//    @Override
+//    public void atEndOfTurn(boolean isPlayer) {
+//        if (isPlayer) {
+////            addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS)));
+//            addToBot(new ReducePowerAction(owner, owner, this, 1));
+//        }
+//    }
+
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer) {
-            addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS)));
+    public void atStartOfTurn() {
             addToBot(new ReducePowerAction(owner, owner, this, 1));
-        }
     }
 
+    @Override
+    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+        return type == DamageInfo.DamageType.NORMAL ? damage + amount : damage;
+    }
+
+    @Override
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        return type == DamageInfo.DamageType.NORMAL ? damage + amount : damage;
+    }
 
     @Override
     public AbstractPower makeCopy() {

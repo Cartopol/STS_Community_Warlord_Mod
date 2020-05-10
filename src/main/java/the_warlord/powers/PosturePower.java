@@ -10,10 +10,13 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import the_warlord.WarlordMod;
 
 public class PosturePower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(PosturePower.class);
     public static final String POWER_ID = STATIC.ID;
+
+    private boolean postureBroken;
 
     public PosturePower(AbstractCreature owner, int amount) {
         super(STATIC);
@@ -22,6 +25,8 @@ public class PosturePower extends CustomWarlordModPower {
 
         this.owner = owner;
         this.amount = amount;
+
+        this.postureBroken = false;
 
         updateDescription();
     }
@@ -37,8 +42,15 @@ public class PosturePower extends CustomWarlordModPower {
         //only trigger if damageAmount > 0 and is Attack Damage
         if (damageTaken > 0 && info.type.equals(DamageInfo.DamageType.NORMAL)) {
             flash();
-            addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
+            WarlordMod.logger.info("postureBroken: " + postureBroken);
+            //only apply tension the first time Posture is broken in a turn
+            if (!postureBroken) {
+                WarlordMod.logger.info("applying tension");
+
+                addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
+            }
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+            this.postureBroken = true;
         }
         return damageTaken < 0 ? 0 : damageTaken;
     }
@@ -46,6 +58,7 @@ public class PosturePower extends CustomWarlordModPower {
     @Override
     public void atStartOfTurn() {
         addToBot(new ReducePowerAction(owner, owner, this, 1));
+        this.postureBroken = false;
     }
 
     @Override
