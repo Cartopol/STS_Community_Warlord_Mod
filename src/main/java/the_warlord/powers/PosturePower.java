@@ -38,19 +38,22 @@ public class PosturePower extends CustomWarlordModPower {
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        int damageTaken = damageAmount - amount;
-        //only trigger if damageAmount > 0 and is Attack Damage
-        if (damageTaken > 0 && info.type.equals(DamageInfo.DamageType.NORMAL)) {
-            flash();
-            WarlordMod.logger.info("postureBroken: " + postureBroken);
-            //only apply tension the first time Posture is broken in a turn
-            if (!postureBroken) {
-                WarlordMod.logger.info("applying tension");
+        int damageTaken = damageAmount;
+        if (info.type.equals(DamageInfo.DamageType.NORMAL)) {
+            damageTaken = damageAmount - amount;
+            //only trigger if damageAmount > 0
+            if (damageTaken > 0) {
+                flash();
+                WarlordMod.logger.info("postureBroken: " + postureBroken);
+                //only apply tension the first time Posture is broken in a turn
+                if (!postureBroken) {
+                    WarlordMod.logger.info("applying tension");
 
-                addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
+                    addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
+                }
+                addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+                this.postureBroken = true;
             }
-            addToBot(new RemoveSpecificPowerAction(owner, owner, this));
-            this.postureBroken = true;
         }
         return damageTaken < 0 ? 0 : damageTaken;
     }
