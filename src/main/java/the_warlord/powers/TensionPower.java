@@ -6,12 +6,15 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class TensionPower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(TensionPower.class);
     public static final String POWER_ID = STATIC.ID;
+    private boolean justApplied = false;
+
 
     public TensionPower(AbstractCreature owner, int amount) {
         super(STATIC);
@@ -22,6 +25,11 @@ public class TensionPower extends CustomWarlordModPower {
         this.amount = amount;
 
         this.isTurnBased = true;
+
+        if (AbstractDungeon.actionManager.turnHasEnded) {
+            this.justApplied = true;
+        }
+
 
         updateDescription();
     }
@@ -42,7 +50,9 @@ public class TensionPower extends CustomWarlordModPower {
 
     @Override
     public void atStartOfTurn() {
+        if (!justApplied) {
             addToBot(new ReducePowerAction(owner, owner, this, 1));
+        } else justApplied = false;
     }
 
     @Override
