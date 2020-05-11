@@ -6,8 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.EndlessNextTurnReactionTimePower;
-import the_warlord.powers.EndlessNextTurnSyrettePower;
+import the_warlord.powers.TensionPower;
 
 public class Extremespeed extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Extremespeed.class);
@@ -19,23 +18,26 @@ public class Extremespeed extends CustomWarlordModCard {
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
-
-    private static final int REACTION_TIME = 1;
+    private static final int DRAW = 1;
+    private static final int UPGRADE_PLUS_DRAW = 1;
+    private static final int TENSION = 2;
 
     public Extremespeed() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = REACTION_TIME;
+        magicNumber = baseMagicNumber = TENSION;
+        urMagicNumber = baseUrMagicNumber = DRAW;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new EndlessNextTurnReactionTimePower(p, this.magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new TensionPower(p, this.magicNumber)));
+        p.gameHandSize += urMagicNumber;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeUrMagicNumber(UPGRADE_PLUS_DRAW);
             upgradeName();
             upgradeDescription();
         }

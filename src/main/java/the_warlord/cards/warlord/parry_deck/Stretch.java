@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.ReactionTimePower;
+import the_warlord.powers.PosturePower;
 
 public class Stretch extends CustomParryCard {
     public static final String ID = WarlordMod.makeID(Stretch.class);
@@ -16,19 +16,19 @@ public class Stretch extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int REACTION_TIME = 4;
+    private static final int POSTURE = 3;
     private static final int UPGRADE_PLUS_REACTION_TIME = 1;
 
 
     public Stretch() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = REACTION_TIME;
+        magicNumber = baseMagicNumber = POSTURE;
 
     }
 
     @Override
     public void onChoseThisOption() {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReactionTimePower(AbstractDungeon.player, magicNumber)));
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PosturePower(AbstractDungeon.player, magicNumber)));
         CustomParryCard.removeFromMasterParryDeck(this);
     }
 

@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -65,6 +66,10 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
             addToBot(new VFXAction(new FlameBarrierEffect(owner.dialogX, owner.dialogY)));
             isFullParrying = true;
             isParrying = true;
+        }
+
+        if (owner.hasPower(TensionPower.POWER_ID) && isParrying) {
+            addToBot(new RemoveSpecificPowerAction(owner, owner, TensionPower.POWER_ID));
         }
 
         return damageAmount;

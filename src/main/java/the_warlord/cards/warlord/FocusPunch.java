@@ -19,16 +19,17 @@ public class FocusPunch extends CustomWarlordModCard {
     private static final int COST = 3;
     private static final int DAMAGE = 40;
     private static final int UPGRADE_PLUS_DAMAGE = 10;
+    private static final int TENSION = 5;
 
     public FocusPunch() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = TENSION;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new FocusPunchPower(p, damage, m)));
-
     }
 
     @Override

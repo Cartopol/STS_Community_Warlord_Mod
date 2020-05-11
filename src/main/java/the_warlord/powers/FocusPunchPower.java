@@ -1,6 +1,7 @@
 package the_warlord.powers;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,6 +14,7 @@ public class FocusPunchPower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(FocusPunchPower.class);
     public static final String POWER_ID = STATIC.ID;
     private AbstractMonster target;
+    private Boolean damageTaken;
 
     public FocusPunchPower(AbstractCreature owner, int amount, AbstractMonster target) {
         super(STATIC);
@@ -23,14 +25,18 @@ public class FocusPunchPower extends CustomWarlordModPower {
         this.owner = owner;
         this.amount = amount;
 
+        this.damageTaken = false;
+
         updateDescription();
     }
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner && damageAmount > 0) {
+        if (!damageTaken && info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner && damageAmount > 0) {
             flash();
-            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+            damageTaken = true;
+            addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, 5)));
+//            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
         return damageAmount;
     }

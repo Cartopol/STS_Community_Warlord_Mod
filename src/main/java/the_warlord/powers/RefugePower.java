@@ -28,8 +28,8 @@ public class RefugePower extends CustomWarlordModPower {
     public void atStartOfTurn() {
         flash();
         int reactionBonus = 0;
-        if (owner.hasPower(ReactionTimePower.POWER_ID)) {
-            reactionBonus = owner.getPower(ReactionTimePower.POWER_ID).amount;
+        if (owner.hasPower(PosturePower.POWER_ID)) {
+            reactionBonus = owner.getPower(PosturePower.POWER_ID).amount;
         }
 
         addToBot(new GainBlockAction(owner, this.amount + reactionBonus));
