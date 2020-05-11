@@ -25,7 +25,6 @@ public class HighReward extends CustomParryCard {
     public HighReward() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = STR_DEX;
-        this.exhaust = true;
     }
 
     @Override
@@ -33,6 +32,7 @@ public class HighReward extends CustomParryCard {
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        removeFromMasterParryDeck(this);
     }
 
     @Override

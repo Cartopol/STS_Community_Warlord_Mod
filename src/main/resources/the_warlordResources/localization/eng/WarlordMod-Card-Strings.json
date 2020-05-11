@@ -18,7 +18,7 @@
 
   "the_warlord:HighReward": {
     "NAME": "High Reward",
-    "DESCRIPTION": "Gain !M! Strength. NL Gain !M! Dexterity. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Strength. NL Gain !M! Dexterity. NL the_warlord:Purge."
   },
   "the_warlord:Syrette": {
     "NAME": "Syrette",
