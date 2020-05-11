@@ -14,7 +14,7 @@ public class FocusPunchPower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(FocusPunchPower.class);
     public static final String POWER_ID = STATIC.ID;
     private AbstractMonster target;
-    private Boolean damageTaken = false;
+    private Boolean damageTaken;
 
     public FocusPunchPower(AbstractCreature owner, int amount, AbstractMonster target) {
         super(STATIC);
@@ -25,12 +25,14 @@ public class FocusPunchPower extends CustomWarlordModPower {
         this.owner = owner;
         this.amount = amount;
 
+        this.damageTaken = false;
+
         updateDescription();
     }
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if (damageTaken = false && info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner && damageAmount > 0) {
+        if (!damageTaken && info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner && damageAmount > 0) {
             flash();
             damageTaken = true;
             addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, 5)));
