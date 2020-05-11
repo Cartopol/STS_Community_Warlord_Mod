@@ -23,7 +23,8 @@ public class ThousandBlades extends CustomWarlordModCard {
     private static final int COST = 2;
     private static final int DAMAGE = 18;
     private static final int GUSH = 1;
-    private static final int UPGRADE_PLUS_DAMAGE = 5;
+    private static final int UPGRADE_PLUS_GUSH = 1;
+    private static final int UPGRADE_PLUS_DAMAGE = 3;
 
     public ThousandBlades() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -47,6 +48,7 @@ public class ThousandBlades extends CustomWarlordModCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_GUSH);
             upgradeDescription();
         }
     }

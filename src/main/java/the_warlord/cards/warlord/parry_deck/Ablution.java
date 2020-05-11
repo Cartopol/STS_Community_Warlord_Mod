@@ -1,7 +1,9 @@
 package the_warlord.cards.warlord.parry_deck;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
 
@@ -14,18 +16,21 @@ public class Ablution extends CustomParryCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = COST_UNPLAYABLE;
+    private static final int ARTIFACT = 1;
 
     public Ablution() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = ARTIFACT;
     }
 
     @Override
     public void onChoseThisOption() {
         addToBot(new RemoveDebuffsAction(AbstractDungeon.player));
-
-        if (!this.upgraded) {
-            removeFromMasterParryDeck(this);
+        if (upgraded) {
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, magicNumber)));
         }
+
+
     }
 
     @Override

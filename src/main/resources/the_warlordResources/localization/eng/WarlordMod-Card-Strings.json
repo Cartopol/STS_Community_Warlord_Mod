@@ -9,7 +9,7 @@
   },
   "the_warlord:Ration": {
     "NAME": "Ration",
-    "DESCRIPTION": "Add !M! Syrette to your hand."
+    "DESCRIPTION": "Add !M! *Syrette to your hand."
   },
   "the_warlord:Rebuff": {
     "NAME": "Rebuff",
@@ -26,7 +26,7 @@
   },
   "the_warlord:NeckSlash": {
     "NAME": "Neck Slash",
-    "DESCRIPTION": "Apply the_warlord:Gush and !M! the_warlord:Bleed to a random enemy."
+    "DESCRIPTION": "Apply !M! the_warlord:Bleed to a random enemy."
   },
   "the_warlord:WideSwipes": {
     "NAME": "Wide Swipes",
@@ -72,7 +72,7 @@
   },
   "the_warlord:Wrap": {
     "NAME": "Wrap",
-    "DESCRIPTION": "ALL enemies lose !M! Strength this turn."
+    "DESCRIPTION": "Gain !M! Plated Armor."
   },
   "the_warlord:HitNRun": {
     "NAME": "Hit 'n Run",
@@ -80,7 +80,7 @@
   },
   "the_warlord:StunNeedle": {
     "NAME": "Stun Needle",
-    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength. NL Increase this card's cost by !the_warlord:UrMagic! this combat."
   },
   "the_warlord:Headlong": {
     "NAME": "Headlong",
@@ -88,7 +88,7 @@
   },
   "the_warlord:SupportingFire": {
     "NAME": "Supporting Fire",
-    "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies. NL This damage is increased by your the_warlord:Posture."
+    "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies. NL This damage is increased by your the_warlord:Tension."
   },
   "the_warlord:Scout": {
     "NAME": "Scout",
@@ -112,7 +112,7 @@
   },
   "the_warlord:PositioningTheory": {
     "NAME": "Positioning Theory",
-    "DESCRIPTION": "At the start of your turn, gain !M! the_warlord:Posture."
+    "DESCRIPTION": "Whenever you the_warlord:Parry, gain !M! Dexterity."
   },
   "the_warlord:BloodMagic": {
     "NAME": "BloodMagic",
@@ -133,8 +133,8 @@
   },
   "the_warlord:BuildingFortress": {
     "NAME": "Building Fortress",
-    "DESCRIPTION": "Add Fortress to your the_warlord:Parry\u00a0Deck.",
-    "UPGRADE_DESCRIPTION": "Add an upgraded Fortress to your the_warlord:Parry\u00a0Deck."
+    "DESCRIPTION": "Gain !B! Block. NL Add *Fortress to your the_warlord:Parry\u00a0Deck.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add an upgraded *Fortress to your the_warlord:Parry\u00a0Deck."
   },
   "the_warlord:Zweihänder": {
     "NAME": "Zweihänder",
@@ -146,8 +146,8 @@
   },
   "the_warlord:Ablution": {
     "NAME": "Ablution",
-    "DESCRIPTION": "Remove all of your debuffs. NL Purge.",
-    "UPGRADE_DESCRIPTION": "Remove all of your debuffs."
+    "DESCRIPTION": "Remove all of your debuffs.",
+    "UPGRADE_DESCRIPTION": "Remove all of your debuffs. NL Gain !M! Artifact."
   },
   "the_warlord:HighStakes": {
     "NAME": "High Stakes",
@@ -186,18 +186,19 @@
   },
   "the_warlord:Diversion": {
     "NAME": "Diversion",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! the_warlord:Posture."
+    "DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension."
   },
   "the_warlord:Anticipation": {
     "NAME": "Anticipation",
     "DESCRIPTION": "At the start of your turn, put !M! card from your draw pile into your hand. NL Draw !M! fewer card each turn."
   },
-  "the_warlord:Riposte": {
-    "NAME": "Riposte",
-    "DESCRIPTION": "Whenever you the_warlord:Parry, apply !M! Vulnerable to ALL enemies."
-  },
   "the_warlord:Punishment": {
     "NAME": "Punishment",
+    "DESCRIPTION": "Whenever you the_warlord:Parry, apply !M! Vulnerable to ALL enemies."
+  },
+  "the_warlord:Riposte": {
+    "NAME": "Riposte",
     "DESCRIPTION": "Deal !D! damage. NL If you have the_warlord:Parried this turn, play this card an additional time."
   },
   "the_warlord:QuickDraw": {
@@ -206,8 +207,8 @@
   },
   "the_warlord:Stimulation": {
     "NAME": "Stimulation",
-    "DESCRIPTION": "At the start of your turn, add a Syrette into your hand.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add a Syrette into your hand."
+    "DESCRIPTION": "At the start of your turn, add a *Syrette into your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add a *Syrette into your hand."
   },
   "the_warlord:BoilingBlood": {
     "NAME": "Boiling Blood",
@@ -216,7 +217,7 @@
   },
   "the_warlord:DeftCharge": {
     "NAME": "Deft Charge",
-    "DESCRIPTION": "Deal !D! damage. NL If you have the_warlord:Posture, draw !M! cards."
+    "DESCRIPTION": "Deal !D! damage. NL If you have the_warlord:Tension, draw !M! cards."
   },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",
@@ -225,13 +226,12 @@
   },
   "the_warlord:TakeShelter": {
     "NAME": "Take Shelter",
-    "DESCRIPTION": "Gain !B! Block. NL Next turn, add a Syrette to your hand.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Next !M! turns, add a Syrette to your hand."
+    "DESCRIPTION": "Gain !B! Block. NL Add a *Syrette to your hand.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Add an upgraded *Syrette to your hand."
   },
   "the_warlord:Sidestep": {
     "NAME": "Sidestep",
-    "DESCRIPTION": "Draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards."
+    "DESCRIPTION": "Draw !M! cards."
   },
   "the_warlord:PrickHoles": {
     "NAME": "Prick Holes",
@@ -249,9 +249,9 @@
     "NAME": "Somersault",
     "DESCRIPTION": "Deal !D! damage. NL Put a card from your discard pile into your hand."
   },
-  "the_warlord:Prey": {
-  "NAME": "Prey",
-  "DESCRIPTION": "Deal !D! damage. NL Deal !M! damage to ALL enemies."
+  "the_warlord:BloodFountain": {
+  "NAME": "Blood Fountain",
+  "DESCRIPTION": "Deal !D! damage. NL Apply !M! the_warlord:Bleed to all other enemies."
 },
   "the_warlord:Backsword": {
     "NAME": "Backsword",
@@ -259,15 +259,16 @@
   },
   "the_warlord:HeadStart": {
     "NAME": "Head Start",
-    "DESCRIPTION": "Innate. NL Draw !M! cards. NL Gain !the_warlord:UrMagic! the_warlord:Posture. NL Exhaust."
+    "DESCRIPTION": "Innate. NL Gain !the_warlord:UrMagic! the_warlord:Posture and !the_warlord:UrMagic! the_warlord:Tension. NL Exhaust."
   },
   "the_warlord:DeadlyMist": {
     "NAME": "Deadly Mist",
-    "DESCRIPTION": "Apply !M! the_warlord:Gush and !the_warlord:UrMagic! the_warlord:Bleed to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !the_warlord:UrMagic! the_warlord:Bleed and !M! Vulnerable to ALL enemies. NL Exhaust."
   },
   "the_warlord:HighRisk": {
     "NAME": "High Risk",
-    "DESCRIPTION": "Lose !M! Strength. NL Lose !M! Dexterity. NL Shuffle a *High *Reward into your draw pile. NL Exhaust."
+    "DESCRIPTION": "Gain !M! the_warlord:Tension. NL Shuffle a *High *Reward into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! the_warlord:Tension. NL Shuffle an upgraded cHigh *Reward into your draw pile. NL Exhaust."
   },
   "the_warlord:BoobyTrap": {
     "NAME": "Booby Trap",
@@ -275,12 +276,13 @@
   },
   "the_warlord:Hyperglycemia": {
     "NAME": "Hyperglycemia",
-    "DESCRIPTION": "Gain [E] [E] NL Gain !the_warlord:UrMagic! the_warlord:Tension."
+    "DESCRIPTION": "Gain [E] [E] NL Gain !the_warlord:UrMagic! the_warlord:Tension.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] NL Gain !the_warlord:UrMagic! the_warlord:Tension."
   },
   "the_warlord:Anticoagulant": {
     "NAME": "Anticoagulant",
-    "DESCRIPTION": "Double the enemy's the_warlord:Gush. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Triple the enemy's the_warlord:Gush. NL Exhaust."
+    "DESCRIPTION": "Double the enemy's the_warlord:Bleed. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Triple the enemy's the_warlord:Bleed. NL Exhaust."
   },
   "the_warlord:FocusPunch": {
     "NAME": "Focus Punch",
@@ -288,17 +290,16 @@
   },
   "the_warlord:DoubleTeam": {
     "NAME": "Double Team",
-    "DESCRIPTION": "Your next card this turn is played twice. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Your next card this turn is played twice."
+    "DESCRIPTION": "Your next card this turn is played twice. NL Gain !the_warlord:UrMagic! the_warlord:Tension. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next card this turn is played twice. NL Gain !the_warlord:UrMagic! the_warlord:Tension."
   },
   "the_warlord:Safeguard": {
     "NAME": "Safeguard",
-    "DESCRIPTION": "Gain !B! Block. NL Remove all of your debuffs. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Remove all of your debuffs."
+    "DESCRIPTION": "Gain !B! Block. NL Remove all of your the_warlord:Tension. NL Exhaust."
   },
   "the_warlord:SpeedUp": {
     "NAME": "Speed Up",
-    "DESCRIPTION": "Draw !M! cards. NL Lose !the_warlord:UrMagic! the_warlord:Tension. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards. NL If you have the_warlord:Tension, gain [E] [E] NL Exhaust."
   },
   "the_warlord:SkillSwap": {
     "NAME": "Skill Swap",
@@ -307,12 +308,12 @@
 
   "the_warlord:TrappingPit": {
     "NAME": "Trapping Pit",
-    "DESCRIPTION": "Apply !M! the_warlord:Bleed to ALL enemies that intend to attack this turn."
+    "DESCRIPTION": "Apply !M! the_warlord:Bleed and !the_warlord:UrMagic! Weak to ALL enemies that intend to attack this turn."
   },
 
   "the_warlord:TripleSlash": {
     "NAME": "Triple Slash",
-    "DESCRIPTION": "Deal !D! damage. NL Play this card !M! more times."
+    "DESCRIPTION": "Deal !D! damage. NL Play this card !M! more times. NL Exhaust."
   },
   "the_warlord:Extremespeed": {
     "NAME": "Extremespeed",
@@ -340,18 +341,18 @@
   },
   "the_warlord:XSlice": {
     "NAME": "X-Slice",
-    "DESCRIPTION": "Apply !the_warlord:UrMagic! the_warlord:Gush and !M! the_warlord:Bleed to ALL enemies."
+    "DESCRIPTION": "Apply !M! the_warlord:Gush to ALL enemies."
   },
 
-  "the_warlord:GuardianMode": {
-    "NAME": "Guardian Mode",
-    "DESCRIPTION": "Ethereal. NL Gain Dexterity equal to your the_warlord:Reaction\u00a0Time.",
-    "UPGRADE_DESCRIPTION": "Gain Dexterity equal to your the_warlord:Reaction\u00a0Time."
+  "the_warlord:GuardianForm": {
+    "NAME": "Guardian Form",
+    "DESCRIPTION": "Whenever your the_warlord:Posture is broken, gain Thorns equal to the the_warlord:Posture lost.",
+    "UPGRADE_DESCRIPTION": "Whenever your the_warlord:Posture is broken, gain Thorns equal to twice the the_warlord:Posture lost."
   },
 
   "the_warlord:Refuge": {
     "NAME": "Refuge",
-    "DESCRIPTION": "At the start of your turn, gain !M! Block. NL This Block is increased by your the_warlord:Posture."
+    "DESCRIPTION": "At the start of your turn, gain !M! Dexterity if you have the_warlord:Posture, and !M! Strength if you have the_warlord:Tension."
   },
 
   "the_warlord:MarchingSong": {

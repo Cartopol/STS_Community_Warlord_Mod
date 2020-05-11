@@ -7,6 +7,7 @@ import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.DoubleTeamPower;
+import the_warlord.powers.TensionPower;
 
 public class DoubleTeam extends CustomWarlordModCard {
 
@@ -19,18 +20,19 @@ public class DoubleTeam extends CustomWarlordModCard {
 
     private static final int COST = 1;
     private static final int POWER_AMOUNT = 1;
-    private static final int DRAW = 2;
+    private static final int TENSION = 3;
 
     public DoubleTeam() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = POWER_AMOUNT;
-        urMagicNumber = baseUrMagicNumber = DRAW;
+        urMagicNumber = baseUrMagicNumber = TENSION;
         this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new DoubleTeamPower(p, POWER_AMOUNT)));
+        addToBot(new ApplyPowerAction(p, p, new DoubleTeamPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new TensionPower(p, urMagicNumber)));
     }
 
     @Override

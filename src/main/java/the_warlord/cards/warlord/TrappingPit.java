@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
@@ -20,23 +21,29 @@ public class TrappingPit extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int BLEED = 9;
+    private static final int BLEED = 7;
     private static final int UPGRADE_PLUS_BLEED = 3;
+    private static final int WEAK = 1;
 
     public TrappingPit() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = BLEED;
+        urMagicNumber = baseUrMagicNumber = WEAK;
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        for (AbstractMonster mo: AbstractDungeon.getCurrRoom().monsters.monsters) {
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if ((!mo.isDead && !mo.isDying)) {
-                if (IntentUtils.isAttackIntent(mo.intent)) { addToBot(new ApplyPowerAction(mo, p, new BleedPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE)); }
+                if (IntentUtils.isAttackIntent(mo.intent)) {
+                    addToBot(new ApplyPowerAction(mo, p, new BleedPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                    addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.urMagicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                }
+
             }
         }
-
     }
 
     @Override

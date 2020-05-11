@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import the_warlord.WarlordMod;
@@ -53,6 +54,12 @@ public class PosturePower extends CustomWarlordModPower {
                 }
                 addToBot(new RemoveSpecificPowerAction(owner, owner, this));
                 this.postureBroken = true;
+
+                for (AbstractPower power : AbstractDungeon.player.powers) {
+                    if (power instanceof OnPostureBrokenSubscriber) {
+                        ((OnPostureBrokenSubscriber) power).onPostureBroken(amount);
+                    }
+                }
             }
         }
         return damageTaken < 0 ? 0 : damageTaken;

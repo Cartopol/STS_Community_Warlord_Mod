@@ -28,6 +28,7 @@ public class TripleSlash extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = PLAY_COUNT;
+        exhaust = true;
     }
 
     @Override

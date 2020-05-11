@@ -18,11 +18,14 @@ public class Hyperglycemia extends CustomWarlordModCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int UPGRADED_COST = 0;
 
-    private static final int TENSION = 1;
+    private static final int TENSION = 4;
     private static final int ENERGY = 2;
+    private static final int UPGRADE_PLUS_ENERGY = 1;
+
+
 
     public Hyperglycemia() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -33,9 +36,6 @@ public class Hyperglycemia extends CustomWarlordModCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainEnergyAction(ENERGY));
-//        if(p.hasPower(ReactionTimePower.POWER_ID)){
-//            addToBot(new RemoveSpecificPowerAction(p, p, ReactionTimePower.POWER_ID));
-//        }
         addToBot(new ApplyPowerAction(p, p, new TensionPower(p, urMagicNumber)));
     }
 
@@ -43,7 +43,7 @@ public class Hyperglycemia extends CustomWarlordModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_ENERGY);
             upgradeDescription();
         }
     }

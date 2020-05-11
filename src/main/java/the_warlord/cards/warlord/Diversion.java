@@ -1,36 +1,32 @@
 package the_warlord.cards.warlord;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.PosturePower;
+import the_warlord.powers.TensionPower;
 
 public class Diversion extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Diversion.class);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int BLOCK = 6;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
-    private static final int BONUS_BLOCK = 3;
-    private static final int UPGRADE_PLUS_BONUS_BLOCK = 1;
 
     private static final int POSTURE = 1;
 
 
     public Diversion() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
-//        magicNumber = baseMagicNumber = BONUS_BLOCK;
         magicNumber = baseMagicNumber = POSTURE;
+        this.exhaust = true;
 
     }
 
@@ -56,17 +52,29 @@ public class Diversion extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, block));
-//        addToBot(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new PosturePower(p, magicNumber)));
+        int currentPosture = 0;
+        int currentTension = 0;
+        if (p.hasPower(PosturePower.POWER_ID)) {
+            currentPosture += p.getPower(PosturePower.POWER_ID).amount;
+            addToBot(new RemoveSpecificPowerAction(p, p, PosturePower.POWER_ID));
+        }
+        if (p.hasPower(TensionPower.POWER_ID)) {
+            currentTension += p.getPower(TensionPower.POWER_ID).amount;
+            addToBot(new RemoveSpecificPowerAction(p, p, TensionPower.POWER_ID));
+        }
+        if (currentPosture > 0) {
+            addToBot(new ApplyPowerAction(p, p, new TensionPower(p, currentPosture)));
+        }
+        if (currentTension > 0) {
+            addToBot(new ApplyPowerAction(p, p, new PosturePower(p, currentTension)));
+        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
+            this.exhaust = false;
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeMagicNumber(UPGRADE_PLUS_BONUS_BLOCK);
             upgradeDescription();
         }
     }

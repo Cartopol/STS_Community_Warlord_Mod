@@ -1,7 +1,7 @@
 package the_warlord.cards.warlord;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
@@ -20,14 +20,14 @@ public class SpeedUp extends CustomWarlordModCard {
 
     private static final int COST = 0;
     private static final int DRAW = 2;
-    private static final int TENSION = 2;
+    private static final int ENERGY = 2;
     private static final int UPGRADE_PLUS_DRAW = 1;
     private static final int UPGRADE_PLUS_TENSION = 1;
 
     public SpeedUp() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = DRAW;
-        urMagicNumber = baseUrMagicNumber = TENSION;
+        urMagicNumber = baseUrMagicNumber = ENERGY;
         this.exhaust = true;
     }
 
@@ -35,7 +35,7 @@ public class SpeedUp extends CustomWarlordModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, magicNumber));
         if (p.hasPower(TensionPower.POWER_ID)) {
-            addToBot(new ReducePowerAction(p, p, TensionPower.POWER_ID, urMagicNumber));
+            addToBot(new GainEnergyAction(urMagicNumber));
         }
     }
 
@@ -44,7 +44,6 @@ public class SpeedUp extends CustomWarlordModCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_DRAW);
-            upgradeUrMagicNumber(UPGRADE_PLUS_TENSION);
             upgradeDescription();
         }
     }

@@ -32,8 +32,8 @@ public class SupportingFirePower extends CustomWarlordModPower {
         if (isPlayer) {
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 int reactionBonus = 0;
-                if (owner.hasPower(PosturePower.POWER_ID)) {
-                    reactionBonus = owner.getPower(PosturePower.POWER_ID).amount;
+                if (owner.hasPower(TensionPower.POWER_ID)) {
+                    reactionBonus = owner.getPower(TensionPower.POWER_ID).amount;
                 }
 
                 this.flash();

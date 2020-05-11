@@ -1,5 +1,5 @@
 package the_warlord.powers;
 
 public interface OnPostureBrokenSubscriber {
-    void onPostureBroken();
+    void onPostureBroken(int postureAmount);
 }

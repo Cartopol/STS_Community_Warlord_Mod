@@ -7,11 +7,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class RipostePower extends CustomWarlordModPower implements OnParrySubscriber {
-    public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(RipostePower.class);
+public class PunishmentPower extends CustomWarlordModPower implements OnParrySubscriber {
+    public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(PunishmentPower.class);
     public static final String POWER_ID = STATIC.ID;
 
-    public RipostePower(AbstractCreature owner, int amount) {
+    public PunishmentPower(AbstractCreature owner, int amount) {
         super(STATIC);
 
         this.type = PowerType.BUFF;
@@ -29,7 +29,7 @@ public class RipostePower extends CustomWarlordModPower implements OnParrySubscr
 
     @Override
     public AbstractPower makeCopy() {
-        return new RipostePower(owner, amount);
+        return new PunishmentPower(owner, amount);
     }
 
     @Override

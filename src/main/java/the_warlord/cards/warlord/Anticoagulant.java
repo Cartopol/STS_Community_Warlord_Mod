@@ -3,7 +3,7 @@ package the_warlord.cards.warlord;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
-import the_warlord.actions.GushAction;
+import the_warlord.actions.DoubleBleedAction;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 
@@ -24,8 +24,8 @@ public class Anticoagulant extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(upgraded){ addToBot(new GushAction(m, p, true)); }
-        else { addToBot(new GushAction(m, p, false)); }
+        if(upgraded){ addToBot(new DoubleBleedAction(m, p, true)); }
+        else { addToBot(new DoubleBleedAction(m, p, false)); }
     }
 
     @Override

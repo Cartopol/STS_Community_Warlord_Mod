@@ -1,5 +1,6 @@
 package the_warlord.cards.warlord;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,9 +19,11 @@ public class BuildingFortress extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 3;
+    private static final int BLOCK = 10;
 
     public BuildingFortress() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
+        baseBlock = BLOCK;
         AbstractCard c = new Fortress();
         if (upgraded) {
             c.upgrade();
@@ -30,6 +33,7 @@ public class BuildingFortress extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new GainBlockAction(p, block));
         AbstractCard c = new Fortress();
         if (upgraded) {
             c.upgrade();

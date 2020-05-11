@@ -21,7 +21,7 @@ public class Headlong extends CustomWarlordModCard {
     private static final int DRAW = 4;
     private static final int UPGRADE_DRAW = 1;
     private static final int DEBUFF_DRAW = 1;
-    private static final int TENSION = 1;
+    private static final int TENSION = 3;
 
 
     public Headlong() {

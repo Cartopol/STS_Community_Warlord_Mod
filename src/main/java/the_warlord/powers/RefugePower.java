@@ -1,8 +1,10 @@
 package the_warlord.powers;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class RefugePower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(RefugePower.class);
@@ -27,12 +29,12 @@ public class RefugePower extends CustomWarlordModPower {
     @Override
     public void atStartOfTurn() {
         flash();
-        int reactionBonus = 0;
         if (owner.hasPower(PosturePower.POWER_ID)) {
-            reactionBonus = owner.getPower(PosturePower.POWER_ID).amount;
+            addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount)));
         }
-
-        addToBot(new GainBlockAction(owner, this.amount + reactionBonus));
+        if (owner.hasPower(TensionPower.POWER_ID)) {
+            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
+        }
     }
 
     @Override

@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.BleedPower;
 import the_warlord.powers.GushPower;
 
 public class XSlice extends CustomParryCard {
@@ -18,24 +17,21 @@ public class XSlice extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int BLEED = 3;
-    private static final int GUSH = 1;
+    private static final int GUSH = 2;
 
-    private static final int UPGRADE_PLUS_BLEED = 2;
+    private static final int UPGRADE_PLUS_GUSH = 1;
 
 
     public XSlice() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = BLEED;
-        urMagicNumber = baseUrMagicNumber = GUSH;
+        magicNumber = baseMagicNumber = GUSH;
     }
 
     @Override
     public void onChoseThisOption() {
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!m.isDead && !m.isDying) {
-                addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new GushPower(m, urMagicNumber)));
-                addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new BleedPower(m, magicNumber)));
+                addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new GushPower(m, magicNumber)));
             }
         }
     }
@@ -43,7 +39,7 @@ public class XSlice extends CustomParryCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeMagicNumber(UPGRADE_PLUS_BLEED);
+            upgradeMagicNumber(UPGRADE_PLUS_GUSH);
 
             upgradeName();
             upgradeDescription();

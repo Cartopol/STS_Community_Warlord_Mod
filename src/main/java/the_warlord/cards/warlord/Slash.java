@@ -21,8 +21,10 @@ public class Slash extends CustomWarlordModCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DAMAGE = 3;
+    private static final int UPGRADE_PLUS_DAMAGE = 2;
     private static final int GUSH = 1;
+    private static final int UPGRADE_PLUS_GUSH = 1;
+
 
     public Slash() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -42,6 +44,7 @@ public class Slash extends CustomWarlordModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_GUSH);
             upgradeName();
             upgradeDescription();
         }

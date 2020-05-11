@@ -17,7 +17,7 @@ public class SupportingFire extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int DAMAGE_PER_TURN = 3;
+    private static final int DAMAGE_PER_TURN = 4;
     private static final int UPGRADE_PLUS_DAMAGE_PER_TURN = 2;
 
     public SupportingFire() {

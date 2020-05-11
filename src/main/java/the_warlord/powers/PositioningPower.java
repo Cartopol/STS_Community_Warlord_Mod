@@ -3,8 +3,9 @@ package the_warlord.powers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 
-public class PositioningPower extends CustomWarlordModPower {
+public class PositioningPower extends CustomWarlordModPower implements OnParrySubscriber {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(PositioningPower.class);
     public static final String POWER_ID = STATIC.ID;
 
@@ -30,10 +31,11 @@ public class PositioningPower extends CustomWarlordModPower {
     }
 
     @Override
-    public void atStartOfTurn() {
-            addToBot(new ApplyPowerAction(owner, owner, new PosturePower(owner, amount)));
-
+    public void onParry(boolean fullParry) {
+        flash();
+        addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount)));
     }
+
 
 //    @Override
 //    public void onParry(boolean fullParry) {

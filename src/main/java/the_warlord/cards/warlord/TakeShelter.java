@@ -1,13 +1,13 @@
 package the_warlord.cards.warlord;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.NextTurnSyrettePower;
 
 public class TakeShelter extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(TakeShelter.class);
@@ -20,27 +20,35 @@ public class TakeShelter extends CustomWarlordModCard {
     private static final int COST = 2;
     private static final int BLOCK = 11;
     private static final int SYRETTES = 1;
-    private static final int UPGRADE_PLUS_SYRETTES = 1;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
     public TakeShelter() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = SYRETTES;
-        cardsToPreview= new Syrette();
+        AbstractCard c = new Syrette();
+        if (upgraded) {
+            c.upgrade();
+        }
+        cardsToPreview = c;
+
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
-        addToBot(new ApplyPowerAction(p, p, new NextTurnSyrettePower(p, magicNumber)));
+        AbstractCard c = new Syrette();
+        if (upgraded) {
+            c.upgrade();
+        }
+        addToBot(new MakeTempCardInHandAction(c, magicNumber));
+
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_SYRETTES);
             upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeDescription();
         }

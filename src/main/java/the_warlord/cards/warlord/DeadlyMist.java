@@ -5,11 +5,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.BleedPower;
-import the_warlord.powers.GushPower;
 
 public class DeadlyMist extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(DeadlyMist.class);
@@ -20,22 +20,24 @@ public class DeadlyMist extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int GUSH = 1;
-    private static final int BLEED = 5;
+    private static final int VULN = 2;
+
+    private static final int BLEED = 8;
     private static final int UPGRADE_PLUS_BLEED = 2;
 
     public DeadlyMist() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         urMagicNumber = baseUrMagicNumber = BLEED;
-        magicNumber = baseMagicNumber = GUSH;
+        magicNumber = baseMagicNumber = VULN;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractMonster mo: AbstractDungeon.getCurrRoom().monsters.monsters) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new GushPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+//            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new GushPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BleedPower(mo, this.urMagicNumber), this.urMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
 

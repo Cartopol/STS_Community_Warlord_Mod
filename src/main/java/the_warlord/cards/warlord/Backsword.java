@@ -20,8 +20,8 @@ public class Backsword extends CustomWarlordModCard implements OnParrySubscriber
 
     private static final int COST = 0;
     private static final int DAMAGE = 3;
-    private static final int UPGRADE_PLUS_DAMAGE = 2;
-    private static final int PARRY_INCREASE = 5;
+    private static final int PARRY_INCREASE = 3;
+    private static final int UPGRADE_PLUS_PARRY_INCREASE = 2;
 
     public Backsword() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -45,7 +45,7 @@ public class Backsword extends CustomWarlordModCard implements OnParrySubscriber
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_PARRY_INCREASE);
             upgradeName();
             upgradeDescription();
         }

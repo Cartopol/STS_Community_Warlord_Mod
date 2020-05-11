@@ -1,40 +1,56 @@
 package the_warlord.cards.warlord;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
+import the_warlord.cards.warlord.parry_deck.ParryDeck;
 import the_warlord.characters.Warlord;
-import the_warlord.powers.RipostePower;
+import the_warlord.powers.ParryPower;
+import the_warlord.util.CardMetaUtils;
+
 
 public class Riposte extends CustomWarlordModCard {
-    public static final String ID = WarlordMod.makeID(Riposte.class);
+    public static final String ID = WarlordMod.makeID(Riposte.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
-
-    private static final int VULN_ON_PARRY = 2;
+    private static final int DAMAGE = 12;
+    private static final int UPGRADE_PLUS_DAMAGE = 5;
+    private static final int PLAY_COUNT = 1;
 
     public Riposte() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = VULN_ON_PARRY;
+        baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = PLAY_COUNT;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new RipostePower(p, this.magicNumber)));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        if (!this.purgeOnUse) {
+            if (p.hasPower(ParryPower.POWER_ID) && ParryDeck.hasParried) {
+                    CardMetaUtils.playCardAdditionalTime(this, m);
+            }
+        }
+    }
+
+    @Override
+    public boolean shouldGlowGold() {
+        return ParryDeck.hasParried;
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
             upgradeName();
             upgradeDescription();
         }

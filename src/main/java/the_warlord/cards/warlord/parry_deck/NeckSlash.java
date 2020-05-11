@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.BleedPower;
-import the_warlord.powers.GushPower;
 
 public class NeckSlash extends CustomParryCard {
     public static final String ID = WarlordMod.makeID(NeckSlash.class);
@@ -19,7 +18,7 @@ public class NeckSlash extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int BLEED = 3;
+    private static final int BLEED = 6;
     private static final int GUSH = 1;
 
     private static final int UPGRADE_PLUS_BLEED = 2;
@@ -35,7 +34,7 @@ public class NeckSlash extends CustomParryCard {
     public void onChoseThisOption() {
         AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(m, p, new GushPower(m, urMagicNumber)));
+//        addToBot(new ApplyPowerAction(m, p, new GushPower(m, urMagicNumber)));
         addToBot(new ApplyPowerAction(m, p, new BleedPower(m, magicNumber)));
     }
 
