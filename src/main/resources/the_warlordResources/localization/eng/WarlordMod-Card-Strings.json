@@ -5,7 +5,7 @@
   },
   "the_warlord:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! block."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "the_warlord:Ration": {
     "NAME": "Ration",
@@ -13,7 +13,7 @@
   },
   "the_warlord:Rebuff": {
     "NAME": "Rebuff",
-    "DESCRIPTION": "Gain !B! block. NL Gain !M! the_warlord:Posture."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! the_warlord:Posture."
   },
 
   "the_warlord:HighReward": {
@@ -52,15 +52,15 @@
   },
   "the_warlord:ZigZag": {
     "NAME": "Zig Zag",
-    "DESCRIPTION": "Gain !B! block for each enemy in combat."
+    "DESCRIPTION": "Gain !B! Block for each enemy in combat."
   },
   "the_warlord:Fracture": {
     "NAME": "Fracture",
-    "DESCRIPTION": "Deal !D! damage. NL If enemy has block, this deals double damage."
+    "DESCRIPTION": "Deal !D! damage. NL If enemy has Block, this deals double damage."
   },
   "the_warlord:Phalanx": {
     "NAME": "Phalanx",
-    "DESCRIPTION": "Gain !B! block X times. NL Gain X Thorns. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block X times. NL Gain X Thorns. NL Exhaust."
   },
   "the_warlord:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
@@ -76,7 +76,7 @@
   },
   "the_warlord:HitNRun": {
     "NAME": "Hit 'n Run",
-    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !B! block."
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !B! Block."
   },
   "the_warlord:StunNeedle": {
     "NAME": "Stun Needle",
