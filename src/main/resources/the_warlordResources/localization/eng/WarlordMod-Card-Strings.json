@@ -267,8 +267,8 @@
   },
   "the_warlord:HighRisk": {
     "NAME": "High Risk",
-    "DESCRIPTION": "Gain !M! the_warlord:Tension. NL Shuffle a *High *Reward into your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! the_warlord:Tension. NL Shuffle an upgraded *High *Reward into your draw pile. NL Exhaust."
+    "DESCRIPTION": "Gain !M! the_warlord:Tension. NL Add a *High *Reward to your the_warlord:Parry\u00a0Deck. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! the_warlord:Tension. NL Add an upgraded *High *Reward to your the_warlord:Parry\u00a0Deck. NL Exhaust."
   },
   "the_warlord:BoobyTrap": {
     "NAME": "Booby Trap",

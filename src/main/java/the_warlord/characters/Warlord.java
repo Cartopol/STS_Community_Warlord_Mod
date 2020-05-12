@@ -28,6 +28,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import the_warlord.WarlordMod;
 import the_warlord.actions.AddToParryDeckAction;
+import the_warlord.cards.warlord.CompositeArmor;
 import the_warlord.cards.warlord.Defend;
 import the_warlord.cards.warlord.Rebuff;
 import the_warlord.cards.warlord.Strike;
@@ -222,7 +223,7 @@ public class Warlord extends CustomPlayer {
         startingDeck.add(Defend.ID);
         startingDeck.add(Defend.ID);
 
-        startingDeck.add(Rebuff.ID);
+        startingDeck.add(CompositeArmor.ID);
 
         startingDeck.add(NeckSlash.ID);
         startingDeck.add(Wrap.ID);
