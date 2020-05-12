@@ -37,37 +37,69 @@ public class PosturePower extends CustomWarlordModPower {
         description = String.format(DESCRIPTIONS[0], amount);
     }
 
-    @Override
-    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        int damageTaken = damageAmount;
-        if (info.type.equals(DamageInfo.DamageType.NORMAL)) {
-            damageTaken = damageAmount - amount;
-            //only trigger if damageAmount > 0
-            if (damageTaken > 0) {
-                flash();
-                WarlordMod.logger.info("postureBroken: " + postureBroken);
-                //only apply tension the first time Posture is broken in a turn
-                if (!postureBroken) {
-                    WarlordMod.logger.info("applying tension");
+    // in this implementation Posture is broken immediately during enemy turn, and tension is applied immediately when
+    // posture is broken, which has some feel-bad downsides.
+//    @Override
+//    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+//        int damageTaken = damageAmount;
+//        if (info.type.equals(DamageInfo.DamageType.NORMAL)) {
+//            damageTaken = damageAmount - amount;
+//            //only trigger if damageAmount > 0
+//            if (damageTaken > 0) {
+//                flash();
+//                WarlordMod.logger.info("postureBroken: " + postureBroken);
+//                //only apply tension the first time Posture is broken in a turn
+//                if (!postureBroken) {
+//                    WarlordMod.logger.info("applying tension");
+//
+//                    addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
+//                }
+//                addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+//                this.postureBroken = true;
+//
+//                for (AbstractPower power : AbstractDungeon.player.powers) {
+//                    if (power instanceof OnPostureBrokenSubscriber) {
+//                        ((OnPostureBrokenSubscriber) power).onPostureBroken(amount);
+//                    }
+//                }
+//            }
+//        }
+//        return damageTaken < 0 ? 0 : damageTaken;
+//    }
 
-                    addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
-                }
-                addToBot(new RemoveSpecificPowerAction(owner, owner, this));
-                this.postureBroken = true;
+    // in this implementation, posture is lost and tension is gained at the start of your turn
+@Override
+public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+    int damageTaken = damageAmount;
+    if (info.type.equals(DamageInfo.DamageType.NORMAL)) {
+        damageTaken = damageAmount - amount;
+        //only trigger if damageAmount > 0
+        if (damageTaken > 0) {
+            flash();
+            WarlordMod.logger.info("postureBroken: " + postureBroken);
+            //only apply tension the first time Posture is broken in a turn
 
-                for (AbstractPower power : AbstractDungeon.player.powers) {
-                    if (power instanceof OnPostureBrokenSubscriber) {
-                        ((OnPostureBrokenSubscriber) power).onPostureBroken(amount);
-                    }
+            this.postureBroken = true;
+
+            for (AbstractPower power : AbstractDungeon.player.powers) {
+                if (power instanceof OnPostureBrokenSubscriber) {
+                    ((OnPostureBrokenSubscriber) power).onPostureBroken(amount);
                 }
             }
         }
-        return damageTaken < 0 ? 0 : damageTaken;
     }
+    return damageTaken < 0 ? 0 : damageTaken;
+}
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ReducePowerAction(owner, owner, this, 1));
+        if (postureBroken) {
+            WarlordMod.logger.info("applying tension");
+            addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+            addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
+        } else {
+            addToBot(new ReducePowerAction(owner, owner, this, 1));
+        }
         this.postureBroken = false;
     }
 

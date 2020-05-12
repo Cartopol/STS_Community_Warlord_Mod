@@ -12,17 +12,17 @@ import the_warlord.powers.PosturePower;
 public class CompositeArmor extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(CompositeArmor.class);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
     private static final int BLOCK = 10;
-    private static final int UPGRADE_PLUS_BLOCK = 4;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final int PLATED_ARMOR = 2;
     private static final int POSTURE = 2;
-
+    private static final int UPGRADE_PLUS_POSTURE = 1;
 
     public CompositeArmor() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -45,6 +45,7 @@ public class CompositeArmor extends CustomWarlordModCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_POSTURE);
             upgradeDescription();
         }
     }
