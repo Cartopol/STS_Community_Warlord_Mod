@@ -18,7 +18,7 @@ public class NeckSlash extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int BLEED = 6;
+    private static final int BLEED = 10;
     private static final int GUSH = 1;
 
     private static final int UPGRADE_PLUS_BLEED = 2;

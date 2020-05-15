@@ -16,8 +16,8 @@ public class Sharpen extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int STRENGTH = 1;
-    private static final int UPGRADE_PLUS_STRENGTH = 1;
+    private static final int STRENGTH = 2;
+    private static final int UPGRADE_PLUS_STRENGTH = 2;
 
 
     public Sharpen() {

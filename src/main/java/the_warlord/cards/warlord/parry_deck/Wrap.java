@@ -17,8 +17,8 @@ public class Wrap extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int PLATED_ARMOR = 2;
-    private static final int UPGRADE_PLUS_PLATED_ARMOR = 1;
+    private static final int PLATED_ARMOR = 3;
+    private static final int UPGRADE_PLUS_PLATED_ARMOR = 2;
 
     public Wrap() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
