@@ -24,14 +24,14 @@
     "NAME": "Fencing Gloves",
     "FLAVOR": "Envied by goalkeepers.",
     "DESCRIPTIONS": [
-      "When you Parry, gain 1 Reaction Time."
+      "When you Parry, gain #b2 the_warlord:Posture."
     ]
   },
   "the_warlord:FeatherBoots": {
     "NAME": "Feather Boots",
     "FLAVOR": "Makes you feel like flying.",
     "DESCRIPTIONS": [
-      "#rReplaces #rFencing #rBoots. NL At the start of combat, gain #b2 the_warlord:Reaction\u00a0Time"
+      "#rReplaces #rFencing #rBoots. NL At the start of combat, gain #b5 the_warlord:Posture."
     ]
   },
   "the_warlord:SamuraiSword": {

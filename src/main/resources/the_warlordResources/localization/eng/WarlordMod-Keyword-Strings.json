@@ -43,7 +43,7 @@
     "NAMES": [
       "tension"
     ],
-    "DESCRIPTION": "ALL #yAttack #yDamage is increased by your #yTension Whenever you #yParry, lose all #yTension. #yTension is reduced by #b1 at the start of your turn."
+    "DESCRIPTION": "Both your block and enemy #yAttack #yDamage are increased by your #yTension. Whenever you #yParry, lose all #yTension. #yTension is reduced by #b1 at the start of your turn."
   },
 
   {

@@ -60,10 +60,16 @@ public class TensionPower extends CustomWarlordModPower {
         return type == DamageInfo.DamageType.NORMAL ? damage + amount : damage;
     }
 
+//    @Override
+//    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+//        return type == DamageInfo.DamageType.NORMAL ? damage + amount : damage;
+//    }
+
     @Override
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage + amount : damage;
+    public float modifyBlock(float blockAmount) {
+        return blockAmount + amount;
     }
+
 
     @Override
     public AbstractPower makeCopy() {

@@ -217,6 +217,7 @@ public class Warlord extends CustomPlayer {
         startingDeck.add(Strike.ID);
         startingDeck.add(Strike.ID);
         startingDeck.add(Strike.ID);
+        startingDeck.add(Strike.ID);
 
         startingDeck.add(Defend.ID);
         startingDeck.add(Defend.ID);
