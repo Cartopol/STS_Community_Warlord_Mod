@@ -2,7 +2,6 @@ package the_warlord.powers;
 
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class GushPower extends CustomWarlordModPower {
@@ -27,7 +26,9 @@ public class GushPower extends CustomWarlordModPower {
 
     @Override
     public void atStartOfTurn() {
-        addToBot(new ReducePowerAction(owner, owner, this, 1));
+        if (owner.hasPower(BleedPower.POWER_ID)) {
+            addToBot(new ReducePowerAction(owner, owner, this, 1));
+        }
     }
 
     @Override
