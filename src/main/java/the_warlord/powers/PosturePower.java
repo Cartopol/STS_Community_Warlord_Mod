@@ -2,7 +2,6 @@ package the_warlord.powers;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -91,11 +90,6 @@ public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
     }
     return damageTaken < 0 ? 0 : damageTaken;
 }
-
-    @Override
-    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        return type == DamageInfo.DamageType.NORMAL ? damage - amount : damage - amount;
-    }
 
     @Override
     public void atStartOfTurn() {
