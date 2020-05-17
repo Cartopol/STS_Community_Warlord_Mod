@@ -3,6 +3,7 @@ package the_warlord.cards.warlord.parry_deck;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
@@ -34,6 +35,8 @@ public class SmokeScreen extends CustomParryCard {
                 addToBot(new ApplyPowerAction(monster, AbstractDungeon.player, new WeakPower(monster, magicNumber, false)));
             }
         }
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BlurPower(AbstractDungeon.player, magicNumber)));
+
     }
 
     @Override

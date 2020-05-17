@@ -19,7 +19,7 @@ public class TensionPower extends CustomWarlordModPower {
     public TensionPower(AbstractCreature owner, int amount) {
         super(STATIC);
 
-        this.type = PowerType.DEBUFF;
+        this.type = PowerType.BUFF;
 
         this.owner = owner;
         this.amount = amount;

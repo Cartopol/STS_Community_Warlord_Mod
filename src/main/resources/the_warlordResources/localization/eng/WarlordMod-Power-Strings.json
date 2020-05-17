@@ -78,15 +78,21 @@
     ]
   },
   "the_warlord:ReactionTimePower": {
-    "NAME": "Reaction Time",
+  "NAME": "Reaction Time",
+  "DESCRIPTIONS": [
+    "Allows #yParrying attacks that are within #b%1$s of your current Block. Reduced by #b1 at the start of your turn."
+  ]
+},
+  "the_warlord:TenseUpPower": {
+    "NAME": "Tense Up",
     "DESCRIPTIONS": [
-      "Allows #yParrying attacks that are within #b%1$s of your current Block. Reduced by #b1 at the start of your turn."
+      "Whenever you gain #yTension, gain #b%1$s Block."
     ]
   },
   "the_warlord:SupportingFirePower": {
     "NAME": "Supporting Fire",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal #b%1$s damage to ALL enemies. This damage is increased by your #yTension."
+      "Whenever you play an #yAttack card, gain #b%1$s Block."
     ]
   },
   "the_warlord:NextTurnSyrettePower": {

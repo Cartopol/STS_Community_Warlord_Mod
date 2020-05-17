@@ -1,6 +1,7 @@
 package the_warlord.cards.warlord;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,15 +20,18 @@ public class Rebuff extends CustomWarlordModCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 7;
+    private static final int BLOCK = 6;
     private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int POSTURE = 1;
+    private static final int DRAW = 1;
 
 
     public Rebuff() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
         magicNumber = baseMagicNumber = POSTURE;
+        urMagicNumber = baseUrMagicNumber = DRAW;
+
 
     }
 
@@ -35,6 +39,7 @@ public class Rebuff extends CustomWarlordModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
         addToBot(new ApplyPowerAction(p, p, new PosturePower(p, magicNumber)));
+        addToBot(new DrawCardAction(urMagicNumber));
 
     }
 

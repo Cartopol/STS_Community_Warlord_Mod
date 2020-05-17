@@ -18,10 +18,10 @@ public class Hyperglycemia extends CustomWarlordModCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int TENSION = 4;
+    private static final int TENSION = 2;
     private static final int ENERGY = 2;
     private static final int UPGRADE_PLUS_ENERGY = 1;
 
