@@ -16,7 +16,7 @@ public class Stretch extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int POSTURE = 3;
+    private static final int POSTURE = 6;
     private static final int UPGRADE_PLUS_REACTION_TIME = 2;
 
 

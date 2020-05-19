@@ -13,16 +13,15 @@
   },
   "the_warlord:Rebuff": {
     "NAME": "Rebuff",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! the_warlord:Posture."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! the_warlord:Posture. NL Draw !the_warlord:UrMagic! card."
   },
-
   "the_warlord:HighReward": {
     "NAME": "High Reward",
     "DESCRIPTION": "Gain !M! Strength. NL Gain !M! Dexterity. NL the_warlord:Purge."
   },
   "the_warlord:Syrette": {
     "NAME": "Syrette",
-    "DESCRIPTION": "Retain. NL Gain !M! Dexterity. NL At the end of this turn, lose !M! Dexterity. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Exhaust."
   },
   "the_warlord:NeckSlash": {
     "NAME": "Neck Slash",
@@ -43,7 +42,7 @@
   },
   "the_warlord:SmokeScreen": {
     "NAME": "Smoke Screen",
-    "DESCRIPTION": "Apply !M! Weak to ALL enemies."
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Gain !M! Blur."
   },
   "the_warlord:FinishOff": {
     "NAME": "Finish Off",
@@ -88,7 +87,7 @@
   },
   "the_warlord:SupportingFire": {
     "NAME": "Supporting Fire",
-    "DESCRIPTION": "At the end of your turn, deal !M! damage to ALL enemies. NL This damage is increased by your the_warlord:Tension."
+    "DESCRIPTION": "Whenever you play an Attack, gain !M! Block."
   },
   "the_warlord:Scout": {
     "NAME": "Scout",
@@ -108,7 +107,7 @@
   },
   "the_warlord:TopsyTurvy": {
     "NAME": "Topsy-Turvy",
-    "DESCRIPTION": "Draw !M! cards. Randomize their cost this turn."
+    "DESCRIPTION": "Whenever you gain the_warlord:Tension, gain !M! Block."
   },
   "the_warlord:PositioningTheory": {
     "NAME": "Positioning Theory",
@@ -295,7 +294,7 @@
   },
   "the_warlord:Safeguard": {
     "NAME": "Safeguard",
-    "DESCRIPTION": "Gain !B! Block. NL Remove all of your the_warlord:Tension. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Remove all of your the_warlord:Tension."
   },
   "the_warlord:SpeedUp": {
     "NAME": "Speed Up",

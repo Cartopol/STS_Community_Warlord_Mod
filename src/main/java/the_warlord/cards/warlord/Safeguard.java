@@ -13,21 +13,19 @@ public class Safeguard extends CustomWarlordModCard {
 
     public static final String ID = WarlordMod.makeID(Safeguard.class);
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int BLOCK = 21;
+    private static final int BLOCK = 14;
     private static final int UPGRADE_PLUS_BLOCK = 4;
 
 
     public Safeguard() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
-        this.exhaust = true;
-
     }
 
     @Override
