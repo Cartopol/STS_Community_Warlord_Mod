@@ -32,8 +32,7 @@ public class FeatherBoots extends CustomWarlordModRelic {
                     break;
                 }
             }
-        } else {
-            super.obtain();
-        }
+        } else { super.obtain(); }
     }
+    public boolean canSpawn() { return AbstractDungeon.player.hasRelic(FencingBoots.ID); }
 }
