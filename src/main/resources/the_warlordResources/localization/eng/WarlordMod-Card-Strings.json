@@ -9,7 +9,7 @@
   },
   "the_warlord:Ration": {
     "NAME": "Ration",
-    "DESCRIPTION": "Add !M! *Syrette to your hand."
+    "DESCRIPTION": "Add !M! *Syrette to your hand. NL Exhaust."
   },
   "the_warlord:Rebuff": {
     "NAME": "Rebuff",
@@ -63,7 +63,7 @@
   },
   "the_warlord:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
-    "DESCRIPTION": "Gain !M! the_warlord:Posture."
+    "DESCRIPTION": "Gain !M! the_warlord:Posture. NL Exhaust."
   },
   "the_warlord:Stretch": {
     "NAME": "Stretch",

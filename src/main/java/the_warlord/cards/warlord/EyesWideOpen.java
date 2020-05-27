@@ -24,6 +24,7 @@ public class EyesWideOpen extends CustomWarlordModCard {
     public EyesWideOpen() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = POSTURE;
+        this.exhaust = true;
     }
 
     @Override

@@ -15,7 +15,7 @@ public class Ration extends CustomWarlordModCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int SYRETTE_AMOUNT = 2;
     private static final int UPGRADE_PLUS_SYRETTE_AMOUNT = 1;
 
@@ -23,6 +23,7 @@ public class Ration extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new Syrette();
         this.magicNumber = this.baseMagicNumber = SYRETTE_AMOUNT;
+        this.exhaust = true;
     }
 
     @Override
