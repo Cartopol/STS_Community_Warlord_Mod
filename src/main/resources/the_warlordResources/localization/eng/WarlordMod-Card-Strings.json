@@ -67,7 +67,7 @@
   },
   "the_warlord:Stretch": {
     "NAME": "Stretch",
-    "DESCRIPTION": "Gain !M! the_warlord:Posture. NL the_warlord:Purge."
+    "DESCRIPTION": "Gain !M! the_warlord:Posture."
   },
   "the_warlord:Wrap": {
     "NAME": "Wrap",
@@ -289,8 +289,8 @@
   },
   "the_warlord:DoubleTeam": {
     "NAME": "Double Team",
-    "DESCRIPTION": "Your next card this turn is played twice. NL Gain !the_warlord:UrMagic! the_warlord:Tension. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Your next card this turn is played twice. NL Gain !the_warlord:UrMagic! the_warlord:Tension."
+    "DESCRIPTION": "Your next card this turn is played an additional time. NL Gain !the_warlord:UrMagic! the_warlord:Tension. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next card this turn is played an additional time. NL Gain !the_warlord:UrMagic! the_warlord:Tension."
   },
   "the_warlord:Safeguard": {
     "NAME": "Safeguard",
@@ -316,8 +316,7 @@
   },
   "the_warlord:Extremespeed": {
     "NAME": "Extremespeed",
-    "DESCRIPTION": "Gain !M! the_warlord:Tension. NL At the start of each turn, draw !the_warlord:UrMagic! card.",
-    "UPGRADE_DESCRIPTION": "Gain !M! the_warlord:Tension. NL At the start of each turn, draw !the_warlord:UrMagic! cards."
+    "DESCRIPTION": "Discard your hand. NL Draw !the_warlord:UrMagic! cards. NL Shuffle !M! Dazed into your draw pile."
   },
   "the_warlord:CompositeArmor": {
     "NAME": "Composite Armor",
@@ -356,6 +355,6 @@
 
   "the_warlord:MarchingSong": {
     "NAME": "Marching Song",
-    "DESCRIPTION": "When you play a card that costs Energy: NL Draw a card."
+    "DESCRIPTION": "Whenever you play !the_warlord:UrMagic! cards, draw a card."
   }
 }

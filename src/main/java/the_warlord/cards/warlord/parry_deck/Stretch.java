@@ -16,7 +16,7 @@ public class Stretch extends CustomParryCard {
 
     private static final int COST = COST_UNPLAYABLE;
 
-    private static final int POSTURE = 6;
+    private static final int POSTURE = 3;
     private static final int UPGRADE_PLUS_REACTION_TIME = 2;
 
 
@@ -29,7 +29,7 @@ public class Stretch extends CustomParryCard {
     @Override
     public void onChoseThisOption() {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PosturePower(AbstractDungeon.player, magicNumber)));
-        CustomParryCard.removeFromMasterParryDeck(this);
+//        CustomParryCard.removeFromMasterParryDeck(this);
     }
 
     @Override

@@ -29,7 +29,7 @@
   "the_warlord:PosturePower": {
     "NAME": "Posture",
     "DESCRIPTIONS": [
-      "#yAttack #yDamage is reduced by #b%1$s. Whenever you take #yAttack #yDamage, lose all #yPosture and gain that much #yTension. Reduce #yPosture by 1 at the start of your turn."
+      "Unblocked #yAttack #yDamage is reduced by #b%1$s. Whenever you take unblocked #yAttack #yDamage, lose all #yPosture and gain that much #yTension. Reduce #yPosture by 1 at the start of your turn."
     ]
   },
   "the_warlord:TensionPower": {
@@ -124,8 +124,8 @@
   "the_warlord:DoubleTeamPower": {
     "NAME": "Double Team",
     "DESCRIPTIONS": [
-      "Your next card this turn is played twice.",
-      "Your next #b%1$s cards this turn are played twice."
+      "Your next card this turn is played an additional time.",
+      "Your next #b%1$s cards this turn are played an additional time."
     ]
   },
 
@@ -170,8 +170,8 @@
   "the_warlord:MarchingSongPower": {
     "NAME": "Marching Song",
     "DESCRIPTIONS": [
-      "Whenever you play a card that costs Energy, draw a card.",
-      "Whenever you play a card that costs Energy, draw #b%1$s cards."
+      "Whenever you play #b4 cards, draw a card.",
+      "Whenever you play #b4 cards, draw #b%1$s cards."
     ]
   }
 }
