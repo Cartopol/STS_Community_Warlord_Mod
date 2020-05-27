@@ -19,17 +19,16 @@ public class Assess extends CustomWarlordModCard {
 
     private static final int COST = 1;
 
-    private static final int BLOCK = 0;
-
 
     public Assess() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = 0;
+
         exhaust = true;
     }
 
     @Override
-    public int calculateBonusBaseBlock(AbstractMonster m) {
+    public int calculateBonusMagicNumber(AbstractMonster m) {
         return (getEnemyDamage(m) + 1) / 2;
     }
 
@@ -50,7 +49,7 @@ public class Assess extends CustomWarlordModCard {
 
     @Override
     public String getRawDynamicDescriptionSuffix() {
-        if (block > 0 && IntentUtils.playerCanSeeThatAnyEnemyIntentMatches(IntentUtils::isAttackIntent)) {
+        if (magicNumber > 0 && IntentUtils.playerCanSeeThatAnyEnemyIntentMatches(IntentUtils::isAttackIntent)) {
             return EXTENDED_DESCRIPTION[0];
         }
         return "";
@@ -58,8 +57,8 @@ public class Assess extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (block > 0) {
-            addToBot(new GainBlockAction(p, p, block));
+        if (magicNumber > 0) {
+            addToBot(new GainBlockAction(p, p, magicNumber));
         }
     }
 

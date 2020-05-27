@@ -165,7 +165,7 @@
     "DESCRIPTION": "Gain Block equal to half enemy's attack intent. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to half enemy's attack intent. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Gain !B! Block)"
+      " NL (Gain !M! Block)"
     ]
   },
   "the_warlord:PerfectAnswer": {

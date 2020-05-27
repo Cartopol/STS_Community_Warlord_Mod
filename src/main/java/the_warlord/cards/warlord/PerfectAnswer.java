@@ -60,7 +60,9 @@ public class PerfectAnswer extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, magicNumber));
+        if (magicNumber > 0) {
+            addToBot(new GainBlockAction(p, magicNumber));
+        }
     }
 
     @Override

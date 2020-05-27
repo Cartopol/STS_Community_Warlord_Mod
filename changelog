@@ -5,8 +5,9 @@ v0.0.8
 - Ration costs 1, exhausts.
 - Reworked Extremespeed: Skill 0: Discard your hand. Draw 5(6) cards. Add 2 Dazed to your draw pile.
 - Deadly Mist now gives 8(12) Bleed, up from 8(10)
-- Perfect Answer no longer gets modifiers from anywhere (dexterity, frail etc.)
+- Perfect Answer and Assess no longer gets modifiers from anywhere (dexterity, frail etc.)
 - All Common Parry cards have been made Uncommon (Sharpen, Smokescreen, Stretch)
 - Gush tooltip updated to current behaviour.
 - Changed wording on Double Team to "... is played an additional time." to reflect interaction with Punishment/Triple Slash
+
 

@@ -157,6 +157,9 @@ public abstract class CustomWarlordModCard extends CustomCard {
         return calculateBonusBaseBlock();
     }
 
+    protected int calculateBonusMagicNumber(AbstractMonster m) {
+        return calculateBonusMagicNumber();
+    }
 
     /**
      * This is intended for use with cards that work like Blizzard/Flechettes/etc, adding a parenthetical suffix
@@ -174,7 +177,7 @@ public abstract class CustomWarlordModCard extends CustomCard {
         int realBaseDamage = baseDamage;
         baseDamage += calculateBonusBaseDamage(mo);
 
-        magicNumber = baseMagicNumber + calculateBonusMagicNumber();
+        magicNumber = baseMagicNumber + calculateBonusMagicNumber(mo);
         isMagicNumberModified = magicNumber != baseMagicNumber;
 
         super.calculateCardDamage(mo);
