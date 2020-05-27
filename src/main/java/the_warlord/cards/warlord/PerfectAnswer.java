@@ -23,12 +23,12 @@ public class PerfectAnswer extends CustomWarlordModCard {
 
     public PerfectAnswer() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = 0;
+        magicNumber = baseMagicNumber = 0;
         this.exhaust = true;
     }
 
     @Override
-    public int calculateBonusBaseBlock() {
+    public int calculateBonusMagicNumber() {
         int bonusBlock = 0;
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!m.isDead && !m.isDying) {
@@ -52,17 +52,15 @@ public class PerfectAnswer extends CustomWarlordModCard {
 
     @Override
     public String getRawDynamicDescriptionSuffix() {
-        if (block > 0 && IntentUtils.playerCanSeeThatAnyEnemyIntentMatches(IntentUtils::isAttackIntent)) {
+        if (magicNumber > 0 && IntentUtils.playerCanSeeThatAnyEnemyIntentMatches(IntentUtils::isAttackIntent)) {
             return EXTENDED_DESCRIPTION[0];
         }
         return "";
     }
 
-
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, block));
+        addToBot(new GainBlockAction(p, magicNumber));
     }
 
     @Override

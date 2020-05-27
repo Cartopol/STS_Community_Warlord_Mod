@@ -172,7 +172,7 @@
     "NAME": "Perfect Answer",
     "DESCRIPTION": "Gain Block equal to ALL incoming attack damage. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Gain !B! Block)"
+      " NL (Gain !M! Block)"
     ]
   },
   "the_warlord:SwordDance": {

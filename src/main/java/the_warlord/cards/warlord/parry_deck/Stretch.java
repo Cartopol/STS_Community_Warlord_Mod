@@ -9,7 +9,7 @@ import the_warlord.powers.PosturePower;
 public class Stretch extends CustomParryCard {
     public static final String ID = WarlordMod.makeID(Stretch.class);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
