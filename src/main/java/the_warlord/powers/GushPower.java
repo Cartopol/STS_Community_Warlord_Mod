@@ -21,7 +21,7 @@ public class GushPower extends CustomWarlordModPower {
 
     @Override
     public void updateDescription() {
-        description = String.format(DESCRIPTIONS[0], amount);
+        description = DESCRIPTIONS[0];
     }
 
     @Override

@@ -17,7 +17,7 @@
   "the_warlord:GushPower": {
     "NAME": "Gush",
     "DESCRIPTIONS": [
-      "#yBleed doesn't decay, but is multiplied by #b%1$s instead. If bleeding, reduce by #b1 at the start of your turn."
+      "At the start of turn, #yBleed is multiplied by #b1.5 instead of reduced by half, then reduce #yGush by #b1. #yGush only decays on #yBleeding enemies."
     ]
   },
   "the_warlord:PunishmentPower": {
