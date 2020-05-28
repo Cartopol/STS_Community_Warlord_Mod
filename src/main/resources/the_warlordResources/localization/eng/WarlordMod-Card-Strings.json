@@ -293,8 +293,8 @@
   },
   "the_warlord:DoubleTeam": {
     "NAME": "Double Team",
-    "DESCRIPTION": "Your next card this turn is played an additional time. NL Gain !the_warlord:UrMagic! the_warlord:Tension. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Your next card this turn is played an additional time. NL Gain !the_warlord:UrMagic! the_warlord:Tension."
+    "DESCRIPTION": "Your next card this turn is played an additional time. NL Shuffle a *Dizzy into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Your next card this turn is played an additional time. NL Shuffle a *Dizzy into your draw pile."
   },
   "the_warlord:Safeguard": {
     "NAME": "Safeguard",
@@ -320,7 +320,7 @@
   },
   "the_warlord:Extremespeed": {
     "NAME": "Extremespeed",
-    "DESCRIPTION": "Discard your hand. NL Draw !the_warlord:UrMagic! cards. NL Shuffle !M! Dizzy into your draw pile."
+    "DESCRIPTION": "Discard your hand. NL Draw !the_warlord:UrMagic! cards. NL Shuffle !M! *Dizzy into your draw pile."
   },
   "the_warlord:CompositeArmor": {
     "NAME": "Composite Armor",

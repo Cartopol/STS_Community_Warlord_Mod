@@ -35,7 +35,7 @@ public class Hyperglycemia extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainEnergyAction(ENERGY));
+        addToBot(new GainEnergyAction(magicNumber));
         addToBot(new ApplyPowerAction(p, p, new TensionPower(p, urMagicNumber)));
     }
 
