@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -21,6 +22,8 @@ import org.apache.logging.log4j.Logger;
 import org.clapper.util.classutil.RegexClassFilter;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
+import the_warlord.potions.GushPotion;
+import the_warlord.potions.PosturePotion;
 import the_warlord.relics.CustomWarlordModRelic;
 import the_warlord.util.ReflectionUtils;
 import the_warlord.util.TextureLoader;
@@ -202,6 +205,8 @@ public class WarlordMod implements
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, WarlordModSettings.createSettingsPanel());
 
         logger.info("Registering potions");
+        BaseMod.addPotion(PosturePotion.class, Color.SKY.cpy(), Color.SLATE.cpy(), null, PosturePotion.POTION_ID, Warlord.Enums.WARLORD);
+        BaseMod.addPotion(GushPotion.class, Color.CLEAR.cpy(), Color.SCARLET.cpy(), null, GushPotion.POTION_ID, Warlord.Enums.WARLORD);
 
         logger.info("Registering powers for dev console");
         registerPowersInDevConsole();

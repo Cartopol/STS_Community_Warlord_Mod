@@ -1,3 +1,17 @@
+v0.0.9
+- Posture Potion added
+- Gush Potion added
+- Backsword, Trapping Pit now common
+- Broken Glass deprecated
+- Anticipation cost increased to 3(2)
+- Riposte damage reduced to 11(15)
+- Sword Dance damage per card reduced to 4(5)
+- New Status: Dizzy
+- Extremespeed now gives you a Dizzy instead of Dazed
+- Diversion now gives you a Dizzy. Cost reduced to 0.
+- Gush power tooltip corrected
+
+
 v0.0.8
 - Eyes Wide Open now exhausts.
 - Stretch no longer Purges, applies 3(4) Posture.

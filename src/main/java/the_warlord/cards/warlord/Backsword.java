@@ -13,7 +13,7 @@ import the_warlord.powers.OnParrySubscriber;
 public class Backsword extends CustomWarlordModCard implements OnParrySubscriber {
     public static final String ID = WarlordMod.makeID(Backsword.class);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;

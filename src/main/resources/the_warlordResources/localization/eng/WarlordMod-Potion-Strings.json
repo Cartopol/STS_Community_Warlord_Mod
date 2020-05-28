@@ -1,2 +1,14 @@
 {
+  "the_warlord:PosturePotion": {
+  "NAME": "Posture Potion",
+  "DESCRIPTIONS": [
+    "Gain #b%1$s #yPosture."
+  ]
+},
+  "the_warlord:GushPotion": {
+    "NAME": "Gush Potion",
+    "DESCRIPTIONS": [
+      "Apply #b%1$s #yGush."
+    ]
+  }
 }

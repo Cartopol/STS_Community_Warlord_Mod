@@ -12,7 +12,7 @@ import the_warlord.powers.BleedPower;
 public class BrokenGlass extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(BrokenGlass.class);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;

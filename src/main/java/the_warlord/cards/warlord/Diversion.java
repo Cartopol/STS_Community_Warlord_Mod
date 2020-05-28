@@ -1,6 +1,7 @@
 package the_warlord.cards.warlord;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,7 +19,7 @@ public class Diversion extends CustomWarlordModCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private static final int POSTURE = 1;
 
@@ -27,28 +28,9 @@ public class Diversion extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = POSTURE;
         this.exhaust = true;
+        cardsToPreview = new Dizzy();
 
     }
-
-//    @Override
-//    public int calculateBonusMagicNumber() {
-//        return calculateMagicNumberAfterMods(magicNumber) - magicNumber;
-//    }
-//
-//    private int calculateMagicNumberAfterMods(int block) {
-//        int bonusBlock = block;
-//
-//        AbstractPlayer p = AbstractDungeon.player;
-//        if (p.hasPower(DexterityPower.POWER_ID)) {
-//            bonusBlock += p.getPower(DexterityPower.POWER_ID).amount;
-//        }
-//        if (p.hasPower(FrailPower.POWER_ID)) {
-//            bonusBlock *= 0.75F;
-//        }
-//
-//        return bonusBlock;
-//    }
-
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -68,6 +50,8 @@ public class Diversion extends CustomWarlordModCard {
         if (currentTension > 0) {
             addToBot(new ApplyPowerAction(p, p, new PosturePower(p, currentTension)));
         }
+        addToBot(new MakeTempCardInDrawPileAction(new Dizzy(), 1, true, true));
+
     }
 
     @Override

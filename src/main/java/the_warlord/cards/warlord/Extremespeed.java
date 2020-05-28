@@ -2,7 +2,6 @@ package the_warlord.cards.warlord;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
@@ -28,7 +27,7 @@ public class Extremespeed extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = DAZED;
         urMagicNumber = baseUrMagicNumber = DRAW;
-        cardsToPreview = new Dazed();
+        cardsToPreview = new Dizzy();
     }
 
     @Override
@@ -36,7 +35,7 @@ public class Extremespeed extends CustomWarlordModCard {
 
         addToBot(new DiscardHandAction());
         addToBot(new DrawCardAction(urMagicNumber));
-        addToBot(new MakeTempCardInDrawPileAction(new Dazed(), magicNumber, true, true));
+        addToBot(new MakeTempCardInDrawPileAction(new Dizzy(), magicNumber, true, true));
     }
 
     @Override

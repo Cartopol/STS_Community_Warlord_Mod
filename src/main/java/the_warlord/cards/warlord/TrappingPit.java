@@ -15,14 +15,14 @@ import the_warlord.util.IntentUtils;
 public class TrappingPit extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(TrappingPit.class);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int BLEED = 7;
-    private static final int UPGRADE_PLUS_BLEED = 3;
+    private static final int BLEED = 5;
+    private static final int UPGRADE_PLUS_BLEED = 7;
     private static final int WEAK = 1;
 
     public TrappingPit() {

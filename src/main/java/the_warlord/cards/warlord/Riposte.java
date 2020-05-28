@@ -22,8 +22,8 @@ public class Riposte extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 12;
-    private static final int UPGRADE_PLUS_DAMAGE = 5;
+    private static final int DAMAGE = 11;
+    private static final int UPGRADE_PLUS_DAMAGE = 4;
     private static final int PLAY_COUNT = 1;
 
     public Riposte() {

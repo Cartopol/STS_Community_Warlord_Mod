@@ -11,6 +11,10 @@
     "NAME": "Ration",
     "DESCRIPTION": "Add !M! *Syrette to your hand. NL Exhaust."
   },
+  "the_warlord:Dizzy": {
+    "NAME": "Dizzy",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL When drawn, reduce your the_warlord:Posture by !M!."
+  },
   "the_warlord:Rebuff": {
     "NAME": "Rebuff",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! the_warlord:Posture. NL Draw !the_warlord:UrMagic! card."
@@ -185,8 +189,8 @@
   },
   "the_warlord:Diversion": {
     "NAME": "Diversion",
-    "DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension."
+    "DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension. NL Add a Dizzy to your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension. NL Add a Dizzy to your draw pile."
   },
   "the_warlord:Anticipation": {
     "NAME": "Anticipation",
@@ -316,7 +320,7 @@
   },
   "the_warlord:Extremespeed": {
     "NAME": "Extremespeed",
-    "DESCRIPTION": "Discard your hand. NL Draw !the_warlord:UrMagic! cards. NL Shuffle !M! Dazed into your draw pile."
+    "DESCRIPTION": "Discard your hand. NL Draw !the_warlord:UrMagic! cards. NL Shuffle !M! Dizzy into your draw pile."
   },
   "the_warlord:CompositeArmor": {
     "NAME": "Composite Armor",
