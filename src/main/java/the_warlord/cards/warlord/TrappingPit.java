@@ -22,7 +22,7 @@ public class TrappingPit extends CustomWarlordModCard {
 
     private static final int COST = 1;
     private static final int BLEED = 5;
-    private static final int UPGRADE_PLUS_BLEED = 7;
+    private static final int UPGRADE_PLUS_BLEED = 2;
     private static final int WEAK = 1;
 
     public TrappingPit() {
