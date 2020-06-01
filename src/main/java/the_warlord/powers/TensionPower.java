@@ -41,7 +41,7 @@ public class TensionPower extends CustomWarlordModPower {
 
     @Override
     public void atStartOfTurn() {
-        if (!justApplied || !owner.hasPower(GuardianFormPower.POWER_ID)) {
+        if (!justApplied) {
             addToBot(new ReducePowerAction(owner, owner, this, 1));
         } else justApplied = false;
     }

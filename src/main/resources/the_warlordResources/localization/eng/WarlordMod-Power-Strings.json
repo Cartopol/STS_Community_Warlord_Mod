@@ -53,7 +53,7 @@
   "the_warlord:GuardianFormPower": {
     "NAME": "Guardian Form",
     "DESCRIPTIONS": [
-      "At the start of your turn, swap your #yPosture and your #yTension. #yPosture and #yTension no longer decay."
+      "At the end of your turn, shuffle #b%1$s #yDizzy into your draw pile."
     ]
   },
   "the_warlord:QuickDrawPower": {
@@ -66,8 +66,7 @@
   "the_warlord:BoilingBloodPower": {
     "NAME": "Boiling Blood",
     "DESCRIPTIONS": [
-      "At the start of your turn, apply #b%1$s #yGush to a random enemy.",
-      "At the start of your turn, apply #b%1$s #yGush and #b%2$s #yBleed to a random enemy."
+      "Whenever an attack deals unblocked damage, apply #b%1$s #yBleed."
     ]
   },
   "the_warlord:ParryPower": {

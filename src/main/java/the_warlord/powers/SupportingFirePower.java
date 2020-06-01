@@ -45,7 +45,7 @@ public class SupportingFirePower extends CustomWarlordModPower {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
-            this.addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
+            this.addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
             this.flash();
         }
     }

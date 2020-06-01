@@ -17,25 +17,23 @@ public class BoilingBlood extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int GUSH = 1;
-    private static final int BLEED = 0;
-    private static final int UPGRADE_PLUS_BLEED = 2;
+    private static final int BLEED_PER_ATTACK = 2;
+    private static final int UPGRADE_PLUS_BLEED = 1;
 
     public BoilingBlood() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = GUSH;
-        urMagicNumber = baseUrMagicNumber = BLEED;
+        magicNumber = baseMagicNumber = BLEED_PER_ATTACK;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BoilingBloodPower(p, this.magicNumber, urMagicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new BoilingBloodPower(p, this.magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeUrMagicNumber(UPGRADE_PLUS_BLEED);
+            upgradeMagicNumber(UPGRADE_PLUS_BLEED);
 
             upgradeName();
             upgradeDescription();

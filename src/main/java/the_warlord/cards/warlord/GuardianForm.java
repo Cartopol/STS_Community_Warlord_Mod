@@ -7,6 +7,7 @@ import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.GuardianFormPower;
+import the_warlord.powers.PosturePower;
 
 
 public class GuardianForm extends CustomWarlordModCard {
@@ -19,24 +20,29 @@ public class GuardianForm extends CustomWarlordModCard {
 
     private static final int COST = 3;
 
-    private static final int THORNS_PER_POSTURE = 1;
-    private static final int UPGRADE_PLUS_THORNS_PER_POSTURE = 1;
+    private static final int POSTURE = 20;
+    private static final int DIZZY = 1;
 
 
     public GuardianForm() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = THORNS_PER_POSTURE;
+        magicNumber = baseMagicNumber = POSTURE;
+        urMagicNumber = baseUrMagicNumber = DIZZY;
+        this.isEthereal = true;
+        cardsToPreview = new Dizzy();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-            addToBot(new ApplyPowerAction(p, p, new GuardianFormPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new PosturePower(p, magicNumber)));
+
+        addToBot(new ApplyPowerAction(p, p, new GuardianFormPower(p, urMagicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeMagicNumber(UPGRADE_PLUS_THORNS_PER_POSTURE);
+            this.isEthereal = false;
             upgradeName();
             upgradeDescription();
         }

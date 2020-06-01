@@ -215,8 +215,7 @@
   },
   "the_warlord:BoilingBlood": {
     "NAME": "Boiling Blood",
-    "DESCRIPTION": "At the start of your turn, apply !M! the_warlord:Gush to a random enemy.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, apply !M! the_warlord:Gush and !the_warlord:UrMagic! the_warlord:Bleed to a random enemy."
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! the_warlord:Bleed."
   },
   "the_warlord:DeftCharge": {
     "NAME": "Deft Charge",
@@ -348,7 +347,8 @@
 
   "the_warlord:GuardianForm": {
     "NAME": "Guardian Form",
-    "DESCRIPTION": "At the start of your turn, swap your the_warlord:Posture and your the_warlord:Tension. NL the_warlord:Posture and the_warlord:Tension no longer decay."
+    "DESCRIPTION": "Ethereal. NL Gain !M! the_warlord:Posture. NL At the end of your turn, shuffle a *Dizzy into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain !M! the_warlord:Posture. NL At the end of your turn, shuffle a *Dizzy into your draw pile."
   },
 
   "the_warlord:Refuge": {
