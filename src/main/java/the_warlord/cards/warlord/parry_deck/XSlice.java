@@ -28,7 +28,7 @@ public class XSlice extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!m.isDead && !m.isDying) {
                 addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new GushPower(m, magicNumber)));

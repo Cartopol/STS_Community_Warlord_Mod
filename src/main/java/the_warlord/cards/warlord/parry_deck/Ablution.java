@@ -24,13 +24,11 @@ public class Ablution extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         addToBot(new RemoveDebuffsAction(AbstractDungeon.player));
         if (upgraded) {
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, magicNumber)));
         }
-
-
     }
 
     @Override

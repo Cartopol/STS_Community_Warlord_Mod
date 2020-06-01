@@ -25,7 +25,7 @@ public class Sidestep extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         this.addToBot(new DrawCardAction(magicNumber));
     }
 

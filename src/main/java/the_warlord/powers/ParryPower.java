@@ -2,8 +2,6 @@ package the_warlord.powers;
 
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,9 +14,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import the_warlord.WarlordMod;
 import the_warlord.cards.warlord.parry_deck.ParryDeck;
-import the_warlord.relics.FencingGloves;
 import the_warlord.relics.RelicParrySubscriber;
-import the_warlord.relics.SamuraiSword;
 
 import java.util.ArrayList;
 
@@ -82,7 +78,7 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
     }
 
     @Override
-    public void atStartOfTurn() {
+    public void atStartOfTurnPostDraw() {
         ParryDeck.setParried(false);
         WarlordMod.logger.info(this.ID + " isParrying: " + isParrying + ". isFullParrying: " + isFullParrying);
         if (isParrying) {

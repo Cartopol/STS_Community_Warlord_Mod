@@ -33,7 +33,7 @@ public class BetaStrike extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         this.addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 
         AbstractCard c = new OmegaStrike();

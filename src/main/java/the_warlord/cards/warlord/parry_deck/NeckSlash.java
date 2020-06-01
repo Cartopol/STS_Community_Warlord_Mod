@@ -29,7 +29,7 @@ public class NeckSlash extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new ApplyPowerAction(m, p, new BleedPower(m, magicNumber)));

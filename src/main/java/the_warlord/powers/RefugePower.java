@@ -30,10 +30,10 @@ public class RefugePower extends CustomWarlordModPower {
     public void atStartOfTurn() {
         flash();
         if (owner.hasPower(PosturePower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount)));
+            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
         }
         if (owner.hasPower(TensionPower.POWER_ID)) {
-            addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
+            addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, amount)));
         }
     }
 

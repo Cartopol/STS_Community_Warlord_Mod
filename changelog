@@ -1,3 +1,14 @@
+v0.0.10
+- You now draw your cards before choosing your parry option
+- Super Saver reintroduced: now gives energy and card draw equal to the cost of exhausted card.
+- 3 new Warlord specific relics: Strategy Guide, Parrying Dagger and Paper Scorpion
+- Wrap reduced to 3(4) plated armor from 3(5)
+- Building Fortress cost reduced to 2 from 3
+- Refuge gives Strength for Posture and Dex for Tension instead of the other way around
+- Guardian Form reworked: At the start of your turn, swap your Posture and your Tension. Posture and Tension no longer decay.
+- New design pattern for how Parry cards work; don't override onChoseThisOption() directly, use new method useParry()
+- New power icon for PunishmentPower
+
 v0.0.9
 - Posture Potion added
 - Gush Potion added

@@ -1,6 +1,7 @@
 package the_warlord.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,15 +34,23 @@ public class SuperSaverAction extends AbstractGameAction {
             }
             if (this.p.hand.size() == 1) {
                 if ((this.p.hand.getBottomCard()).costForTurn == -1) {
-                    if (upgraded) {
-                        addToTop((AbstractGameAction)new GainEnergyAction(EnergyPanel.getCurrentEnergy() + 1));
-                    } else
-                    addToTop((AbstractGameAction)new GainEnergyAction(EnergyPanel.getCurrentEnergy()));
+//                    if (upgraded) {
+//                        addToTop((AbstractGameAction)new GainEnergyAction(EnergyPanel.getCurrentEnergy() + 1));
+//                        addToTop((AbstractGameAction)new DrawCardAction(EnergyPanel.getCurrentEnergy() + 1));
+//
+//                    } else {
+                        addToTop((AbstractGameAction) new GainEnergyAction(EnergyPanel.getCurrentEnergy()));
+                        addToTop((AbstractGameAction) new DrawCardAction(EnergyPanel.getCurrentEnergy()));
+//                    }
                 } else if ((this.p.hand.getBottomCard()).costForTurn > 0) {
-                    if (upgraded) {
-                        addToTop((AbstractGameAction)new GainEnergyAction((this.p.hand.getBottomCard()).costForTurn + 1));
-                    } else
-                        addToTop((AbstractGameAction)new GainEnergyAction((this.p.hand.getBottomCard()).costForTurn));
+//                    if (upgraded) {
+//                        addToTop((AbstractGameAction)new GainEnergyAction((this.p.hand.getBottomCard()).costForTurn + 1));
+//                        addToTop((AbstractGameAction)new DrawCardAction((this.p.hand.getBottomCard()).costForTurn + 1));
+//
+//                    } else {
+                        addToTop((AbstractGameAction) new GainEnergyAction((this.p.hand.getBottomCard()).costForTurn));
+                        addToTop((AbstractGameAction) new DrawCardAction((this.p.hand.getBottomCard()).costForTurn));
+//                    }
                 }
                 this.p.hand.moveToExhaustPile(this.p.hand.getBottomCard());
                 tickDuration();
@@ -54,15 +63,23 @@ public class SuperSaverAction extends AbstractGameAction {
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 if (c.costForTurn == -1) {
-                    if (upgraded) {
-                        addToTop((AbstractGameAction)new GainEnergyAction(EnergyPanel.getCurrentEnergy() + 1));
-                    } else
-                    addToTop((AbstractGameAction)new GainEnergyAction(EnergyPanel.getCurrentEnergy()));
+//                    if (upgraded) {
+//                        addToTop((AbstractGameAction)new GainEnergyAction(EnergyPanel.getCurrentEnergy() + 1));
+//                        addToTop((AbstractGameAction)new DrawCardAction(EnergyPanel.getCurrentEnergy() + 1));
+//
+//                    } else {
+                        addToTop((AbstractGameAction) new GainEnergyAction(EnergyPanel.getCurrentEnergy()));
+                        addToTop((AbstractGameAction) new DrawCardAction(EnergyPanel.getCurrentEnergy()));
+//                    }
                 } else if (c.costForTurn > 0) {
-                    if (upgraded) {
-                        addToTop((AbstractGameAction)new GainEnergyAction(c.costForTurn + 1));
-                    } else
-                        addToTop((AbstractGameAction)new GainEnergyAction(c.costForTurn));
+//                    if (upgraded) {
+//                        addToTop((AbstractGameAction)new GainEnergyAction(c.costForTurn + 1));
+//                        addToTop((AbstractGameAction)new DrawCardAction(c.costForTurn + 1));
+//
+//                    } else {
+                        addToTop((AbstractGameAction) new GainEnergyAction(c.costForTurn));
+                        addToTop((AbstractGameAction) new DrawCardAction(c.costForTurn));
+//                    }
                 }
                 this.p.hand.moveToExhaustPile(c);
             }

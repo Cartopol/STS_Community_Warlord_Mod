@@ -27,7 +27,7 @@ public class PrickHoles extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, magicNumber)));
         removeFromMasterParryDeck(this);
     }

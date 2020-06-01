@@ -2,9 +2,11 @@ package the_warlord.cards.warlord.parry_deck;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
+import the_warlord.relics.ParryingDagger;
 
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardType.SKILL;
 import static the_warlord.WarlordMod.makeCharPath;
@@ -31,8 +33,17 @@ public abstract class CustomParryCard extends CustomWarlordModCard {
 
     @Override
     public final void use(AbstractPlayer p, AbstractMonster m) {
+            }
+
+    @Override
+    public final void onChoseThisOption() {
         ParryDeck.playedThisCombatCount++;
-        onChoseThisOption();
+        useParry();
+        WarlordMod.logger.info("Parried " + ParryDeck.playedThisCombatCount + " time(s).");
+        if (AbstractDungeon.player.hasRelic(ParryingDagger.ID) && ParryDeck.playedThisCombatCount == 1) {
+            WarlordMod.logger.info("Parrying twice.");
+            onChoseThisOption();
+        }
     }
 
     public static AbstractCard getMasterParryDeckEquivalent(AbstractCard playingCard) {
@@ -42,6 +53,9 @@ public abstract class CustomParryCard extends CustomWarlordModCard {
             }
         }
         return null;
+    }
+
+    public void useParry() {
     }
 
     public static void removeFromMasterParryDeck(AbstractCard playingCard) {

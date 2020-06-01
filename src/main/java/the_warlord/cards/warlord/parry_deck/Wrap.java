@@ -18,7 +18,7 @@ public class Wrap extends CustomParryCard {
     private static final int COST = COST_UNPLAYABLE;
 
     private static final int PLATED_ARMOR = 3;
-    private static final int UPGRADE_PLUS_PLATED_ARMOR = 2;
+    private static final int UPGRADE_PLUS_PLATED_ARMOR = 1;
 
     public Wrap() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -27,7 +27,7 @@ public class Wrap extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new ApplyPowerAction(p, p, new PlatedArmorPower(p, magicNumber)));
     }

@@ -22,7 +22,7 @@ public class DecisiveFactor extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         if (this.upgraded) {
             addToBot(new DrawCardAction(magicNumber));
         }

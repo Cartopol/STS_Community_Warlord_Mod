@@ -39,18 +39,9 @@ public class TensionPower extends CustomWarlordModPower {
         description = String.format(DESCRIPTIONS[0], amount);
     }
 
-
-//    @Override
-//    public void atEndOfTurn(boolean isPlayer) {
-//        if (isPlayer) {
-////            addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS)));
-//            addToBot(new ReducePowerAction(owner, owner, this, 1));
-//        }
-//    }
-
     @Override
     public void atStartOfTurn() {
-        if (!justApplied) {
+        if (!justApplied || !owner.hasPower(GuardianFormPower.POWER_ID)) {
             addToBot(new ReducePowerAction(owner, owner, this, 1));
         } else justApplied = false;
     }
@@ -59,11 +50,6 @@ public class TensionPower extends CustomWarlordModPower {
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         return type == DamageInfo.DamageType.NORMAL ? damage + amount : damage;
     }
-
-//    @Override
-//    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-//        return type == DamageInfo.DamageType.NORMAL ? damage + amount : damage;
-//    }
 
     @Override
     public float modifyBlock(float blockAmount) {
@@ -75,11 +61,6 @@ public class TensionPower extends CustomWarlordModPower {
     public AbstractPower makeCopy() {
         return new TensionPower(owner, amount);
     }
-
-//    @Override
-//    public void onParry(boolean fullParry) {
-//        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
-//    }
 
     @Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {

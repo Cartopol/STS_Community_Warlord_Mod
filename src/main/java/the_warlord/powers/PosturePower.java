@@ -98,7 +98,9 @@ public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
             addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
         } else {
-            addToBot(new ReducePowerAction(owner, owner, this, 1));
+            if (!owner.hasPower(GuardianFormPower.POWER_ID)) {
+                addToBot(new ReducePowerAction(owner, owner, this, 1));
+            }
         }
         this.postureBroken = false;
     }

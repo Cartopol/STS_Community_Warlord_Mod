@@ -1,11 +1,10 @@
 package the_warlord.powers;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
+import the_warlord.actions.SwapTensionPostureAction;
 
-public class GuardianFormPower extends CustomWarlordModPower implements OnPostureBrokenSubscriber {
+public class GuardianFormPower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(GuardianFormPower.class);
     public static final String POWER_ID = STATIC.ID;
 
@@ -20,10 +19,19 @@ public class GuardianFormPower extends CustomWarlordModPower implements OnPostur
         updateDescription();
     }
 
+    /*
+    Functionality implemented in PosturePower and TensionPower classes: start of turn decay removed if you have
+    GuardianFormPower
+     */
+
     @Override
     public void updateDescription() {
-        int baseStringIndex = amount == 1 ? 0 : 1;
-        description = String.format(DESCRIPTIONS[baseStringIndex], amount);
+        description = String.format(DESCRIPTIONS[0]);
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        addToBot(new SwapTensionPostureAction());
     }
 
     @Override
@@ -31,9 +39,5 @@ public class GuardianFormPower extends CustomWarlordModPower implements OnPostur
         return new GuardianFormPower(owner, amount);
     }
 
-    @Override
-    public void onPostureBroken(int postureAmount) {
-        flash();
-        addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, postureAmount * amount)));
-    }
+
 }

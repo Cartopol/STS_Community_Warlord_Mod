@@ -41,8 +41,8 @@
   },
   "the_warlord:SuperSaver": {
     "NAME": "Super Saver",
-    "DESCRIPTION": "Exhaust a card. NL Gain [E] equal to its cost.",
-    "UPGRADE_DESCRIPTION": "Exhaust a card. NL Gain [E] equal to its cost + 1."
+    "DESCRIPTION": "Exhaust a card. NL Gain [E] and draw cards equal to its cost. the_warlord:Purge.",
+    "UPGRADE_DESCRIPTION": "Exhaust a card. NL Gain [E] and draw cards equal to its cost."
   },
   "the_warlord:SmokeScreen": {
     "NAME": "Smoke Screen",
@@ -348,13 +348,12 @@
 
   "the_warlord:GuardianForm": {
     "NAME": "Guardian Form",
-    "DESCRIPTION": "Whenever your the_warlord:Posture is broken, gain Thorns equal to the the_warlord:Posture lost.",
-    "UPGRADE_DESCRIPTION": "Whenever your the_warlord:Posture is broken, gain Thorns equal to twice the the_warlord:Posture lost."
+    "DESCRIPTION": "At the start of your turn, swap your the_warlord:Posture and your the_warlord:Tension. NL the_warlord:Posture and the_warlord:Tension no longer decay."
   },
 
   "the_warlord:Refuge": {
     "NAME": "Refuge",
-    "DESCRIPTION": "At the start of your turn, gain !M! Dexterity if you have the_warlord:Posture, and !M! Strength if you have the_warlord:Tension."
+    "DESCRIPTION": "At the start of your turn, gain !M! Strength if you have the_warlord:Posture, and !M! Dexterity if you have the_warlord:Tension."
   },
 
   "the_warlord:MarchingSong": {

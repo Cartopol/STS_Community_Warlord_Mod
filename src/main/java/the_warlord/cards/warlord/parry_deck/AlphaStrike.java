@@ -35,7 +35,7 @@ public class AlphaStrike extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             calculateCardDamage(m);
         }

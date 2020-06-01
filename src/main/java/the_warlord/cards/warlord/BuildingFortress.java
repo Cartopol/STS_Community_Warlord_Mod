@@ -18,7 +18,7 @@ public class BuildingFortress extends CustomWarlordModCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
     private static final int BLOCK = 10;
 
     public BuildingFortress() {

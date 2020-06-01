@@ -39,7 +39,7 @@ public class TrappingPit extends CustomWarlordModCard {
             if ((!mo.isDead && !mo.isDying)) {
                 if (IntentUtils.isAttackIntent(mo.intent)) {
                     addToBot(new ApplyPowerAction(mo, p, new BleedPower(mo, this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-                    addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.urMagicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                    addToBot(new ApplyPowerAction(mo, p, new WeakPower(mo, this.urMagicNumber, false), this.urMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
                 }
 
             }

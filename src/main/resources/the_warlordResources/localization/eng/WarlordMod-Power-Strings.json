@@ -53,8 +53,7 @@
   "the_warlord:GuardianFormPower": {
     "NAME": "Guardian Form",
     "DESCRIPTIONS": [
-      "Whenever your #yPosture is broken, gain Thorns equal to the #yPosture broken.",
-      "Whenever your #yPosture is broken, gain Thorns equal to #b%1$s times the #yPosture broken."
+      "At the start of your turn, swap your #yPosture and your #yTension. #yPosture and #yTension no longer decay."
     ]
   },
   "the_warlord:QuickDrawPower": {
@@ -163,7 +162,7 @@
   "the_warlord:RefugePower": {
     "NAME": "Refuge",
     "DESCRIPTIONS": [
-      "At the start of each turn, gain #b%1$s #yDexterity if you have #yPosture, and gain #b%1$s #yStrength if you have #yTension."
+      "At the start of each turn, gain #b%1$s #yStrength if you have #yPosture, and gain #b%1$s #yDexterity if you have #yTension."
     ]
   },
 

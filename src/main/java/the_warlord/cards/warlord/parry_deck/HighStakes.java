@@ -25,7 +25,7 @@ public class HighStakes extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new GamblingChipAction(p, true));
         if (!this.upgraded) {

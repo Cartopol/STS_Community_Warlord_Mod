@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import the_warlord.relics.PaperScorpion;
 
 public class BleedPower extends CustomWarlordModPower implements HealthBarRenderPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(BleedPower.class);
@@ -44,7 +46,9 @@ public class BleedPower extends CustomWarlordModPower implements HealthBarRender
         if (owner.hasPower(GushPower.POWER_ID)) {
             owner.getPower(GushPower.POWER_ID).flash();
             // Apply bleed equal to half the current Bleed amount, rounded up.
-            addToBot(new ApplyPowerAction(owner, owner, new BleedPower(owner, (amount + 1) / 2)));
+            if (AbstractDungeon.player.hasRelic(PaperScorpion.ID)) {
+                addToBot(new ApplyPowerAction(owner, owner, new BleedPower(owner, amount)));
+            } else {addToBot(new ApplyPowerAction(owner, owner, new BleedPower(owner, (amount + 1) / 2)));}
         } else {
             //remove if amount is 1, since halving 1 doesn't work
             if (amount == 1) {

@@ -20,6 +20,27 @@
       "You can now have #b4 Parry cards instead of #b3 to choose from."
     ]
   },
+  "the_warlord:ParryingDagger": {
+    "NAME": "Parrying Dagger",
+    "FLAVOR": "Because when was dual wielding not cool, huh?",
+    "DESCRIPTIONS": [
+      "The first #yParry card you play in combat is played twice."
+    ]
+  },
+  "the_warlord:PaperScorpion": {
+    "NAME": "Paper Scorpion",
+    "FLAVOR": "Watch out or you get a bleeding paper cut!",
+    "DESCRIPTIONS": [
+      "the_warlord:Bleed on enemies with the_warlord:Gush is multiplied by #b2 instead of #b1.5."
+    ]
+  },
+  "the_warlord:StrategyGuide": {
+    "NAME": "StrategyGuide",
+    "FLAVOR": "Find out how to Beat Heart in 4 turns",
+    "DESCRIPTIONS": [
+      "On pickup, choose a #yParry card to add to your deck."
+    ]
+  },
   "the_warlord:FencingGloves": {
     "NAME": "Fencing Gloves",
     "FLAVOR": "Envied by goalkeepers.",

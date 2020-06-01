@@ -29,7 +29,7 @@ public class FinishOff extends CustomParryCard {
     }
 
     @Override
-    public void onChoseThisOption() {
+    public void useParry() {
         if (this.upgraded) {
             for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!monster.isDead && !monster.isDying) {
