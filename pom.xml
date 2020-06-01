@@ -4,7 +4,7 @@
     <groupId>stswarlordmod</groupId>
     <artifactId>WarlordMod</artifactId>
     <name>The Warlord</name>
-    <version>0.0.10</version>
+    <version>0.0.11</version>
     <description>The Warlord, a character mod by the StS community.</description>
 
     <properties>

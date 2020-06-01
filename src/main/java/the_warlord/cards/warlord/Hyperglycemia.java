@@ -21,7 +21,7 @@ public class Hyperglycemia extends CustomWarlordModCard {
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int TENSION = 2;
+    private static final int TENSION = 1;
     private static final int ENERGY = 2;
     private static final int UPGRADE_PLUS_ENERGY = 1;
 

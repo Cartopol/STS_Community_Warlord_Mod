@@ -29,13 +29,13 @@
   "the_warlord:PosturePower": {
     "NAME": "Posture",
     "DESCRIPTIONS": [
-      "Unblocked #yAttack #yDamage is reduced by #b%1$s. Whenever you take unblocked #yAttack #yDamage, lose all #yPosture and gain that much #yTension. Reduce #yPosture by 1 at the start of your turn."
+      "Unblocked #yAttack #yDamage is reduced by #b%1$s. Whenever you take unblocked #yAttack #yDamage, lose all #yPosture and gain #b1 #yTension. Reduce #yPosture by 1 at the start of your turn."
     ]
   },
   "the_warlord:TensionPower": {
     "NAME": "Tension",
     "DESCRIPTIONS": [
-      "Both your block and enemy #yAttack #yDamage are increased by #b%1$s. At the start of turn, reduce #yTension by 1. Whenever you #yParry, remove all #yTension."
+      "Enemy #yAttack #yDamage is increased by #b%1$s."
     ]
   },
   "the_warlord:PositioningPower": {

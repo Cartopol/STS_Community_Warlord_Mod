@@ -36,14 +36,14 @@
     "NAMES": [
       "posture"
     ],
-    "DESCRIPTION": "Unblocked #yAttack #yDamage is reduced by your #yPosture. Whenever you take unblocked #yAttack #yDamage, lose all #yPosture and gain that much #yTension. #yPosture is reduced by #b1 at the start of your turn."
+    "DESCRIPTION": "Unblocked #yAttack #yDamage is reduced by your #yPosture. Whenever you take unblocked #yAttack #yDamage, lose all #yPosture and gain #b1 #yTension. #yPosture is reduced by #b1 at the start of your turn."
   },
 
   {
     "NAMES": [
       "tension"
     ],
-    "DESCRIPTION": "Both your block and enemy #yAttack #yDamage are increased by your #yTension. Whenever you #yParry, lose all #yTension. #yTension is reduced by #b1 at the start of your turn."
+    "DESCRIPTION": "Enemy #yAttack #yDamage is increased by your #yTension."
   },
 
   {

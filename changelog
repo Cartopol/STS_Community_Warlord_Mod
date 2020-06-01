@@ -1,3 +1,12 @@
+v0.0.11
+- Tension reworked: you only get 1 Tension when posture is broken. It no longer increases your block, and no longer
+decays each turn. You no longer remove Tension when parrying. Tension is now a debuff, and can be cleansed etc.
+- Headlong Tension reduced to 1
+- Hyperglycemia Tension reduced to 1
+- High Risk Tension reduced to 5
+- Zweihander damage up to 22
+- Head Start cost reduced to 0
+
 v0.0.10
 - You now draw your cards before choosing your parry option
 - Super Saver reintroduced: now gives energy and card draw equal to the cost of exhausted card.

@@ -18,6 +18,7 @@ public class PosturePower extends CustomWarlordModPower {
     public static final String POWER_ID = STATIC.ID;
 
     private boolean postureBroken;
+    private int TENSION_ON_BREAK = 1;
 
     public PosturePower(AbstractCreature owner, int amount) {
         super(STATIC);
@@ -96,7 +97,8 @@ public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
         if (postureBroken) {
             WarlordMod.logger.info("applying tension");
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
-            addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
+            //apply 1 Tension whenever Posture is broken
+            addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, TENSION_ON_BREAK)));
         } else {
                 addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
