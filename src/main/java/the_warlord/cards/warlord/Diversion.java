@@ -1,7 +1,6 @@
 package the_warlord.cards.warlord;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -28,7 +27,7 @@ public class Diversion extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = POSTURE;
         this.exhaust = true;
-        cardsToPreview = new Dizzy();
+//        cardsToPreview = new Dizzy();
 
     }
 
@@ -50,7 +49,7 @@ public class Diversion extends CustomWarlordModCard {
         if (currentTension > 0) {
             addToBot(new ApplyPowerAction(p, p, new PosturePower(p, currentTension)));
         }
-        addToBot(new MakeTempCardInDrawPileAction(new Dizzy(), 1, true, true));
+//        addToBot(new MakeTempCardInDrawPileAction(new Dizzy(), 1, true, true));
 
     }
 

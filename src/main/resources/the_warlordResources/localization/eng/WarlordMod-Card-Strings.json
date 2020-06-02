@@ -189,8 +189,8 @@
   },
   "the_warlord:Diversion": {
     "NAME": "Diversion",
-    "DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension. NL Add a Dizzy to your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension. NL Add a Dizzy to your draw pile."
+    "DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Swap your the_warlord:Posture and your the_warlord:Tension."
   },
   "the_warlord:Anticipation": {
     "NAME": "Anticipation",
