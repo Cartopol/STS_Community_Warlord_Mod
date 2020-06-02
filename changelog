@@ -6,6 +6,7 @@ decays each turn. You no longer remove Tension when parrying. Tension is now a d
 - High Risk Tension reduced to 5
 - Zweihander damage up to 22
 - Head Start cost reduced to 0
+- Fix for Strategy Guide bug
 
 v0.0.10
 - You now draw your cards before choosing your parry option

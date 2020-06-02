@@ -118,7 +118,7 @@
     "DESCRIPTION": "Whenever you the_warlord:Parry, gain !M! Dexterity."
   },
   "the_warlord:BloodMagic": {
-    "NAME": "BloodMagic",
+    "NAME": "Blood Magic",
     "DESCRIPTION": "At the start of your turn, apply !M! Bleed to a random enemy."
   },
   "the_warlord:Steamroll": {
