@@ -39,7 +39,6 @@ public class Wrap extends CustomParryCard {
         if(p.hasPower(TensionPower.POWER_ID)){
             if(p.getPower(TensionPower.POWER_ID).amount != this.magicNumber){ addToBot(new ApplyPowerAction(p, p, new TensionPower(p, -magicNumber), -magicNumber)); }
             else { addToBot(new RemoveSpecificPowerAction(p, p, TensionPower.POWER_ID)); }
-
         }
     }
 

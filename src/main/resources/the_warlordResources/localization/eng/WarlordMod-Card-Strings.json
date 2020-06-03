@@ -295,7 +295,7 @@
   },
   "the_warlord:Safeguard": {
     "NAME": "Safeguard",
-    "DESCRIPTION": "Gain !B! Block. NL Remove all of your the_warlord:Tension."
+    "DESCRIPTION": "Gain !B! Block. NL Remove !M! the_warlord:Tension."
   },
   "the_warlord:SpeedUp": {
     "NAME": "Speed Up",

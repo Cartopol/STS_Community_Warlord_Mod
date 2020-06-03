@@ -1,5 +1,6 @@
 package the_warlord.cards.warlord;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,20 +20,23 @@ public class Safeguard extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 2;
-    private static final int BLOCK = 14;
-    private static final int UPGRADE_PLUS_BLOCK = 4;
-
+    private static final int BLOCK = 13;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int TENSION_LOSS = 2;
+    private static final int UPGRADE_TENSION_LOSS = 1;
 
     public Safeguard() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = TENSION_LOSS;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
-        if (p.hasPower(TensionPower.POWER_ID)) {
-            addToBot(new RemoveSpecificPowerAction(p, p, TensionPower.POWER_ID));
+        if(p.hasPower(TensionPower.POWER_ID)){
+            if(p.getPower(TensionPower.POWER_ID).amount != this.magicNumber){ addToBot(new ApplyPowerAction(p, p, new TensionPower(p, -magicNumber), -magicNumber)); }
+            else { addToBot(new RemoveSpecificPowerAction(p, p, TensionPower.POWER_ID)); }
         }
     }
 
@@ -40,6 +44,7 @@ public class Safeguard extends CustomWarlordModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_TENSION_LOSS);
             upgradeName();
             upgradeDescription();
         }
