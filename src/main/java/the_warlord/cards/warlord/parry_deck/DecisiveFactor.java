@@ -1,7 +1,9 @@
 package the_warlord.cards.warlord.parry_deck;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.unique.ApotheosisAction;
 import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
 
@@ -24,9 +26,9 @@ public class DecisiveFactor extends CustomParryCard {
     @Override
     public void useParry() {
         if (this.upgraded) {
-            addToBot(new DrawCardAction(magicNumber));
+            addToBot(new ApotheosisAction());
         }
-        addToBot(new ArmamentsAction(true));
+        else { addToBot(new ArmamentsAction(true)); }
     }
 
     @Override

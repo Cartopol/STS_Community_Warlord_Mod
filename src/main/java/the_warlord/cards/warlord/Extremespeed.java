@@ -19,9 +19,9 @@ public class Extremespeed extends CustomWarlordModCard {
 
     private static final int COST = 0;
     private static final int UPGRADED_COST = 0;
-    private static final int DRAW = 5;
+    private static final int DRAW = 3;
     private static final int UPGRADE_PLUS_DRAW = 1;
-    private static final int DAZED = 2;
+    private static final int DAZED = 1;
 
     public Extremespeed() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -32,8 +32,7 @@ public class Extremespeed extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        addToBot(new DiscardHandAction());
+        //addToBot(new DiscardHandAction());
         addToBot(new DrawCardAction(urMagicNumber));
         addToBot(new MakeTempCardInDrawPileAction(new Dizzy(), magicNumber, true, true));
     }

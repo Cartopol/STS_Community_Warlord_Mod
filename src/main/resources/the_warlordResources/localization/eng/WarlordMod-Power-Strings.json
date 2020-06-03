@@ -6,7 +6,12 @@
       "Does something #b%1$s times."
     ]
   },
-
+  "the_warlord:AnticoagulantPower": {
+    "NAME": "Anticoagulant",
+    "DESCRIPTIONS": [
+      "Whenever you Parry, apply #b%1$s #yGush to ALL enemies."
+    ]
+  },
   "the_warlord:BleedPower": {
     "NAME": "Bleed",
     "DESCRIPTIONS": [
@@ -70,9 +75,9 @@
     ]
   },
   "the_warlord:ParryPower": {
-    "NAME": "",
+    "NAME": "Parrying Spirit",
     "DESCRIPTIONS": [
-      ""
+      "Whenever an attack removes all of your block, or you take no damage from an attack, parry. Parrying gives you random options from your #yParry #yDeck to play at the start of your next turn (After drawing cards). "
     ]
   },
   "the_warlord:ReactionTimePower": {
@@ -115,7 +120,7 @@
   "the_warlord:FocusPunchPower": {
     "NAME": "Focus Punch",
     "DESCRIPTIONS": [
-      "At the start of next turn, deal #b%1$s damage. NL If you take damage, gain #b5 #yTension."
+      "At the start of next turn, deal #b%1$s damage. NL If you take damage, gain #b2 #yTension."
     ]
   },
 

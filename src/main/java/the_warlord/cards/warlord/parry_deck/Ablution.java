@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import the_warlord.WarlordMod;
+import the_warlord.actions.AblutionCleanseDebuffsAction;
 import the_warlord.characters.Warlord;
 
 public class Ablution extends CustomParryCard {
@@ -16,26 +17,25 @@ public class Ablution extends CustomParryCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = COST_UNPLAYABLE;
-    private static final int ARTIFACT = 1;
+    private static final int BLOCK = 3;
+    private static final int UPGRADE_PLUS_BLOCK = 1;
+
 
     public Ablution() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = ARTIFACT;
+        block = baseBlock = BLOCK;
     }
 
     @Override
     public void useParry() {
-        addToBot(new RemoveDebuffsAction(AbstractDungeon.player));
-        if (upgraded) {
-            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, magicNumber)));
-        }
+        addToBot(new AblutionCleanseDebuffsAction(AbstractDungeon.player, this.block));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
-
             upgradeName();
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeDescription();
         }
     }
