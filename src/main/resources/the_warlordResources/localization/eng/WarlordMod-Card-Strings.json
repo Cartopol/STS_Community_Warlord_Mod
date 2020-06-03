@@ -317,7 +317,7 @@
   },
   "the_warlord:Extremespeed": {
     "NAME": "Extremespeed",
-    "DESCRIPTION": "Discard your hand. NL Draw !the_warlord:UrMagic! cards. NL Shuffle !M! *Dizzy into your draw pile."
+    "DESCRIPTION": "Draw !the_warlord:UrMagic! cards. NL Shuffle !M! *Dizzy into your draw pile."
   },
   "the_warlord:CompositeArmor": {
     "NAME": "Composite Armor",
