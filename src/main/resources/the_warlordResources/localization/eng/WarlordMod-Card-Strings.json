@@ -67,7 +67,7 @@
   },
   "the_warlord:EyesWideOpen": {
     "NAME": "Eyes Wide Open",
-    "DESCRIPTION": "Gain !M! the_warlord:Posture. NL Exhaust."
+    "DESCRIPTION": "Gain !M! the_warlord:Posture. NL the_warlord:Posture cannot be reduced until your next turn. NL Exhaust."
   },
   "the_warlord:Stretch": {
     "NAME": "Stretch",
@@ -162,7 +162,7 @@
   },
   "the_warlord:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy is not attacking NL Gain [E]"
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is not attacking, gain [E] ."
   },
   "the_warlord:Assess": {
     "NAME": "Assess",
@@ -287,7 +287,7 @@
   },
   "the_warlord:FocusPunch": {
     "NAME": "Focus Punch",
-    "DESCRIPTION": "Next turn, Deal !D! damage. NL If you take damage this turn, gain !M! the_warlord:Tension."
+    "DESCRIPTION": "Next turn, deal !D! damage. NL If you take damage this turn, gain !M! the_warlord:Tension."
   },
   "the_warlord:DoubleTeam": {
     "NAME": "Double Team",

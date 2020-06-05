@@ -14,17 +14,25 @@ public class IntentUtils {
     public static boolean isDebuffIntent(Intent intent) {
         return
                 intent == Intent.STRONG_DEBUFF ||
-                intent == Intent.ATTACK_DEBUFF ||
-                intent == Intent.DEBUFF ||
-                intent == Intent.DEFEND_DEBUFF;
+                        intent == Intent.ATTACK_DEBUFF ||
+                        intent == Intent.DEBUFF ||
+                        intent == Intent.DEFEND_DEBUFF;
     }
 
     public static boolean isAttackIntent(Intent intent) {
         return
                 intent == Intent.ATTACK ||
-                intent == Intent.ATTACK_BUFF ||
-                intent == Intent.ATTACK_DEBUFF ||
-                intent == Intent.ATTACK_DEFEND;
+                        intent == Intent.ATTACK_BUFF ||
+                        intent == Intent.ATTACK_DEBUFF ||
+                        intent == Intent.ATTACK_DEFEND;
+    }
+
+    public static boolean isNonAttackIntent(Intent intent) {
+        return
+                intent != Intent.ATTACK &&
+                        intent != Intent.ATTACK_BUFF &&
+                        intent != Intent.ATTACK_DEBUFF &&
+                        intent != Intent.ATTACK_DEFEND;
     }
 
     public static boolean playerCanSeeThatAnyEnemyIntentMatches(Predicate<Intent> intentPredicate) {

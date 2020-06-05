@@ -7,6 +7,7 @@ import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.PosturePower;
+import the_warlord.powers.PostureStabilizedPower;
 
 public class EyesWideOpen extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(EyesWideOpen.class);
@@ -19,17 +20,22 @@ public class EyesWideOpen extends CustomWarlordModCard {
     private static final int COST = 0;
 
     private static final int POSTURE = 2;
+    private static final int POSTURE_STABILIZED = 1;
+
     private static final int UPGRADE_PLUS_POSTURE = 1;
 
     public EyesWideOpen() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = POSTURE;
+        urMagicNumber = baseUrMagicNumber = POSTURE_STABILIZED;
         this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new PosturePower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new PostureStabilizedPower(p, urMagicNumber)));
+
     }
 
     @Override

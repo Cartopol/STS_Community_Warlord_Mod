@@ -38,36 +38,6 @@ public class PosturePower extends CustomWarlordModPower {
         description = String.format(DESCRIPTIONS[0], amount);
     }
 
-    // in this implementation Posture is broken immediately during enemy turn, and tension is applied immediately when
-    // posture is broken, which has some feel-bad downsides.
-//    @Override
-//    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-//        int damageTaken = damageAmount;
-//        if (info.type.equals(DamageInfo.DamageType.NORMAL)) {
-//            damageTaken = damageAmount - amount;
-//            //only trigger if damageAmount > 0
-//            if (damageTaken > 0) {
-//                flash();
-//                WarlordMod.logger.info("postureBroken: " + postureBroken);
-//                //only apply tension the first time Posture is broken in a turn
-//                if (!postureBroken) {
-//                    WarlordMod.logger.info("applying tension");
-//
-//                    addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, amount)));
-//                }
-//                addToBot(new RemoveSpecificPowerAction(owner, owner, this));
-//                this.postureBroken = true;
-//
-//                for (AbstractPower power : AbstractDungeon.player.powers) {
-//                    if (power instanceof OnPostureBrokenSubscriber) {
-//                        ((OnPostureBrokenSubscriber) power).onPostureBroken(amount);
-//                    }
-//                }
-//            }
-//        }
-//        return damageTaken < 0 ? 0 : damageTaken;
-//    }
-
     // in this implementation, posture is lost and tension is gained at the start of your turn
 @Override
 public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
@@ -79,7 +49,6 @@ public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
             flash();
             WarlordMod.logger.info("postureBroken: " + postureBroken);
             //only apply tension the first time Posture is broken in a turn
-
             this.postureBroken = true;
 
             for (AbstractPower power : AbstractDungeon.player.powers) {
@@ -94,12 +63,15 @@ public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
 
     @Override
     public void atStartOfTurn() {
-        if (postureBroken) {
-            WarlordMod.logger.info("applying tension");
+        boolean stabilized = owner.hasPower(PostureStabilizedPower.POWER_ID);
+        if (stabilized) {
+            owner.getPower(PostureStabilizedPower.POWER_ID).flash();
+        }
+        if (postureBroken && !stabilized) {
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
             //apply 1 Tension whenever Posture is broken
             addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, TENSION_ON_BREAK)));
-        } else {
+        } else if (!stabilized) {
                 addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
         this.postureBroken = false;

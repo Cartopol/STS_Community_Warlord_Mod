@@ -43,6 +43,13 @@
       "Enemy #yAttack #yDamage is increased by #b%1$s."
     ]
   },
+  "the_warlord:PostureStabilizedPower": {
+    "NAME": "Posture Stabilized",
+    "DESCRIPTIONS": [
+      "#yPosture cannot be reduced for #b%1$s turn.",
+      "#yPosture cannot be reduced for #b%1$s turns."
+    ]
+  },
   "the_warlord:PositioningPower": {
     "NAME": "Positioning",
     "DESCRIPTIONS": [

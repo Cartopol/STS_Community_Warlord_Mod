@@ -1,22 +1,17 @@
 package the_warlord.cards.warlord;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.util.IntentUtils;
 
 import static the_warlord.util.IntentUtils.isAttackIntent;
-import static the_warlord.util.IntentUtils.playerCanSeeThatAnyEnemyIntentMatches;
 
 public class Ambush extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Ambush.class);
@@ -54,5 +49,5 @@ public class Ambush extends CustomWarlordModCard {
         }
     }
 
-    public boolean shouldGlowGold() { return IntentUtils.playerCanSeeThatAnyEnemyIntentMatches(IntentUtils::isAttackIntent); }
+    public boolean shouldGlowGold() { return IntentUtils.playerCanSeeThatAnyEnemyIntentMatches(IntentUtils::isNonAttackIntent); }
 }
