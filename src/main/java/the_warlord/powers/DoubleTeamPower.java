@@ -64,11 +64,8 @@ public class DoubleTeamPower extends CustomWarlordModPower {
 
     @Override
     public void updateDescription() {
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0];
-        } else {
-            description = String.format(DESCRIPTIONS[1], amount);
-        }
+        if (this.amount == 1) { this.description = DESCRIPTIONS[0];
+        } else { description = String.format(DESCRIPTIONS[1], amount); }
     }
 
     @Override

@@ -29,7 +29,6 @@ public class TrappingPit extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = BLEED;
         urMagicNumber = baseUrMagicNumber = WEAK;
-
     }
 
     @Override
@@ -51,6 +50,7 @@ public class TrappingPit extends CustomWarlordModCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_PLUS_BLEED);
+            this.selfRetain = true;
             upgradeDescription();
         }
     }

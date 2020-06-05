@@ -309,7 +309,8 @@
 
   "the_warlord:TrappingPit": {
     "NAME": "Trapping Pit",
-    "DESCRIPTION": "Apply !M! the_warlord:Bleed and !the_warlord:UrMagic! Weak to ALL enemies that intend to attack this turn."
+    "DESCRIPTION": "Apply !M! the_warlord:Bleed and !the_warlord:UrMagic! Weak to ALL enemies that intend to attack this turn.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Apply !M! the_warlord:Bleed and !the_warlord:UrMagic! Weak to ALL enemies that intend to attack this turn."
   },
 
   "the_warlord:TripleSlash": {
