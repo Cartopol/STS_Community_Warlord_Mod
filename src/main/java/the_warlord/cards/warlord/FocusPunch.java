@@ -29,7 +29,7 @@ public class FocusPunch extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new FocusPunchPower(p, damage, m)));
+        addToBot(new ApplyPowerAction(p, p, new FocusPunchPower(p, damage, m, magicNumber)));
     }
 
     @Override

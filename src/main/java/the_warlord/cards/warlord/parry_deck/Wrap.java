@@ -23,7 +23,7 @@ public class Wrap extends CustomParryCard {
     private static final int COST = COST_UNPLAYABLE;
 
     private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 8;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int TENSION_LOSS = 1;
 
     public Wrap() {
@@ -45,7 +45,7 @@ public class Wrap extends CustomParryCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeMagicNumber(UPGRADE_PLUS_BLOCK);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeName();
             upgradeDescription();
         }

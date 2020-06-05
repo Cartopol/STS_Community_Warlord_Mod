@@ -149,7 +149,11 @@
   },
   "the_warlord:Ablution": {
     "NAME": "Ablution",
-    "DESCRIPTION": "Remove all of your debuffs. NL Gain !B! Block for each debuff removed."
+    "DESCRIPTION": "Remove all of your debuffs. NL Gain !B! Block for each debuff removed.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (You have !M! Debuff.)",
+      " NL (You have !M! Debuffs.)"
+    ]
   },
   "the_warlord:HighStakes": {
     "NAME": "High Stakes",
@@ -158,10 +162,7 @@
   },
   "the_warlord:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy is not attacking NL Gain [E]",
-    "EXTENDED_DESCRIPTION": [
-      ""
-    ]
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is not attacking NL Gain [E]"
   },
   "the_warlord:Assess": {
     "NAME": "Assess",
@@ -223,7 +224,7 @@
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",
     "DESCRIPTION": "Upgrade ALL cards in your hand for the rest of combat.",
-    "UPGRADE_DESCRIPTION": "Upgrade ALL cards in your deck, and ALL cards in your parry deck for the rest of combat."
+    "UPGRADE_DESCRIPTION": "Upgrade ALL cards for the rest of combat (including your parry cards) NL the_warlord:Purge."
   },
   "the_warlord:TakeShelter": {
     "NAME": "Take Shelter",

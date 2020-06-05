@@ -21,11 +21,11 @@ public class Extremespeed extends CustomWarlordModCard {
     private static final int UPGRADED_COST = 0;
     private static final int DRAW = 3;
     private static final int UPGRADE_PLUS_DRAW = 1;
-    private static final int DAZED = 1;
+    private static final int DIZZY = 1;
 
     public Extremespeed() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = DAZED;
+        magicNumber = baseMagicNumber = DIZZY;
         urMagicNumber = baseUrMagicNumber = DRAW;
         cardsToPreview = new Dizzy();
     }

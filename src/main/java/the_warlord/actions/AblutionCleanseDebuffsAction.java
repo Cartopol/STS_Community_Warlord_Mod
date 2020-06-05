@@ -19,10 +19,7 @@ public class AblutionCleanseDebuffsAction extends AbstractGameAction {
     }
 
     public void update() {
-        Iterator var1 = this.c.powers.iterator();
-
-        while(var1.hasNext()) {
-            AbstractPower p = (AbstractPower)var1.next();
+        for (AbstractPower p: c.powers){
             if (p.type == AbstractPower.PowerType.DEBUFF) {
                 this.addToTop(new RemoveSpecificPowerAction(this.c, this.c, p.ID));
                 addToTop(new GainBlockAction(this.c, this.block));

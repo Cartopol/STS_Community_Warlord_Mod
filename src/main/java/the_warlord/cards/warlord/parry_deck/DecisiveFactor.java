@@ -27,6 +27,7 @@ public class DecisiveFactor extends CustomParryCard {
     public void useParry() {
         if (this.upgraded) {
             addToBot(new ApotheosisAction());
+            removeFromMasterParryDeck(this);
         }
         else { addToBot(new ArmamentsAction(true)); }
     }

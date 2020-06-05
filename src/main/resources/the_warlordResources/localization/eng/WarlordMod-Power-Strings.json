@@ -9,7 +9,7 @@
   "the_warlord:AnticoagulantPower": {
     "NAME": "Anticoagulant",
     "DESCRIPTIONS": [
-      "Whenever you Parry, apply #b%1$s #yGush to ALL enemies."
+      "The next time you parry, apply #b%1$s #yGush to ALL enemies."
     ]
   },
   "the_warlord:BleedPower": {
@@ -120,7 +120,7 @@
   "the_warlord:FocusPunchPower": {
     "NAME": "Focus Punch",
     "DESCRIPTIONS": [
-      "At the start of next turn, deal #b%1$s damage. NL If you take damage, gain #b2 #yTension."
+      "At the start of next turn, deal #b%1$s damage. NL If you take damage, gain #b%2$s #yTension."
     ]
   },
 

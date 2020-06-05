@@ -13,8 +13,10 @@ import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
+import the_warlord.util.IntentUtils;
 
 import static the_warlord.util.IntentUtils.isAttackIntent;
+import static the_warlord.util.IntentUtils.playerCanSeeThatAnyEnemyIntentMatches;
 
 public class Ambush extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(Ambush.class);
@@ -33,7 +35,6 @@ public class Ambush extends CustomWarlordModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
 //        AutoplayField.autoplay.set(this, true);
-        this.exhaust = true;
     }
 
     @Override
@@ -52,4 +53,6 @@ public class Ambush extends CustomWarlordModCard {
             upgradeDescription();
         }
     }
+
+    public boolean shouldGlowGold() { return IntentUtils.playerCanSeeThatAnyEnemyIntentMatches(IntentUtils::isAttackIntent); }
 }
