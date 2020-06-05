@@ -17,7 +17,7 @@ import the_warlord.relics.RelicParrySubscriber;
 
 import java.util.ArrayList;
 
-public class ParryPower extends CustomWarlordModPower implements InvisiblePower {
+public class ParryPower extends CustomWarlordModPower { //implements InvisiblePower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(ParryPower.class);
     public static final String POWER_ID = STATIC.ID;
 
@@ -30,7 +30,7 @@ public class ParryPower extends CustomWarlordModPower implements InvisiblePower 
         this.type = PowerType.BUFF;
 
         this.owner = owner;
-
+        loadRegion("flameBarrier");
         updateDescription();
     }
 

@@ -22,7 +22,7 @@ public class StunNeedle extends CustomWarlordModCard {
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 7;
     private static final int STRENGTH_LOSS = 1;
     private static final int COST_INCREASE = 1;
 

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
+import the_warlord.powers.PosturePower;
 import the_warlord.powers.TenseUpPower;
 
 public class TopsyTurvy extends CustomWarlordModCard {
@@ -17,12 +18,12 @@ public class TopsyTurvy extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int BLOCK_PER_TENSION = 4;
-    private static final int UPGRADE_BLOCK_PER_TENSION = 2;
+    private static final int POSTURE_PER_TENSION = 1;
+    private static final int UPGRADE_POSTURE_PER_TENSION = 1;
 
     public TopsyTurvy() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = BLOCK_PER_TENSION;
+        this.magicNumber = this.baseMagicNumber = POSTURE_PER_TENSION;
     }
 
     @Override
@@ -34,7 +35,7 @@ public class TopsyTurvy extends CustomWarlordModCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            upgradeMagicNumber(UPGRADE_BLOCK_PER_TENSION);
+            upgradeMagicNumber(UPGRADE_POSTURE_PER_TENSION);
 
             upgradeName();
             upgradeDescription();

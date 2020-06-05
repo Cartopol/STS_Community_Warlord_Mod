@@ -16,10 +16,10 @@ public class FocusPunch extends CustomWarlordModCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
-    private static final int COST = 3;
-    private static final int DAMAGE = 30;
-    private static final int UPGRADE_PLUS_DAMAGE = 10;
-    private static final int TENSION = 5;
+    private static final int COST = 1;
+    private static final int DAMAGE = 16;
+    private static final int UPGRADE_PLUS_DAMAGE = 4;
+    private static final int TENSION = 2;
 
     public FocusPunch() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -29,7 +29,7 @@ public class FocusPunch extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new FocusPunchPower(p, damage, m)));
+        addToBot(new ApplyPowerAction(p, p, new FocusPunchPower(p, damage, m, magicNumber)));
     }
 
     @Override

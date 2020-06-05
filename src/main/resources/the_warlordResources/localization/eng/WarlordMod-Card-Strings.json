@@ -75,7 +75,7 @@
   },
   "the_warlord:Wrap": {
     "NAME": "Wrap",
-    "DESCRIPTION": "Gain !M! Plated Armor."
+    "DESCRIPTION": "Gain !B! Block. NL Lose 1 the_warlord:Tension"
   },
   "the_warlord:HitNRun": {
     "NAME": "Hit 'n Run",
@@ -111,7 +111,7 @@
   },
   "the_warlord:TopsyTurvy": {
     "NAME": "Topsy-Turvy",
-    "DESCRIPTION": "Whenever you gain the_warlord:Tension, gain !M! Block."
+    "DESCRIPTION": "Whenever you gain the_warlord:Tension, gain !M! the_warlord:Posture."
   },
   "the_warlord:PositioningTheory": {
     "NAME": "Positioning Theory",
@@ -123,7 +123,7 @@
   },
   "the_warlord:Steamroll": {
     "NAME": "Steamroll",
-    "DESCRIPTION": "Deal !D! damage to a random enemy X times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage and apply !M! the_warlord:Bleed X times."
   },
   "the_warlord:Furrow": {
     "NAME": "Furrow",
@@ -149,8 +149,11 @@
   },
   "the_warlord:Ablution": {
     "NAME": "Ablution",
-    "DESCRIPTION": "Remove all of your debuffs.",
-    "UPGRADE_DESCRIPTION": "Remove all of your debuffs. NL Gain !M! Artifact."
+    "DESCRIPTION": "Remove all of your debuffs. NL Gain !B! Block for each debuff removed.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (You have !M! Debuff.)",
+      " NL (You have !M! Debuffs.)"
+    ]
   },
   "the_warlord:HighStakes": {
     "NAME": "High Stakes",
@@ -159,10 +162,7 @@
   },
   "the_warlord:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "If this is the first card played this turn, deal !D! damage to ALL enemies. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": [
-      "I can't play this card."
-    ]
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is not attacking NL Gain [E]"
   },
   "the_warlord:Assess": {
     "NAME": "Assess",
@@ -223,8 +223,8 @@
   },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",
-    "DESCRIPTION": "Upgrade all cards in your hand for the rest of combat.",
-    "UPGRADE_DESCRIPTION": "Draw !M! card. NL Upgrade all cards in your hand for the rest of combat."
+    "DESCRIPTION": "Upgrade ALL cards in your hand for the rest of combat.",
+    "UPGRADE_DESCRIPTION": "Upgrade ALL cards for the rest of combat (including your parry cards) NL the_warlord:Purge."
   },
   "the_warlord:TakeShelter": {
     "NAME": "Take Shelter",
@@ -283,8 +283,7 @@
   },
   "the_warlord:Anticoagulant": {
     "NAME": "Anticoagulant",
-    "DESCRIPTION": "Double the enemy's the_warlord:Bleed. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Triple the enemy's the_warlord:Bleed. NL Exhaust."
+    "DESCRIPTION": "The next time you the_warlord:Parry, apply !M! the_warlord:Gush to ALL enemies."
   },
   "the_warlord:FocusPunch": {
     "NAME": "Focus Punch",
@@ -297,7 +296,7 @@
   },
   "the_warlord:Safeguard": {
     "NAME": "Safeguard",
-    "DESCRIPTION": "Gain !B! Block. NL Remove all of your the_warlord:Tension."
+    "DESCRIPTION": "Gain !B! Block. NL Remove !M! the_warlord:Tension."
   },
   "the_warlord:SpeedUp": {
     "NAME": "Speed Up",
@@ -310,7 +309,8 @@
 
   "the_warlord:TrappingPit": {
     "NAME": "Trapping Pit",
-    "DESCRIPTION": "Apply !M! the_warlord:Bleed and !the_warlord:UrMagic! Weak to ALL enemies that intend to attack this turn."
+    "DESCRIPTION": "Apply !M! the_warlord:Bleed and !the_warlord:UrMagic! Weak to ALL enemies that intend to attack this turn.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Apply !M! the_warlord:Bleed and !the_warlord:UrMagic! Weak to ALL enemies that intend to attack this turn."
   },
 
   "the_warlord:TripleSlash": {
@@ -319,7 +319,7 @@
   },
   "the_warlord:Extremespeed": {
     "NAME": "Extremespeed",
-    "DESCRIPTION": "Discard your hand. NL Draw !the_warlord:UrMagic! cards. NL Shuffle !M! *Dizzy into your draw pile."
+    "DESCRIPTION": "Draw !the_warlord:UrMagic! cards. NL Shuffle !M! *Dizzy into your draw pile."
   },
   "the_warlord:CompositeArmor": {
     "NAME": "Composite Armor",

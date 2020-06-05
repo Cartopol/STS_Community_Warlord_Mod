@@ -1,5 +1,6 @@
 package the_warlord.powers;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -28,7 +29,7 @@ public class TenseUpPower extends CustomWarlordModPower {
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.ID.equals(TensionPower.POWER_ID)) {
             flash();
-            addToBot(new GainBlockAction(owner, amount));
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new PosturePower(this.owner, this.amount)));
         }
     }
 
