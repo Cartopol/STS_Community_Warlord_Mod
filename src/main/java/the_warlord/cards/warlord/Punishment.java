@@ -13,17 +13,17 @@ public class Punishment extends CustomWarlordModCard {
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
     private static final int UPGRADED_COST = 0;
 
-    private static final int VULN_ON_PARRY = 2;
+    private static final int ADDITIONAL_PARRIES = 1;
 
     public Punishment() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = VULN_ON_PARRY;
+        magicNumber = baseMagicNumber = ADDITIONAL_PARRIES;
     }
 
     @Override

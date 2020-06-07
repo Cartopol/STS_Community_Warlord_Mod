@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
+import the_warlord.powers.TensionPower;
 
 public class ZigZag extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(ZigZag.class);
@@ -19,19 +20,29 @@ public class ZigZag extends CustomWarlordModCard {
     private static final int COST = 1;
     private static final int BLOCK = 4;
     private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int BLOCK_PER_TENSION = 2;
+    private static final int UPGRADE_PLUS_BLOCK_PER_TENSION = 1;
+
 
     public ZigZag() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = BLOCK_PER_TENSION;
+    }
+
+    @Override
+    public int calculateBonusBaseBlock() {
+        AbstractPlayer p = AbstractDungeon.player;
+        int bonusBlock = 0;
+        if (p.hasPower(TensionPower.POWER_ID)) {
+            bonusBlock = p.getPower(TensionPower.POWER_ID).amount * magicNumber;
+        }
+        return bonusBlock;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster monster :  AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!monster.isDead && !monster.isDying) {
-                addToBot(new GainBlockAction(p, block));
-            }
-        }
+        addToBot(new GainBlockAction(p, block));
     }
 
     @Override
@@ -39,6 +50,7 @@ public class ZigZag extends CustomWarlordModCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_BLOCK_PER_TENSION);
             upgradeDescription();
         }
     }

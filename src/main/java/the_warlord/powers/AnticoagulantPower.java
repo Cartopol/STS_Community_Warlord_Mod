@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class AnticoagulantPower extends CustomWarlordModPower implements OnParrySubscriber {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(AnticoagulantPower.class);
@@ -17,7 +16,6 @@ public class AnticoagulantPower extends CustomWarlordModPower implements OnParry
         this.type = PowerType.BUFF;
         this.owner = owner;
         this.amount = amount;
-        loadRegion("flameBarrier");
         updateDescription();
     }
 

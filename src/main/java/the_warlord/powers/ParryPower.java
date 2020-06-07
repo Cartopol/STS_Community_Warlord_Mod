@@ -1,8 +1,6 @@
 package the_warlord.powers;
 
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,10 +10,9 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import the_warlord.WarlordMod;
+import the_warlord.actions.ParryAction;
 import the_warlord.cards.warlord.parry_deck.ParryDeck;
 import the_warlord.relics.RelicParrySubscriber;
-
-import java.util.ArrayList;
 
 public class ParryPower extends CustomWarlordModPower { //implements InvisiblePower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(ParryPower.class);
@@ -24,13 +21,14 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
     public static boolean isParrying = false;
     public static boolean isFullParrying = false;
 
+    public static int damageParriedThisTurn = 0;
+
     public ParryPower(AbstractCreature owner) {
         super(STATIC);
 
         this.type = PowerType.BUFF;
 
         this.owner = owner;
-        loadRegion("flameBarrier");
         updateDescription();
     }
 
@@ -45,27 +43,17 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
         isFullParrying = false;
         WarlordMod.logger.info("onAttacked called");
 
-        int tolerance = 0;
-        if (owner.hasPower(ReactionTimePower.POWER_ID)) {
-            tolerance = owner.getPower(ReactionTimePower.POWER_ID).amount;
-        }
-
         WarlordMod.logger.info("Damage " + damageAmount);
         WarlordMod.logger.info("DamageInfo.output " + info.output);
 
-//        if (damageAmount > 0 && owner.currentBlock > 0 && damageAmount <= upperDamageBound && damageAmount >= lowerDamageBound) {
-
-        if (damageAmount < info.output && damageAmount <= tolerance && owner.currentBlock <= tolerance) {
+        if (damageAmount < info.output && damageAmount == 0 && owner.currentBlock == 0) {
             WarlordMod.logger.info("Parrying");
+            damageParriedThisTurn += info.output;
 
             addToBot(new VFXAction(new FlameBarrierEffect(owner.dialogX, owner.dialogY)));
             isFullParrying = true;
             isParrying = true;
         }
-
-//        if (owner.hasPower(TensionPower.POWER_ID) && isParrying) {
-//            addToBot(new RemoveSpecificPowerAction(owner, owner, TensionPower.POWER_ID));
-//        }
 
         return damageAmount;
     }
@@ -78,11 +66,16 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
 
     @Override
     public void atStartOfTurnPostDraw() {
+        WarlordMod.logger.info("Amount of damage parried " + damageParriedThisTurn);
         ParryDeck.setParried(false);
-        WarlordMod.logger.info(this.ID + " isParrying: " + isParrying + ". isFullParrying: " + isFullParrying);
         if (isParrying) {
+
             ParryDeck.setParried(true);
             AbstractPlayer p = AbstractDungeon.player;
+
+            //check for number of parries to perform from PunishmentPower
+            int additionalParries = p.hasPower(PunishmentPower.POWER_ID) ? p.getPower(PunishmentPower.POWER_ID).amount : 0;
+
             //this calls onParry for all powers that implement onParrySubsciber
             for (AbstractPower pow : p.powers) {
                 if (pow instanceof OnParrySubscriber) {
@@ -90,8 +83,8 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
                 }
             }
             //this calls onParry for all relics that implement onParrySubsciber
-            for (AbstractRelic r : p.relics){
-                if(r instanceof RelicParrySubscriber){
+            for (AbstractRelic r : p.relics) {
+                if (r instanceof RelicParrySubscriber) {
                     ((RelicParrySubscriber) r).onParry(isFullParrying);
                 }
             }
@@ -113,19 +106,31 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
             }
 
             isParrying = false;
+            isFullParrying = false;
 
-            ArrayList<AbstractCard> parryOptions = ParryDeck.getParryOptions();
+//            ArrayList<AbstractCard> parryOptions = ParryDeck.getParryOptions();
+//            WarlordMod.logger.info("parryOptions : " + parryOptions);
 
-            if (isFullParrying) {
-                isFullParrying = false;
-                for (AbstractCard c : parryOptions) {
-//                    c.upgrade();
+
+//            if (parryOptions.size() > 0) {
+//                this.addToBot(new ChooseOneAction(parryOptions));
+
+            addToBot(new ParryAction());
+                for (int i = 0; i < additionalParries; ++i) {
+//                    ArrayList<AbstractCard> additionalParryOptions = ParryDeck.getParryOptions();
+//                    WarlordMod.logger.info("additionalParryOptions : " + additionalParryOptions);
+//
+//                    this.addToBot(new ChooseOneAction(additionalParryOptions));
+                    addToBot(new ParryAction());
+
                 }
             }
+        }
 
-            if (parryOptions.size() > 0) {
-                this.addToBot(new ChooseOneAction(parryOptions));
-            }
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if (isPlayer) {
+            damageParriedThisTurn = 0;
         }
     }
 

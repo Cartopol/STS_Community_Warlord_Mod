@@ -1,10 +1,13 @@
 package the_warlord.cards.warlord.parry_deck;
 
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
+
+@AutoAdd.Ignore
 
 public class PrickHoles extends CustomParryCard {
     public static final String ID = WarlordMod.makeID(PrickHoles.class);
@@ -18,7 +21,6 @@ public class PrickHoles extends CustomParryCard {
 
     private static final int THORNS = 3;
     private static final int UPGRADE_PLUS_THORNS = 2;
-
 
     public PrickHoles() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);

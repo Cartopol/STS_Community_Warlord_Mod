@@ -55,7 +55,7 @@
   },
   "the_warlord:ZigZag": {
     "NAME": "Zig Zag",
-    "DESCRIPTION": "Gain !B! Block for each enemy in combat."
+    "DESCRIPTION": "Gain !B! Block. NL Block is increased by !M! times your the_warlord:Tension."
   },
   "the_warlord:Fracture": {
     "NAME": "Fracture",
@@ -194,15 +194,32 @@
   },
   "the_warlord:Anticipation": {
     "NAME": "Anticipation",
-    "DESCRIPTION": "At the start of your turn, put !M! card from your draw pile into your hand. NL Draw !M! fewer card each turn."
+    "DESCRIPTION": "Put !M! card from your draw pile into your hand. NL the_warlord:Purge.",
+    "UPGRADE_DESCRIPTION": "Put !M! card from your draw pile into your hand."
   },
   "the_warlord:Punishment": {
     "NAME": "Punishment",
-    "DESCRIPTION": "Whenever you the_warlord:Parry, apply !M! Vulnerable to ALL enemies."
+    "DESCRIPTION": "The next time you the_warlord:Parry, play !M! additional the_warlord:Parry card."
   },
   "the_warlord:Riposte": {
     "NAME": "Riposte",
     "DESCRIPTION": "Deal !D! damage. NL If you have the_warlord:Parried this turn, play this card an additional time."
+  },
+  "the_warlord:InvertForce": {
+    "NAME": "Invert Force",
+    "DESCRIPTION": "Shuffle *Kinetic *Release into your draw pile. NL the_warlord:Purge.",
+    "UPGRADE_DESCRIPTION": "Shuffle *Kinetic *Release into your draw pile.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (the_warlord:Parried !M! damage)."
+    ]
+  },
+  "the_warlord:KineticRelease": {
+    "NAME": "Kinetic Release",
+    "DESCRIPTION": "Deal damage equal to the damage parried by *Invert *Force. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the damage parried by *Invert *Force.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deal !D! damage)."
+    ]
   },
   "the_warlord:QuickDraw": {
     "NAME": "Quick Draw",

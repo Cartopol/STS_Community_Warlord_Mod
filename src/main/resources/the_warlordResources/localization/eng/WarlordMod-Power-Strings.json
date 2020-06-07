@@ -28,7 +28,7 @@
   "the_warlord:PunishmentPower": {
     "NAME": "Punishment",
     "DESCRIPTIONS": [
-      "Whenever you Parry, apply #b%1$s #yVulnerable to ALL enemies."
+      "The next time you #yParry, play #b%1$s additional #yParry cards."
     ]
   },
   "the_warlord:PosturePower": {
@@ -84,7 +84,7 @@
   "the_warlord:ParryPower": {
     "NAME": "Parrying Spirit",
     "DESCRIPTIONS": [
-      "Whenever an attack removes all of your block, or you take no damage from an attack, parry. Parrying gives you random options from your #yParry #yDeck to play at the start of your next turn (After drawing cards). "
+      "When you Block an attack without taking damage and without having any Block left over, play 1 out of 3 random Parry cards from your Parry deck at the start of your next turn."
     ]
   },
   "the_warlord:ReactionTimePower": {

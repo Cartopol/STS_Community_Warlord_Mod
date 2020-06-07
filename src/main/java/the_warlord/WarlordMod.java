@@ -7,7 +7,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
-import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -55,14 +54,6 @@ public class WarlordMod implements
     private static final String AUTHOR = "";
     private static final String DESCRIPTION = "The Warlord";
 
-    public static class CustomCardTags {
-        // Use on a card that brings in a possible beneficial effect that lasts longer than the combat and isn't
-        // directly healing or gaining Max HP. If the effect has indirect healing, such as adding a second effect
-        // that conditionally heals or grants Max HP, do use this card tag instead of HEALING.
-        @SpireEnum(name = "PERSISTENT_POSITIVE_EFFECT")
-        public static AbstractCard.CardTags PERSISTENT_POSITIVE_EFFECT;
-  }
-
     // =============== INPUT TEXTURE LOCATION =================
 
     //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
@@ -70,10 +61,6 @@ public class WarlordMod implements
 
 
     // =============== MAKE RESOURCE PATHS =================
-
-    public static String makeVoiceOverPath(String resourcePath) {
-        return MOD_ID + "Resources/audio/vo/" + resourcePath;
-    }
 
     public static String makeCardPath(String resourcePath) {
         return MOD_ID + "Resources/images/cards/" + resourcePath;
@@ -89,14 +76,6 @@ public class WarlordMod implements
 
     public static String makeRelicOutlinePath(String resourcePath) {
         return MOD_ID + "Resources/images/relics/outline/" + resourcePath;
-    }
-
-    public static String makeMemoryPath(String resourcePath) {
-        return MOD_ID + "Resources/images/memories/" + resourcePath;
-    }
-
-    public static String makeMonsterPath(String resourcePath) {
-        return MOD_ID + "Resources/images/monsters/" + resourcePath;
     }
 
     public static String makePowerPath(String resourcePath) {
@@ -213,14 +192,6 @@ public class WarlordMod implements
 
         // =============== EVENTS =================
 
-        // This event will be exclusive to the City (act 2). If you want an event that's present at any
-        // part of the game, simply don't include the dungeon ID
-        // If you want to have a character-specific event, look at slimebound (CityRemoveEventPatch).
-        // Essentially, you need to patch the game and say "if a player is not playing my character class, remove the event from the pool"
-        //
-        // Not complete yet:
-        // BaseMod.addEvent(DeckOfManyThingsEvent.ID, DeckOfManyThingsEvent.class, TheCity.ID);
-
         // =============== /EVENTS/ =================
     }
 
@@ -260,6 +231,9 @@ public class WarlordMod implements
         BaseMod.addDynamicVariable(new BaseDamageNumber());
         BaseMod.addDynamicVariable(new UrMagicNumber());
         BaseMod.addDynamicVariable(new MetaMagicNumber());
+
+
+//        new AutoAdd(WarlordMod.MOD_ID).packageFilter("cards").setDefaultSeen(true).cards();
 
         List<CustomWarlordModCard> cards = ReflectionUtils.instantiateAllConcreteWarlordModSubclasses(CustomWarlordModCard.class);
         for (CustomWarlordModCard cardInstance : cards) {
