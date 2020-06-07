@@ -9,6 +9,7 @@ import the_warlord.WarlordMod;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.PosturePower;
+import the_warlord.powers.TensionPerTurnPower;
 import the_warlord.powers.TensionPower;
 
 public class HeadStart extends CustomWarlordModCard {
@@ -23,17 +24,18 @@ public class HeadStart extends CustomWarlordModCard {
 //    private static final int DRAW = 3;
 //    private static final int POSTURE = 1;
 //    private static final int UPGRADE_PLUS_POSTURE = 2;
-    private static final int POSTURE_TENSION = 4;
-    private static final int UPGRADE_PLUS_POSTURE_TENSION = 1;
+    private static final int POSTURE = 5;
+    private static final int UPGRADE_PLUS_POSTURE = 2;
+    private static final int TENSION_PT = 1;
 
 
     public HeadStart() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        this.isInnate = true;
         this.exhaust = true;
 //        magicNumber = baseMagicNumber = DRAW;
 //        urMagicNumber = baseUrMagicNumber = POSTURE;
-        urMagicNumber = baseUrMagicNumber = POSTURE_TENSION;
+        urMagicNumber = baseUrMagicNumber = POSTURE;
+        magicNumber = TENSION_PT;
 
     }
 
@@ -41,7 +43,7 @@ public class HeadStart extends CustomWarlordModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 //        addToBot(new DrawCardAction(magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PosturePower(p, urMagicNumber), urMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TensionPower(p, urMagicNumber), urMagicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TensionPerTurnPower(p, magicNumber), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
 
     }
 
@@ -50,7 +52,7 @@ public class HeadStart extends CustomWarlordModCard {
         if (!upgraded) {
             upgradeName();
 //            upgradeUrMagicNumber(UPGRADE_PLUS_POSTURE);
-            upgradeUrMagicNumber(UPGRADE_PLUS_POSTURE_TENSION);
+            upgradeUrMagicNumber(UPGRADE_PLUS_POSTURE);
             upgradeDescription();
         }
     }

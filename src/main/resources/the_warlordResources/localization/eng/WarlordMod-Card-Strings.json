@@ -278,7 +278,7 @@
   },
   "the_warlord:HeadStart": {
     "NAME": "Head Start",
-    "DESCRIPTION": "Innate. NL Gain !the_warlord:UrMagic! the_warlord:Posture and !the_warlord:UrMagic! the_warlord:Tension. NL Exhaust."
+    "DESCRIPTION": "Gain !the_warlord:UrMagic! the_warlord:Posture. NL Gain !M! the_warlord:Tension at the start of each turn. NL Exhaust."
   },
   "the_warlord:DeadlyMist": {
     "NAME": "Deadly Mist",
