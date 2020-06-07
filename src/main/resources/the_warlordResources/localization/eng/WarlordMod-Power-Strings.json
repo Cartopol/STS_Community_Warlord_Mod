@@ -183,5 +183,11 @@
       "Whenever you play #b4 cards, draw a card.",
       "Whenever you play #b4 cards, draw #b%1$s cards."
     ]
+  },
+  "the_warlord:TensionPerTurnPower": {
+    "NAME": "Increasing Tension",
+    "DESCRIPTIONS": [
+      "Gain #b%1$s #yTension at the start of each turn."
+    ]
   }
 }
