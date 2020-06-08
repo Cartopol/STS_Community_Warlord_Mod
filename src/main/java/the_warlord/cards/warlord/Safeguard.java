@@ -1,8 +1,7 @@
 package the_warlord.cards.warlord;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import the_warlord.WarlordMod;
@@ -35,8 +34,7 @@ public class Safeguard extends CustomWarlordModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
         if(p.hasPower(TensionPower.POWER_ID)){
-            if(p.getPower(TensionPower.POWER_ID).amount != this.magicNumber){ addToBot(new ApplyPowerAction(p, p, new TensionPower(p, -magicNumber), -magicNumber)); }
-            else { addToBot(new RemoveSpecificPowerAction(p, p, TensionPower.POWER_ID)); }
+            addToBot(new ReducePowerAction(p, p, TensionPower.POWER_ID, magicNumber));
         }
     }
 

@@ -23,7 +23,8 @@ public class TensionPower extends CustomWarlordModPower {
         this.owner = owner;
         this.amount = amount;
 
-        this.isTurnBased = true;
+//        this.isTurnBased = true;
+        canGoNegative = false;
 
         if (AbstractDungeon.actionManager.turnHasEnded) {
             this.justApplied = true;

@@ -10,7 +10,7 @@ import static the_warlord.characters.Warlord.Enums.WARLORD_CARD_COLOR;
 
 public class FencingBoots extends CustomWarlordModRelic {
     public static final String ID = WarlordMod.makeID(FencingBoots.class);
-    private static final int REACTION_TIME = 2;
+    private static final int POSTURE = 3;
 
     public FencingBoots() {
         super(ID, WARLORD_CARD_COLOR, RelicTier.STARTER, LandingSound.FLAT);
@@ -19,9 +19,7 @@ public class FencingBoots extends CustomWarlordModRelic {
     @Override
     public void atBattleStart() {
         AbstractPlayer p = AbstractDungeon.player;
-//        addToBot(new ApplyPowerAction(p, p, new ReactionTimePower(p, REACTION_TIME)));
-        addToBot(new ApplyPowerAction(p, p, new PosturePower(p, REACTION_TIME)));
-//        addToBot(new ApplyPowerAction(p, p, new TensionPower(p, REACTION_TIME)));
+        addToBot(new ApplyPowerAction(p, p, new PosturePower(p, POSTURE)));
 
         this.flash();
     }

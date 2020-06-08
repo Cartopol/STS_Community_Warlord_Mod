@@ -10,7 +10,7 @@ import static the_warlord.characters.Warlord.Enums.WARLORD_CARD_COLOR;
 
 public class FeatherBoots extends CustomWarlordModRelic {
     public static final String ID = WarlordMod.makeID(FeatherBoots.class);
-    private static final int REACTION_TIME = 5;
+    private static final int POSTURE = 6;
 
     public FeatherBoots() {
         super(ID, WARLORD_CARD_COLOR, RelicTier.BOSS, LandingSound.MAGICAL);
@@ -19,7 +19,7 @@ public class FeatherBoots extends CustomWarlordModRelic {
     @Override
     public void atBattleStart() {
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new PosturePower(p, REACTION_TIME)));
+        addToBot(new ApplyPowerAction(p, p, new PosturePower(p, POSTURE)));
         this.flash();
     }
 

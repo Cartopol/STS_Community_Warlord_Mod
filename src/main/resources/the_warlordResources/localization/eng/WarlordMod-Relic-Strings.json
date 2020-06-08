@@ -3,7 +3,7 @@
     "NAME": "Fencing Boots",
     "FLAVOR": "You are the fencing queen, young and ascension 17...",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b2 the_warlord:Posture."
+      "At the start of combat, gain #b3 the_warlord:Posture."
     ]
   },
   "the_warlord:MedicPouch": {
@@ -52,7 +52,7 @@
     "NAME": "Feather Boots",
     "FLAVOR": "Makes you feel like flying.",
     "DESCRIPTIONS": [
-      "#rReplaces #rFencing #rBoots. NL At the start of combat, gain #b5 the_warlord:Posture."
+      "#rReplaces #rFencing #rBoots. NL At the start of combat, gain #b6 the_warlord:Posture."
     ]
   },
   "the_warlord:SamuraiSword": {

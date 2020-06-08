@@ -10,7 +10,6 @@ import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.PosturePower;
 import the_warlord.powers.TensionPerTurnPower;
-import the_warlord.powers.TensionPower;
 
 public class HeadStart extends CustomWarlordModCard {
     public static final String ID = WarlordMod.makeID(HeadStart.class);
@@ -35,7 +34,7 @@ public class HeadStart extends CustomWarlordModCard {
 //        magicNumber = baseMagicNumber = DRAW;
 //        urMagicNumber = baseUrMagicNumber = POSTURE;
         urMagicNumber = baseUrMagicNumber = POSTURE;
-        magicNumber =  baseMagicNumber = TENSION_PT;
+        magicNumber = baseMagicNumber = TENSION_PT;
 
     }
 

@@ -1,20 +1,26 @@
 v0.0.12
 - New card: Invert Force. "Parry: Shuffle Kinetic Release into your draw pile. Purge."
 - New card: Kinetic Release. "0: Deal damage equal to the damage parried with Invert Force. Exhaust."
+
 - Punishment reworked. "1(0): The next time you Parry, play an additional Parry card."
 - Anticipation reworked. "Parry: Put a card from your draw pile into your hand. Purge."
 - Zig Zag reworked. "1: Gain 4(6) Block. Increase this by 2(3) times your Tension."
+- Head Start reworked. "0: Gain 5(7) Posture. Gain 1 Tension at the start of each turn. Exhaust."
+- Wrap rework: Gain 5(8) Block, Lose 1 Tension.
+- Ambush rework: Deal 10 (13) Damage, If the enemy isn't attacking, gain [E].
+- Extremespeed rework: Dizzy amount reduced to 1, Draw reduced to 3(4), Discard clause removed.
+- Focus Punch cost reduced to 1, damage reduced to 16 (20), Tension reduced to 2.
+- Anticoagulant rework: Changed to "The next time you parry, apply 2 Gush to ALL enemies.", Cost changed to 1(0)
+- Steamroll rework: Deal 6(8) Damage and Apply 2(3) Bleed X times.
+- Decisive Factor: Upgrade changed - Upgrade all cards in your deck (and parry deck) for this combat.
+- Topsy Turvy rework: Whenever you gain tension, gain 1(2) Posture.
+- Ablution rework - Gain 3(4) block whenever a debuff is removed.
+
+- Starter Relic and its upgrade buffed to 3(6) Posture
 - Stun Needle damage increased to 7
 - Trapping Pit+ now has Retain
-- Wrap: Gain 5(8) Block, Lose 1 Tension.
-- Ambush: Deal 10 (13) Damage, If the enemy isn't attacking, gain [E].
-- Extremespeed: Dizzy amount reduced to 1, Draw reduced to 3(4), Discard clause removed.
-- Focus Punch cost reduced to 1, damage reduced to 16 (20), Tension reduced to 2.
-- Anticoagulant: Changed to "The next time you parry, apply 2 Gush to ALL enemies.", Cost changed to 1(0)
-- Steamroll: Deal 6(8) Damage and Apply 2(3) Bleed X times.
-- Decisive Factor: Upgrade changed - Upgrade all cards in your deck (and parry deck) for this combat.
-- Topsy Turvy: Whenever you gain tension, gain 1(2) Posture.
-- Ablution - Gain 3(4) block whenever a debuff is removed.
+- Pocket Knife relic is now Common
+
 - QOL: ParryPower now has a description and is viewable.
 - Eyes Wide Open now has "Your Posture cannot be reduced until your next turn."
 
