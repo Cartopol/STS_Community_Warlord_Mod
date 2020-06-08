@@ -35,7 +35,7 @@ public class HeadStart extends CustomWarlordModCard {
 //        magicNumber = baseMagicNumber = DRAW;
 //        urMagicNumber = baseUrMagicNumber = POSTURE;
         urMagicNumber = baseUrMagicNumber = POSTURE;
-        magicNumber = TENSION_PT;
+        magicNumber =  baseMagicNumber = TENSION_PT;
 
     }
 
