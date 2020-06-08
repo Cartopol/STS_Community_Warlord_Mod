@@ -25,6 +25,14 @@ public class InvertForce extends CustomParryCard {
     }
 
     @Override
+    public void applyPowers() {
+        super.applyPowers();
+        rawDescription = upgraded ? cardStrings.DESCRIPTION : cardStrings.UPGRADE_DESCRIPTION + EXTENDED_DESCRIPTION[0];
+        WarlordMod.logger.info("InvertForce Description initialized: " + rawDescription);
+        initializeDescription();
+    }
+
+    @Override
     public void useParry() {
         magicNumber = calculateBonusMagicNumber();
         KineticRelease c = new KineticRelease();
@@ -40,17 +48,14 @@ public class InvertForce extends CustomParryCard {
         int damageParried = 0;
         AbstractPlayer p = AbstractDungeon.player;
         if (p.hasPower(ParryPower.POWER_ID)) {
-            damageParried = ParryPower.damageParriedThisTurn;
+
+           ParryPower power = (ParryPower)p.getPower(ParryPower.POWER_ID);
+           damageParried = power.damageParriedThisTurn;
         }
+
         return damageParried;
+
     }
-
-
-    @Override
-    public String getRawDynamicDescriptionSuffix() {
-        return EXTENDED_DESCRIPTION[0];
-    }
-
 
     @Override
     public void upgrade() {

@@ -21,7 +21,7 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
     public static boolean isParrying = false;
     public static boolean isFullParrying = false;
 
-    public static int damageParriedThisTurn = 0;
+    public int damageParriedThisTurn = 0;
 
     public ParryPower(AbstractCreature owner) {
         super(STATIC);
@@ -43,12 +43,13 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
         isFullParrying = false;
         WarlordMod.logger.info("onAttacked called");
 
-        WarlordMod.logger.info("Damage " + damageAmount);
-        WarlordMod.logger.info("DamageInfo.output " + info.output);
+        if (damageAmount == 0) {
+            this.damageParriedThisTurn += info.output;
+            WarlordMod.logger.info("DamageParriedThisTurn = " + damageParriedThisTurn);
+        }
 
         if (damageAmount < info.output && damageAmount == 0 && owner.currentBlock == 0) {
             WarlordMod.logger.info("Parrying");
-            damageParriedThisTurn += info.output;
 
             addToBot(new VFXAction(new FlameBarrierEffect(owner.dialogX, owner.dialogY)));
             isFullParrying = true;

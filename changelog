@@ -7,6 +7,7 @@ v0.0.12
 - Zig Zag reworked. "1: Gain 4(6) Block. Increase this by 2(3) times your Tension."
 - Head Start reworked. "0: Gain 5(7) Posture. Gain 1 Tension at the start of each turn. Exhaust."
 - Wrap rework: Gain 5(8) Block, Lose 1 Tension.
+- Eyes Wide Open rework: now has "Your Posture cannot be reduced until your next turn."
 - Ambush rework: Deal 10 (13) Damage, If the enemy isn't attacking, gain [E].
 - Extremespeed rework: Dizzy amount reduced to 1, Draw reduced to 3(4), Discard clause removed.
 - Focus Punch cost reduced to 1, damage reduced to 16 (20), Tension reduced to 2.
@@ -22,7 +23,6 @@ v0.0.12
 - Pocket Knife relic is now Common
 
 - QOL: ParryPower now has a description and is viewable.
-- Eyes Wide Open now has "Your Posture cannot be reduced until your next turn."
 
 v0.0.11
 - Tension reworked: you only get 1 Tension when posture is broken. It no longer increases your block, and no longer
