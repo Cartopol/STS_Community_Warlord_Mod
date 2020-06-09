@@ -1,9 +1,11 @@
 package the_warlord.cards.warlord.parry_deck;
 
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import the_warlord.WarlordMod;
+import the_warlord.cardmods.IFText;
 import the_warlord.cards.warlord.KineticRelease;
 import the_warlord.characters.Warlord;
 import the_warlord.powers.ParryPower;
@@ -22,6 +24,7 @@ public class InvertForce extends CustomParryCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 0;
         cardsToPreview = new KineticRelease();
+        if(!CardModifierManager.hasModifier(this, IFText.fetchID())){ CardModifierManager.addModifier(this, new IFText(cardStrings.EXTENDED_DESCRIPTION[0])); }
     }
 
     @Override

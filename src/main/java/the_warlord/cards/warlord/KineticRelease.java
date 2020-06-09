@@ -38,7 +38,6 @@ public class KineticRelease extends CustomWarlordModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         addToBot(new VFXAction(new SearingBlowEffect(m.hb.cX, m.hb.cY, this.baseDamage/8), 0.2F));
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AbstractGameAction.AttackEffect.NONE));
     }
