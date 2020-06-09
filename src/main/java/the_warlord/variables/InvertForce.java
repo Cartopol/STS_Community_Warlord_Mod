@@ -3,7 +3,7 @@ package the_warlord.variables;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import the_warlord.patches.squeenyInvertForceField;
+import the_warlord.patches.SqueenyInvertForceField;
 
 import static the_warlord.WarlordMod.makeID;
 
@@ -15,7 +15,7 @@ public class InvertForce extends DynamicVariable {
 
     @Override
     public int baseValue(AbstractCard card) {
-        return AbstractDungeon.player != null ? squeenyInvertForceField.parriedDamageThisTurn.get(AbstractDungeon.player) : 0;
+        return AbstractDungeon.player != null ? SqueenyInvertForceField.parriedDamageThisTurn.get(AbstractDungeon.player) : 0;
     }
 
     @Override

@@ -207,10 +207,10 @@
   },
   "the_warlord:InvertForce": {
     "NAME": "Invert Force",
-    "DESCRIPTION": "Shuffle *Kinetic *Release into your draw pile. NL the_warlord:Purge.",
-    "UPGRADE_DESCRIPTION": "Shuffle *Kinetic *Release into your draw pile.",
+    "DESCRIPTION": "Shuffle *Kinetic *Release into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Shuffle an upgraded *Kinetic *Release into your draw pile.",
     "EXTENDED_DESCRIPTION": [
-      " NL (the_warlord:Parried !the_warlord:IF! damage)."
+      " NL (Parried !the_warlord:IF! damage)."
     ]
   },
   "the_warlord:KineticRelease": {

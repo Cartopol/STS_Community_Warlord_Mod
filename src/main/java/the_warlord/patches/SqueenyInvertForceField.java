@@ -8,6 +8,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
         clz = AbstractPlayer.class,
         method = SpirePatch.CLASS
 )
-public class squeenyInvertForceField {
+public class SqueenyInvertForceField {
     public static SpireField<Integer> parriedDamageThisTurn = new SpireField<>(()->0);
 }

@@ -39,11 +39,11 @@ public class InvertForce extends CustomParryCard {
     public void useParry() {
         magicNumber = calculateBonusMagicNumber();
         KineticRelease c = new KineticRelease();
+        if (upgraded) {
+            c.upgrade();
+        }
         c.setDamage(this.magicNumber);
         addToBot(new MakeTempCardInDrawPileAction(c, 1, true, true));
-        if (!upgraded) {
-            removeFromMasterParryDeck(this);
-        }
     }
 
     @Override

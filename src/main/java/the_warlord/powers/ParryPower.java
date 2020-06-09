@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
 import the_warlord.WarlordMod;
 import the_warlord.actions.ParryAction;
 import the_warlord.cards.warlord.parry_deck.ParryDeck;
-import the_warlord.patches.squeenyInvertForceField;
+import the_warlord.patches.SqueenyInvertForceField;
 import the_warlord.relics.RelicParrySubscriber;
 
 public class ParryPower extends CustomWarlordModPower { //implements InvisiblePower {
@@ -71,7 +71,7 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
         WarlordMod.logger.info("Amount of damage parried " + damageParriedThisTurn);
         ParryDeck.setParried(false);
         if (isParrying) {
-            squeenyInvertForceField.parriedDamageThisTurn.set(AbstractDungeon.player, damageParriedThisTurn);
+            SqueenyInvertForceField.parriedDamageThisTurn.set(AbstractDungeon.player, damageParriedThisTurn);
             ParryDeck.setParried(true);
             AbstractPlayer p = AbstractDungeon.player;
 
