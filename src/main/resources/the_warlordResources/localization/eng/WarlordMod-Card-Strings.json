@@ -210,7 +210,7 @@
     "DESCRIPTION": "Shuffle *Kinetic *Release into your draw pile. NL the_warlord:Purge.",
     "UPGRADE_DESCRIPTION": "Shuffle *Kinetic *Release into your draw pile.",
     "EXTENDED_DESCRIPTION": [
-      " NL (the_warlord:Parried !M! damage)."
+      " NL (the_warlord:Parried !the_warlord:IF! damage)."
     ]
   },
   "the_warlord:KineticRelease": {

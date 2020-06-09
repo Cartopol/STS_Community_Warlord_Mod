@@ -1,6 +1,7 @@
 package the_warlord;
 
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -21,15 +22,13 @@ import org.apache.logging.log4j.Logger;
 import org.clapper.util.classutil.RegexClassFilter;
 import the_warlord.cards.CustomWarlordModCard;
 import the_warlord.characters.Warlord;
+import the_warlord.patches.squeenyInvertForceField;
 import the_warlord.potions.GushPotion;
 import the_warlord.potions.PosturePotion;
 import the_warlord.relics.CustomWarlordModRelic;
 import the_warlord.util.ReflectionUtils;
 import the_warlord.util.TextureLoader;
-import the_warlord.variables.BaseBlockNumber;
-import the_warlord.variables.BaseDamageNumber;
-import the_warlord.variables.MetaMagicNumber;
-import the_warlord.variables.UrMagicNumber;
+import the_warlord.variables.*;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -190,6 +189,22 @@ public class WarlordMod implements
         logger.info("Registering powers for dev console");
         registerPowersInDevConsole();
 
+        BaseMod.addSaveField("WarlordParryPowerSavable", new CustomSavable<Integer>() {
+            @Override
+            public Integer onSave() {
+                if(AbstractDungeon.player != null){
+                    squeenyInvertForceField.parriedDamageThisTurn.set(AbstractDungeon.player, 0);
+                }
+                return 0;
+            }
+
+            @Override
+            public void onLoad(Integer i) {
+                if(AbstractDungeon.player != null){
+                    squeenyInvertForceField.parriedDamageThisTurn.set(AbstractDungeon.player, 0);
+                }
+            }
+        });
         // =============== EVENTS =================
 
         // =============== /EVENTS/ =================
@@ -231,6 +246,7 @@ public class WarlordMod implements
         BaseMod.addDynamicVariable(new BaseDamageNumber());
         BaseMod.addDynamicVariable(new UrMagicNumber());
         BaseMod.addDynamicVariable(new MetaMagicNumber());
+        BaseMod.addDynamicVariable(new InvertForce());
 
 
 //        new AutoAdd(WarlordMod.MOD_ID).packageFilter("cards").setDefaultSeen(true).cards();
