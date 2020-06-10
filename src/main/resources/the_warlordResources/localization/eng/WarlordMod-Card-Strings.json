@@ -13,7 +13,7 @@
   },
   "the_warlord:Dizzy": {
     "NAME": "Dizzy",
-    "DESCRIPTION": "Unplayable. NL Ethereal. NL When drawn, reduce your the_warlord:Posture by !M!."
+    "DESCRIPTION": "Unplayable. NL When drawn, reduce your the_warlord:Posture by !M! and draw a card."
   },
   "the_warlord:Rebuff": {
     "NAME": "Rebuff",

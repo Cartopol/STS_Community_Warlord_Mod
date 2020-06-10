@@ -1,5 +1,6 @@
 package the_warlord.cards.warlord;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,12 +18,12 @@ public class Dizzy extends CustomWarlordModCard {
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = COST_UNPLAYABLE;
-    private static final int POSTURE_REDUCTION = 3;
+    private static final int POSTURE_REDUCTION = 2;
 
     public Dizzy() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = baseMagicNumber = POSTURE_REDUCTION;
-        this.isEthereal = true;
+//        this.isEthereal = true;
     }
 
     @Override
@@ -30,6 +31,7 @@ public class Dizzy extends CustomWarlordModCard {
         AbstractPlayer p = AbstractDungeon.player;
         if (p.hasPower(PosturePower.POWER_ID)) {
             addToBot(new ReducePowerAction(p, p, PosturePower.POWER_ID, magicNumber));
+            addToBot(new DrawCardAction(1));
         }
     }
 
