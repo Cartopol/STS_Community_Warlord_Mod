@@ -118,8 +118,8 @@
     "DESCRIPTION": "Whenever you the_warlord:Parry, gain !M! Dexterity."
   },
   "the_warlord:BloodMagic": {
-    "NAME": "Blood Magic",
-    "DESCRIPTION": "At the start of your turn, apply !M! Bleed to a random enemy."
+    "NAME": "Blood Smoke",
+    "DESCRIPTION": "Whenever you apply the_warlord:Gush to a the_warlord:Bleeding enemy, gain Block equal to its Bleed."
   },
   "the_warlord:Steamroll": {
     "NAME": "Steamroll",

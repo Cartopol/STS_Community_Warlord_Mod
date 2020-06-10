@@ -1,10 +1,10 @@
 package the_warlord.powers;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import the_warlord.VFX.BloodSmokeEffect;
 
 public class BloodMagicPower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(BloodMagicPower.class);
@@ -21,11 +21,19 @@ public class BloodMagicPower extends CustomWarlordModPower {
         updateDescription();
     }
 
+//    @Override
+//    public void atStartOfTurn() {
+//        AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
+//        if (target != null) {
+//            addToBot(new ApplyPowerAction(target, owner, new BleedPower(target, amount)));
+//        }
+//    }
+
     @Override
-    public void atStartOfTurn() {
-        AbstractMonster target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng);
-        if (target != null) {
-            addToBot(new ApplyPowerAction(target, owner, new BleedPower(target, amount)));
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.ID.equals(GushPower.POWER_ID) && target.hasPower(BleedPower.POWER_ID)) {
+            addToBot(new GainBlockAction(owner, target.getPower(BleedPower.POWER_ID).amount * amount));
+            addToBot(new VFXAction(new BloodSmokeEffect(target.drawX, target.drawY)));
         }
     }
 

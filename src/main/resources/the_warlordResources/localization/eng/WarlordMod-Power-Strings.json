@@ -57,9 +57,9 @@
     ]
   },
   "the_warlord:BloodMagicPower": {
-    "NAME": "Blood Magic",
+    "NAME": "Blood Smoke",
     "DESCRIPTIONS": [
-      "At the start of your turn, apply #b%1$s #yBleed to a random enemy."
+      "Whenever you apply #yGush to a #yBleeding enemy, gain #b%1$s Block for each point of #yBleed on enemy."
     ]
   },
   "the_warlord:GuardianFormPower": {

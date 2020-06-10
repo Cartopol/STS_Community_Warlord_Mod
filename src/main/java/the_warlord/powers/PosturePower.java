@@ -39,40 +39,44 @@ public class PosturePower extends CustomWarlordModPower {
     }
 
     // in this implementation, posture is lost and tension is gained at the start of your turn
-@Override
-public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-    int damageTaken = damageAmount;
-    if (info.type.equals(DamageInfo.DamageType.NORMAL)) {
-        damageTaken = damageAmount - amount;
-        //only trigger if damageAmount > 0
-        if (damageTaken > 0) {
-            flash();
-            WarlordMod.logger.info("postureBroken: " + postureBroken);
-            //only apply tension the first time Posture is broken in a turn
-            this.postureBroken = true;
+    @Override
+    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+        int damageTaken = damageAmount;
+        if (info.type.equals(DamageInfo.DamageType.NORMAL)) {
+            damageTaken = damageAmount - amount;
+            //only trigger if damageAmount > 0
+            if (damageTaken > 0) {
+                flash();
+                WarlordMod.logger.info("postureBroken: " + postureBroken);
+                //only apply tension the first time Posture is broken in a turn
+                this.postureBroken = true;
 
-            for (AbstractPower power : AbstractDungeon.player.powers) {
-                if (power instanceof OnPostureBrokenSubscriber) {
-                    ((OnPostureBrokenSubscriber) power).onPostureBroken(amount);
+                for (AbstractPower power : AbstractDungeon.player.powers) {
+                    if (power instanceof OnPostureBrokenSubscriber) {
+                        ((OnPostureBrokenSubscriber) power).onPostureBroken(amount);
+                    }
                 }
             }
         }
+        return damageTaken < 0 ? 0 : damageTaken;
     }
-    return damageTaken < 0 ? 0 : damageTaken;
-}
 
     @Override
     public void atStartOfTurn() {
         boolean stabilized = owner.hasPower(PostureStabilizedPower.POWER_ID);
+
+
         if (stabilized) {
             owner.getPower(PostureStabilizedPower.POWER_ID).flash();
-        }
-        if (postureBroken && !stabilized) {
+            if (postureBroken) {
+                addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, TENSION_ON_BREAK)));
+            }
+        } else if (postureBroken) {
             addToBot(new RemoveSpecificPowerAction(owner, owner, this));
             //apply 1 Tension whenever Posture is broken
             addToBot(new ApplyPowerAction(owner, owner, new TensionPower(owner, TENSION_ON_BREAK)));
-        } else if (!stabilized) {
-                addToBot(new ReducePowerAction(owner, owner, this, 1));
+        } else {
+            addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
         this.postureBroken = false;
     }

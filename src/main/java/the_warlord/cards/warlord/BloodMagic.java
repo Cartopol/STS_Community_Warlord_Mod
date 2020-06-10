@@ -16,13 +16,17 @@ public class BloodMagic extends CustomWarlordModCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
+    private static final int UPGRADE_COST = 1;
+
     private static final int BLEED = 4;
     private static final int UPGRADE_PLUS_BLEED = 1;
+    private static final int BLOCK_PER_BLEED = 1;
+
 
     public BloodMagic() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = BLEED;
+        magicNumber = baseMagicNumber = BLOCK_PER_BLEED;
     }
 
     @Override
@@ -34,7 +38,8 @@ public class BloodMagic extends CustomWarlordModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_BLEED);
+            upgradeBaseCost(UPGRADE_COST);
+//            upgradeMagicNumber(UPGRADE_PLUS_BLEED);
             upgradeDescription();
         }
     }
