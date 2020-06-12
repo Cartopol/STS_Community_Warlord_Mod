@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.combat.FlameBarrierEffect;
+import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 import the_warlord.WarlordMod;
 import the_warlord.actions.ParryAction;
 import the_warlord.cards.warlord.parry_deck.ParryDeck;
@@ -52,7 +52,7 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
         if (damageAmount < info.output && damageAmount == 0 && owner.currentBlock == 0) {
             WarlordMod.logger.info("Parrying");
 
-            addToBot(new VFXAction(new FlameBarrierEffect(owner.dialogX, owner.dialogY)));
+            addToTop(new VFXAction(new ClashEffect(owner.dialogX, owner.dialogY)));
             isFullParrying = true;
             isParrying = true;
         }
