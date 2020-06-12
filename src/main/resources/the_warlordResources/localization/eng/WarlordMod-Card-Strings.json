@@ -97,6 +97,21 @@
     "NAME": "Scout",
     "DESCRIPTION": "If this is the first card played this turn, draw !M! cards."
   },
+  "the_warlord:SpinSlash": {
+    "NAME": "Spin Slash",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL Shuffle !the_warlord:UrMagic! *Dizzy into your draw pile."
+  },
+  "the_warlord:InnerBalance": {
+    "NAME": "Inner Balance",
+    "DESCRIPTION": "Deal !D! damage. NL If you have no the_warlord:Posture, play this card an additional time."
+  },
+  "the_warlord:WardOff": {
+    "NAME": "Ward Off",
+    "DESCRIPTION": "Lose ALL your the_warlord:Posture. NL Gain !M! Block for each the_warlord:Posture lost.",
+    "EXTENDED_DESCRIPTION": [
+      "`NL (Gain !B! Block)"
+    ]
+  },
   "the_warlord:BrokenGlass": {
     "NAME": "Broken Glass",
     "DESCRIPTION": "Apply !M! the_warlord:Bleed to ALL enemies."
