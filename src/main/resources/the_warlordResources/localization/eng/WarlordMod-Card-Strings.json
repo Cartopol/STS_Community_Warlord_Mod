@@ -251,7 +251,7 @@
   },
   "the_warlord:DeftCharge": {
     "NAME": "Deft Charge",
-    "DESCRIPTION": "Deal !D! damage. NL If you have the_warlord:Tension, draw !M! cards."
+    "DESCRIPTION": "Deal !D! damage. NL Draw cards equal to your the_warlord:Tension."
   },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",

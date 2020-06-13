@@ -1,5 +1,14 @@
 v0.0.13
 - Dizzy rework
+- New card Spinning Slash: 1: Deal 5(7) damage to a random enemy 3 times. Shuffle a Dizzy into your draw pile.
+- New card Inner Balance: 1: Deal 8(11) damage. If you have no Posture, play this an additional time.
+- New card Ward Off: 1: Lose ALL Posture. Gain 4(6) Block for each Posture removed.
+
+- Rework of Deft Charge: Cost 1: Deal 7(10) damage. Draw cards equal to your Tension."
+
+- Buff Zig Zag, now gets 3(4) Block per point of Tension (up from 2(3))
+
+- Different VFX for succesful parries.
 
 v0.0.12
 - New card: Invert Force. "Parry: Shuffle (an upgraded) Kinetic Release into your draw pile."
