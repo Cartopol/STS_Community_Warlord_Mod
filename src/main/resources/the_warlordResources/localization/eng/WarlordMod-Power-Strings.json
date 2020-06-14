@@ -75,6 +75,18 @@
       "Whenever you Parry, draw #b%1$s cards."
     ]
   },
+  "the_warlord:CorneredPower": {
+    "NAME": "Cornered",
+    "DESCRIPTIONS": [
+      "Increase your #yAttack #yDamage by #b%1$s for each point of #yTension you have."
+    ]
+  },
+  "the_warlord:BloodLinkPower": {
+    "NAME": "Blood Link",
+    "DESCRIPTIONS": [
+      "Whenever you draw a Status, apply #b%1$s #yBleed to ALL enemies."
+    ]
+  },
   "the_warlord:BoilingBloodPower": {
     "NAME": "Boiling Blood",
     "DESCRIPTIONS": [

@@ -52,7 +52,7 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
         if (damageAmount < info.output && damageAmount == 0 && owner.currentBlock == 0) {
             WarlordMod.logger.info("Parrying");
 
-            addToTop(new VFXAction(new ClashEffect(owner.dialogX, owner.dialogY)));
+            addToTop(new VFXAction(new ClashEffect(owner.dialogX + 20F, owner.dialogY)));
             isFullParrying = true;
             isParrying = true;
         }
@@ -110,21 +110,9 @@ public class ParryPower extends CustomWarlordModPower { //implements InvisiblePo
             isParrying = false;
             isFullParrying = false;
 
-//            ArrayList<AbstractCard> parryOptions = ParryDeck.getParryOptions();
-//            WarlordMod.logger.info("parryOptions : " + parryOptions);
-
-
-//            if (parryOptions.size() > 0) {
-//                this.addToBot(new ChooseOneAction(parryOptions));
-
             addToBot(new ParryAction());
                 for (int i = 0; i < additionalParries; ++i) {
-//                    ArrayList<AbstractCard> additionalParryOptions = ParryDeck.getParryOptions();
-//                    WarlordMod.logger.info("additionalParryOptions : " + additionalParryOptions);
-//
-//                    this.addToBot(new ChooseOneAction(additionalParryOptions));
                     addToBot(new ParryAction());
-
                 }
             }
         }
