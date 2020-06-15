@@ -51,7 +51,7 @@
   "the_warlord:FinishOff": {
     "NAME": "Finish Off",
     "DESCRIPTION": "Your attacks deal double damage this turn. NL the_warlord:Purge.",
-    "UPGRADE_DESCRIPTION": "Your attacks deal double damage this turn. NL Apply !M! Vulnerable to ALL enemies. NL the_warlord:Purge."
+    "UPGRADE_DESCRIPTION": "Your attacks deal double damage this turn."
   },
   "the_warlord:ZigZag": {
     "NAME": "Zig Zag",

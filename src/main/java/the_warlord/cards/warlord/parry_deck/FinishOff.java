@@ -3,9 +3,7 @@ package the_warlord.cards.warlord.parry_deck;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DoubleDamagePower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import the_warlord.WarlordMod;
 import the_warlord.characters.Warlord;
 
@@ -30,17 +28,12 @@ public class FinishOff extends CustomParryCard {
 
     @Override
     public void useParry() {
-        if (this.upgraded) {
-            for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                if (!monster.isDead && !monster.isDying) {
-                    addToBot(new ApplyPowerAction(monster, AbstractDungeon.player, new VulnerablePower(monster, magicNumber, false)));
-                }
-            }
-        }
+
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, urMagicNumber, false)));
-
-        removeFromMasterParryDeck(this);
+        if (!upgraded) {
+            removeFromMasterParryDeck(this);
+        }
     }
 
     @Override
