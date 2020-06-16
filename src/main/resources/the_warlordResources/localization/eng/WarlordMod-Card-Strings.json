@@ -109,7 +109,7 @@
     "NAME": "Ward Off",
     "DESCRIPTION": "Lose ALL your the_warlord:Posture. NL Gain !M! Block for each the_warlord:Posture lost.",
     "EXTENDED_DESCRIPTION": [
-      "`NL (Gain !B! Block)"
+      " NL (Gain !B! Block)"
     ]
   },
   "the_warlord:BrokenGlass": {

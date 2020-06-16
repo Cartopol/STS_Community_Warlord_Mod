@@ -108,7 +108,7 @@
   "the_warlord:TenseUpPower": {
     "NAME": "Tense Up",
     "DESCRIPTIONS": [
-      "Whenever you gain #yTension, gain #b%1$s Block."
+      "Whenever you gain #yTension, gain #b%1$s #yPosture."
     ]
   },
   "the_warlord:SupportingFirePower": {
