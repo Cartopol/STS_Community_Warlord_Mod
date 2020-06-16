@@ -399,5 +399,15 @@
   "the_warlord:MarchingSong": {
     "NAME": "Marching Song",
     "DESCRIPTION": "Whenever you play !the_warlord:UrMagic! cards, draw a card."
+  },
+
+  "the_warlord:Improvise": {
+    "NAME": "Improvise",
+    "DESCRIPTION": "At the start of each turn, if you have no the_warlord:Posture, the first card you play each turn is played twice."
+  },
+
+  "the_warlord:DesperateDodge": {
+    "NAME": "Desperate Dodge",
+    "DESCRIPTION": "If you have no the_warlord:Posture, gain !B! Block."
   }
 }

@@ -201,5 +201,11 @@
     "DESCRIPTIONS": [
       "Gain #b%1$s #yTension at the start of each turn."
     ]
+  },
+  "the_warlord:ImprovisePower": {
+    "NAME": "Improvise",
+    "DESCRIPTIONS": [
+      "At the start of each turn, if you have no #yPosture, the next card you play is played #b%1$s times."
+    ]
   }
 }
