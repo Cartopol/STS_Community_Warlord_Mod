@@ -13,16 +13,19 @@ public class Improvise extends CustomWarlordModCard {
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
     private static final int COST = 3;
     private static final int UPGRADED_COST = 2;
+    private static final int DOUBLED_AMOUNT = 1;
+
     public Improvise() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = DOUBLED_AMOUNT;
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ImprovisePower(p, 2)));
+        addToBot(new ApplyPowerAction(p, p, new ImprovisePower(p, magicNumber)));
     }
     @Override
     public void upgrade() {
