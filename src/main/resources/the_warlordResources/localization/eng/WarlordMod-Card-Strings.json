@@ -240,6 +240,14 @@
     "NAME": "Quick Draw",
     "DESCRIPTION": "Whenever you the_warlord:Parry, draw !M! card."
   },
+  "the_warlord:Cornered": {
+    "NAME": "Cornered",
+    "DESCRIPTION": "Your the_warlord:Attack\u00a0Damage is increased by !M! for each point of the_warlord:Tension you have."
+  },
+  "the_warlord:BloodLink": {
+    "NAME": "Blood Link",
+    "DESCRIPTION": "Whenever you draw a Status, apply !M! the_warlord:Bleed to ALL enemies."
+  },
   "the_warlord:Stimulation": {
     "NAME": "Stimulation",
     "DESCRIPTION": "At the start of your turn, add a *Syrette into your hand.",
@@ -251,7 +259,7 @@
   },
   "the_warlord:DeftCharge": {
     "NAME": "Deft Charge",
-    "DESCRIPTION": "Deal !D! damage. NL If you have the_warlord:Tension, draw !M! cards."
+    "DESCRIPTION": "Deal !D! damage. NL Draw cards equal to your the_warlord:Tension."
   },
   "the_warlord:DecisiveFactor": {
     "NAME": "Decisive Factor",

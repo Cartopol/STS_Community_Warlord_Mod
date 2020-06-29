@@ -63,6 +63,7 @@ public class PosturePower extends CustomWarlordModPower {
 
     @Override
     public void atStartOfTurn() {
+
         boolean stabilized = owner.hasPower(PostureStabilizedPower.POWER_ID);
 
 

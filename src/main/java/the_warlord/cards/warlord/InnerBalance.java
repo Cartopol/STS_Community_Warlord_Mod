@@ -22,7 +22,7 @@ public class InnerBalance extends CustomWarlordModCard {
     public static final CardColor COLOR = Warlord.Enums.WARLORD_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
     private static final int ADDITIONAL_PLAY_COUNT = 1;
 
