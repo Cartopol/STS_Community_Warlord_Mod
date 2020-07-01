@@ -37,6 +37,7 @@ public abstract class CustomParryCard extends CustomWarlordModCard {
 
     @Override
     public final void onChoseThisOption() {
+        applyPowers();
         ParryDeck.playedThisCombatCount++;
         useParry();
         WarlordMod.logger.info("Parried " + ParryDeck.playedThisCombatCount + " time(s).");

@@ -1,8 +1,16 @@
 v0.0.13
 - Dizzy rework
-- New card Spinning Slash: 1: Deal 5(7) damage to a random enemy 3 times. Shuffle a Dizzy into your draw pile.
+- New card Spinning Slash: 2: Deal 7(9) damage to a random enemy 3 times. Shuffle a Dizzy into your draw pile.
 - New card Inner Balance: 1: Deal 8(11) damage. If you have no Posture, play this an additional time.
 - New card Ward Off: 1: Lose ALL Posture. Gain 4(6) Block for each Posture removed.
+- New card Blood Link: Power, 1: Whenever you draw a Status, apply 4(6) Bleed to ALL enemies.
+- New card Cornered: Power, 1: Your attack damage is increased by 1(2) for each point of Tension you have.
+
+- Guardian Form nerf, now gives 15 Posture instead of 20.
+- Neck Slash nerf now applies 8(12) Bleed instead of 10(14).
+- Slash nerf, now deals 10(14) damage and 1 Gush, instead of 10(12) damage and 1(2) Gush.
+- Supporting Fire nerf, now costs 0 and gives 1(2) Block per attack played, instead of cost 1 and 3(4) Block.
+- Finish Off nerf, no longer applies Vulnerable when upgraded. Instead, upgrading removes Purge.
 
 - Rework of Deft Charge: Cost 1: Deal 7(10) damage. Draw cards equal to your Tension."
 

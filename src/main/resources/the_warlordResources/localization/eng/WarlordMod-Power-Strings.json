@@ -108,7 +108,7 @@
   "the_warlord:TenseUpPower": {
     "NAME": "Tense Up",
     "DESCRIPTIONS": [
-      "Whenever you gain #yTension, gain #b%1$s Block."
+      "Whenever you gain #yTension, gain #b%1$s #yPosture."
     ]
   },
   "the_warlord:SupportingFirePower": {
@@ -205,7 +205,9 @@
   "the_warlord:ImprovisePower": {
     "NAME": "Improvise",
     "DESCRIPTIONS": [
-      "At the start of each turn, if you have no #yPosture, the next card you play is played #b%1$s times."
+      "At the start of each turn, if you have no #yPosture, the first card you play is played an additional time.",
+      "At the start of each turn, if you have no #yPosture, the first #b%1$s cards you play are played an additional time."
+
     ]
   }
 }

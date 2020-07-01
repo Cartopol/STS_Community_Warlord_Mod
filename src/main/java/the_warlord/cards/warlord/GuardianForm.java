@@ -20,7 +20,7 @@ public class GuardianForm extends CustomWarlordModCard {
 
     private static final int COST = 3;
 
-    private static final int POSTURE = 20;
+    private static final int POSTURE = 15;
     private static final int DIZZY = 1;
 
 

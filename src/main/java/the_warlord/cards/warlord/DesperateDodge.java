@@ -1,7 +1,5 @@
 package the_warlord.cards.warlord;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,16 +19,19 @@ public class DesperateDodge extends CustomWarlordModCard {
     private static final int COST = 1;
     private static final int BLOCK = 11;
     private static final int UPGRADE_PLUS_BLOCK = 4;
+
     public DesperateDodge() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(!p.hasPower(PosturePower.POWER_ID)){
+        if (!p.hasPower(PosturePower.POWER_ID)) {
             addToBot(new GainBlockAction(p, p, block));
         }
     }
+
     @Override
     public void upgrade() {
         if (!upgraded) {
@@ -39,10 +40,10 @@ public class DesperateDodge extends CustomWarlordModCard {
             upgradeDescription();
         }
     }
+
     @Override
-    public void triggerOnGlowCheck() {
-        if(!AbstractDungeon.player.hasPower(PosturePower.POWER_ID)){ glowColor = GOLD_BORDER_GLOW_COLOR;
-        } else { glowColor = BLUE_BORDER_GLOW_COLOR; }
+    public boolean shouldGlowGold() {
+        return !AbstractDungeon.player.hasPower(PosturePower.POWER_ID);
     }
 
 }
