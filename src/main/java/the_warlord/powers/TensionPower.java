@@ -8,12 +8,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.BobEffect;
 
 public class TensionPower extends CustomWarlordModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(TensionPower.class);
     public static final String POWER_ID = STATIC.ID;
     private boolean justApplied = false;
-
+    protected BobEffect bobEffect;
 
     public TensionPower(AbstractCreature owner, int amount) {
         super(STATIC);
@@ -30,7 +31,7 @@ public class TensionPower extends CustomWarlordModPower {
             this.justApplied = true;
         }
 
-
+        this.bobEffect = new BobEffect(5.0F * Settings.scale, 3.0F);
         updateDescription();
     }
 
@@ -63,6 +64,12 @@ public class TensionPower extends CustomWarlordModPower {
     }
 
     @Override
+    public void updateParticles(){
+        super.updateParticles();
+        this.bobEffect.update();
+    }
+
+    @Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         super.renderIcons(sb, x, y, c);
 
@@ -70,7 +77,7 @@ public class TensionPower extends CustomWarlordModPower {
         float xPos = owner.dialogX;
         float yPos = owner.dialogY+ 80;
         float xOffset = -200.0F;
-        sb.draw(STATIC.TEXTURE_84, xPos + xOffset - 25, yPos - 12.0F, 16.0F, 16.0F, 50.0F, 50.0F, Settings.scale * 1.5F, Settings.scale * 1.5F, 0.0F, 0, 0, 84, 84, false, false);
+        sb.draw(STATIC.TEXTURE_84, xPos + xOffset - 25, yPos - 12.0F + this.bobEffect.y, 16.0F, 16.0F, 50.0F, 50.0F, Settings.scale * 1.5F, Settings.scale * 1.5F, 0.0F, 0, 0, 84, 84, false, false);
     }
 
     @Override
