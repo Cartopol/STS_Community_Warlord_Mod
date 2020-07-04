@@ -1,7 +1,10 @@
 package the_warlord.powers;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -11,6 +14,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.BobEffect;
+import com.megacrit.cardcrawl.vfx.combat.FrostOrbPassiveEffect;
 import the_warlord.WarlordMod;
 
 public class PosturePower extends CustomWarlordModPower {
@@ -19,17 +24,15 @@ public class PosturePower extends CustomWarlordModPower {
 
     private boolean postureBroken;
     private int TENSION_ON_BREAK = 1;
+    protected BobEffect bobEffect;
 
     public PosturePower(AbstractCreature owner, int amount) {
         super(STATIC);
-
         this.type = PowerType.BUFF;
-
         this.owner = owner;
         this.amount = amount;
-
         this.postureBroken = false;
-
+        this.bobEffect = new BobEffect(5.0F * Settings.scale, 3.0F);
         updateDescription();
     }
 
@@ -66,7 +69,6 @@ public class PosturePower extends CustomWarlordModPower {
 
         boolean stabilized = owner.hasPower(PostureStabilizedPower.POWER_ID);
 
-
         if (stabilized) {
             owner.getPower(PostureStabilizedPower.POWER_ID).flash();
             if (postureBroken) {
@@ -88,14 +90,19 @@ public class PosturePower extends CustomWarlordModPower {
     }
 
     @Override
+    public void updateParticles(){
+        super.updateParticles();
+        this.bobEffect.update();
+    }
+
+    @Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         super.renderIcons(sb, x, y, c);
-
         sb.setColor(c);
         float xPos = owner.dialogX;
         float yPos = owner.dialogY + 80;
         float xOffset = 200.0F;
-        sb.draw(STATIC.TEXTURE_84, xPos + xOffset - 25, yPos - 12.0F, 16.0F, 16.0F, 50.0F, 50.0F, Settings.scale * 1.5F, Settings.scale * 1.5F, 0.0F, 0, 0, 84, 84, false, false);
+        sb.draw(STATIC.TEXTURE_84, xPos + xOffset - 25, yPos - 12.0F + this.bobEffect.y, 16.0F, 16.0F, 50.0F, 50.0F, Settings.scale * 1.5F, Settings.scale * 1.5F, 0.0F, 0, 0, 84, 84, false, false);
     }
 
     @Override
